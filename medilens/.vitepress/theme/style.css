@@ -3,6 +3,12 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
+:root {
+  --custom-c-active: #F25939;
+  --custom-c-default: #1E1E1E;
+  --custom-c-bg: #F6F6F6;
+}
+
 /**
  * Colors
  *
@@ -49,10 +55,10 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand-1: var(--custom-c-active);
+  --vp-c-brand-2: var(--custom-c-active);
+  --vp-c-brand-3: var(--custom-c-active);
+  --vp-c-brand-soft: var(--custom-c-active);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -92,17 +98,13 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
+  --vp-home-hero-name-background: -webkit-linear-gradient(0deg,
+      var(--custom-c-active) 50%,
+      var(--custom-c-default) 50%);
 
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
+  --vp-home-hero-image-background-image: linear-gradient(-45deg,
+      #bd34fe 50%,
+      #47caff 50%);
   --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -141,9 +143,71 @@
  * CUSTOM
  * -------------------------------------------------------------------------- */
 
- .VPFooter .container {
+.VPHome .main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.VPHome .main .text {
+  font-weight: 500;
+}
+
+.VPFooter .container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.image-container .image-bg {
+  background-image: none !important;
+  background-color: var(--custom-c-active) !important;
+  opacity: .5;
+}
+
+.custom-hero-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 960px) {
+  .VPHome .main .text {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .custom-hero-actions {
+    max-width: 576px;
+    justify-content: flex-start;
+    margin-bottom: 200px;
+  }
+
+  .VPImage {
+    max-width: auto !important;
+    max-height: 500px !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+.custom-hero-actions img {
+  width: auto;
+  height: 50px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.custom-hero-actions a {
+  background-color: var(--custom-c-active);
+  color: #ffffff;
+  display: flex;
+  border-radius: 8px;
+  padding: 15px;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
 }

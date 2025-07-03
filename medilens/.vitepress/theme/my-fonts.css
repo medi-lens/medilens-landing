@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Akshar';
+  src: url('/assets/fonts/Akshar-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 700;
+  font-stretch: 75% 125%;
+}
+
+:root {
+  --vp-font-family-base: 'Akshar', 'Segoe UI', Arial, sans-serif; /* base font */
+  --vp-font-family-mono: 'Akshar', 'Fira Mono', 'Menlo', 'Consolas', monospace; /* monospace font */
+}

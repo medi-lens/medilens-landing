@@ -2,6 +2,24 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  transformHead({ assets }) {
+    // adjust the regex accordingly to match your font
+    const myFontFile = assets.find(file => /Akshar\.[\w-]+\.ttf/.test(file))
+    if (myFontFile) {
+      return [
+        [
+          'link',
+          {
+            rel: 'preload',
+            href: myFontFile,
+            as: 'font',
+            type: 'font/ttf',
+            crossorigin: ''
+          }
+        ]
+      ]
+    }
+  },
   head: [
     // ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
@@ -18,13 +36,13 @@ export default defineConfig({
     ]
   ],
   lang: 'es',
-  title: "Medi Lens",
-  // titleTemplate: 'Medi Lens',
+  title: "MEDI lens",
+  // titleTemplate: 'MEDI lens',
   description: "Escanea y conoce tus medicamentos",
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    siteTitle: 'Medi Lens',
+    siteTitle: 'MEDI lens',
     // logo: '/logo.png',
     // nav: [
     //   { text: 'Home', link: '/' },
@@ -46,7 +64,7 @@ export default defineConfig({
     // ],
 
     footer: {
-      message: 'Medi Lens - Escanea y conoce tus medicamentos',
+      message: 'MEDI lens - Escanea y conoce tus medicamentos',
       copyright: '© 2025'
     }
   }
