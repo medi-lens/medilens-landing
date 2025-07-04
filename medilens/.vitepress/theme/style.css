@@ -254,6 +254,18 @@
 }
 
 
+.VPDoc .content-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.VPDoc .content-container .VPDocFooter {
+  margin-top: 0;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+
 
 
 @media (min-width: 960px) {
