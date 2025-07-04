@@ -261,8 +261,10 @@
 
 .VPDoc .content-container .VPDocFooter {
   margin-top: 0;
-  font-weight: 300;
-  opacity: 0.8;
+}
+
+.VPLastUpdated {
+  font-weight: 300 !important;
 }
 
 
