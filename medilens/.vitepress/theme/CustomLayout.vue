@@ -8,17 +8,22 @@ const { Layout } = DefaultTheme;
   <Layout>
     <template #home-hero-actions-after>
       <div class="custom-hero-actions">
-        <img
-          src="/assets/img/medilens-google-play.png"
-          alt="Medilens Logo"
-          class="home-hero-logo"
-        />
-        <img
-          src="/assets/img/medilens-apple-store-wht.svg"
-          alt="Medilens Logo"
-          class="home-hero-logo"
-        />
-        <a href="#">APP Web</a>
+        <a href="#">
+          <img src="/assets/img/medilens-google-play.png" alt="Google Play" />
+        </a>
+        <a href="#">
+          <img
+            src="/assets/img/medilens-apple-store-wht.svg"
+            alt="Apple Store"
+          />
+        </a>
+        <a class="app-web" href="#">
+          <img src="/assets/icons/ml-icon.svg" alt="Medilens Logo" />
+          <div>
+            <small>Accede a la</small>
+            <span>Versión Web</span>
+          </div>
+        </a>
       </div>
     </template>
   </Layout>
