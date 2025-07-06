@@ -187,6 +187,11 @@
   gap: 20px;
 }
 
+.VPFooter .container p {
+  font-weight: 400;
+  text-align: left;
+}
+
 .image-container .image-bg {
   background-image: none !important;
   background-color: var(--custom-c-active) !important;

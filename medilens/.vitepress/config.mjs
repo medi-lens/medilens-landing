@@ -47,7 +47,7 @@ export default defineConfig({
     logo: '/assets/icons/ml-icon.svg',
     nav: [
       {
-        text: '🙋‍♂️ Quienes somos',
+        text: '🙋‍♂️ Quienes Somos',
         link: '/quienes-somos',
         activeMatch: '/quienes-somos'
       },
@@ -113,7 +113,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'MEDI lens - Escanea y conoce tus medicamentos',
+      message: 'MEDI lens - Escanea y conoce tus medicamentos · Hecho con ❤️ en Almería 🍅',
       copyright: 'Copyright © 2025'
     }
   }

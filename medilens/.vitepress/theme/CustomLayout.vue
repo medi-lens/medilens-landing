@@ -12,12 +12,9 @@ const { Layout } = DefaultTheme;
           <img src="/assets/img/medilens-google-play.png" alt="Google Play" />
         </a>
         <a href="#">
-          <img
-            src="/assets/img/medilens-apple-store-wht.svg"
-            alt="Apple Store"
-          />
+          <img src="/assets/img/medilens-apple-store-wht.svg" alt="Apple Store" />
         </a>
-        <a class="app-web" href="#">
+        <a class="app-web" href="https://app.medilens.es">
           <img src="/assets/icons/ml-icon.svg" alt="Medilens Logo" />
           <div>
             <small>Accede a la</small>
