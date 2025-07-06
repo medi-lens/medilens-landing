@@ -15,7 +15,7 @@ const { Layout } = DefaultTheme;
           <img src="/assets/img/medilens-apple-store-wht.svg" alt="Apple Store" />
         </a>
         <a class="app-web" href="https://app.medilens.es">
-          <img src="/assets/icons/ml-icon.svg" alt="Medilens Logo" />
+          <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
           <div>
             <small>Accede a la</small>
             <span>Versión Web</span>

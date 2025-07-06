@@ -219,11 +219,23 @@
   color: var(--custom-c-default);
   display: flex;
   border-radius: 12px;
-  padding: 10px 15px 10px 10px;
+  padding: 10px 10px 10px 4px;
   align-items: center;
   height: 50px;
   box-sizing: border-box;
   gap: 10px;
+  position: relative;
+}
+
+.custom-hero-actions a.app-web::after {
+  content: "(No requiere instalación)";
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  text-wrap: nowrap;
+  transform: translateX(-50%);
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .custom-hero-actions a.app-web img {
@@ -249,13 +261,13 @@
 .VPFeature .title {
   line-height: 24px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .VPFeature .details {
   line-height: 24px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 
@@ -301,7 +313,7 @@
 
 @media (min-width: 768px) {
   .VPTeamPage {
-    margin: 0 !important;
+    margin-top: 0 !important;
   }
 }
 

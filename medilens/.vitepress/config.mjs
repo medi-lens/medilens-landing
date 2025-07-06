@@ -44,7 +44,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: 'MEDI lens',
-    logo: '/assets/icons/ml-icon.svg',
+    logo: '/assets/icons/ml-icon-bxd.svg',
     nav: [
       {
         text: '🙋‍♂️ Quienes Somos',
