@@ -55,6 +55,17 @@ export default defineConfig({
         text: '🗃️ Dossier Medios',
         link: '/dossier-medios',
         activeMatch: '/dossier-medios'
+      },
+      {
+        text: '📣 Presentación',
+        link: '/presentamos-medilens',
+        activeMatch: '/presentamos-medilens'
+      },
+      {
+        text: '1.0.0',
+        items: [
+          { text: 'Changelog', link: 'CHANGELOG' },
+        ]
       }
     ],
 
