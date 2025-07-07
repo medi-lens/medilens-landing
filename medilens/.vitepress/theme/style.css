@@ -233,10 +233,11 @@
   box-sizing: border-box;
   gap: 10px;
   position: relative;
+  text-decoration: none !important;
 }
 
 .custom-hero-actions a.app-web::after {
-  content: "(No requiere instalación)";
+  content: "(No requiere instalación)" !important;
   position: absolute;
   bottom: -26px;
   left: 50%;

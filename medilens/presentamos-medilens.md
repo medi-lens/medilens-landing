@@ -84,7 +84,7 @@ MEDI Lens integra una serie de funcionalidades clave que aportan un alto valor t
     <a href="#">
         <img src="/assets/img/medilens-apple-store-wht.svg" alt="Apple Store" />
     </a>
-    <a class="app-web" href="https://app.medilens.es">
+    <a class="app-web no-icon" href="https://app.medilens.es">
         <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
         <div>
             <small>Accede a la</small>
