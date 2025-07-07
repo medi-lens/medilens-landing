@@ -302,6 +302,7 @@
   margin-top: 120px;
   max-width: 600px; /*1152px;*/
   border-radius: 12px;
+  background-color: var(--custom-c-bg);
   height: auto !important;
 }
 
