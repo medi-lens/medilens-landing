@@ -15,11 +15,11 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 
 - Ficha técnica disponible en formatos HTML y PDF.
 
-    Se trata del documento autorizado por la AEMPS dirigido a profesionales sanitarios, que recoge información clave como las indicaciones del medicamento, posología, precauciones, contraindicaciones, posibles reacciones adversas, así como sus propiedades farmacodinámicas y farmacocinéticas. También incluye advertencias específicas para poblaciones especiales como embarazadas o mujeres en período de lactancia, entre otros datos relevantes.
+    <span style="font-weight: 300">Se trata del documento autorizado por la AEMPS dirigido a profesionales sanitarios, que recoge información clave como las indicaciones del medicamento, posología, precauciones, contraindicaciones, posibles reacciones adversas, así como sus propiedades farmacodinámicas y farmacocinéticas. También incluye advertencias específicas para poblaciones especiales como embarazadas o mujeres en período de lactancia, entre otros datos relevantes.</span>
 
 - Prospecto accesible tanto en HTML como en PDF.
 
-    Este documento, dirigido al paciente o usuario, acompaña al medicamento e incluye la información necesaria para su correcta utilización.
+    <span style="font-weight: 300">Este documento, dirigido al paciente o usuario, acompaña al medicamento e incluye la información necesaria para su correcta utilización.</span>
 
 
 #### Información a nivel de medicamento:
@@ -30,14 +30,9 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 - Documentos de ficha técnica y prospecto.
 - Información sobre si el medicamento se encuentra comercializado y, en su caso, detalles sobre posibles problemas de suministro.
 - Detalles sobre las condiciones de prescripción y uso: necesidad de receta médica, requisitos especiales para su prescripción (como uso hospitalario o diagnóstico específico), posibilidad de promoción al público general, y presencia del símbolo de triángulo negro que indica seguimiento adicional.
-
 - Situación actual de la autorización, incluyendo la fecha correspondiente.
-
 - Principios activos que componen el medicamento.
-
 - Clasificación terapéutica según el sistema ATC, con indicación de su grupo y subgrupo.
-
-
 - Listado con las diferentes presentaciones del medicamento.
 
 <!-- #### Información a nivel de las presentaciones de cada medicamento:
@@ -55,12 +50,12 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 #### ¿Cómo se puede buscar la información de un medicamento?
 
 - Por el nombre del medicamento.
-- Por el laboratorio titular de la autorización de comercialización.
-- Por principio activo.
-- Por el código nacional.
+- Por el Laboratorio titular de la autorización de comercialización.
+- Por Principio Activo.
+- Por el Código Nacional.
 - Por el código ATC.
-- Por el número de registro.
-- Por Grupo terapéutico.
+- Por el Número de Registro.
+- Por Grupo Terapéutico.
 
 
 ## Beneficios Destacados de MEDI lens

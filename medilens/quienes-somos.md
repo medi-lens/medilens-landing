@@ -24,7 +24,7 @@ const members = [
     title: 'Creator',
     links: [
       { icon: 'github', link: 'https://github.com/crimson3d' },
-      { icon: 'twitter', link: 'https://twitter.com/youyuxi' }
+      { icon: 'twitter', link: 'https://x.com/pixeltroll' }
     ]
   }
 ]
@@ -36,7 +36,7 @@ const members = [
       El Equipo
     </template>
     <template #lead>
-      MEDI Lens ha sido desarrollada por dos desarrolladores de Almería 🍅, con el objetivo de ofrecer una herramienta útil, nativa e intuitiva y basada en datos oficiales del CIMA.
+      <span class="logo-colored">MEDI lens</span> ha sido desarrollada por dos desarrolladores de Almería 🍅, con el objetivo de ofrecer una herramienta útil, nativa e intuitiva y basada en datos oficiales de la AEMPS.
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members />

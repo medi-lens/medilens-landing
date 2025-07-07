@@ -64,7 +64,7 @@ export default defineConfig({
       {
         text: '1.0.0',
         items: [
-          { text: 'Changelog', link: 'CHANGELOG' },
+          { text: '📝 Changelog', link: 'CHANGELOG' },
         ]
       }
     ],
