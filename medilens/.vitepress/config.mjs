@@ -23,6 +23,10 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
       'script',
+      { src: 'https://app.mailjet.com/pas-nc-embedded-v1.js' }
+    ],
+    [
+      'script',
       { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-HG4RJR1M0Z' }
     ],
     [
