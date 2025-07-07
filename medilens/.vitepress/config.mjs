@@ -124,8 +124,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'MEDI lens - Escanea y conoce tus medicamentos · Hecho con ❤️ en Almería 🍅',
-      copyright: 'Copyright © 2025'
+      message: 'MEDI lens - Escanea y conoce tus medicamentos',
+      copyright: 'Hecho con ❤️ en Almería 🍅 · Copyright © 2025'
     }
   }
 })
