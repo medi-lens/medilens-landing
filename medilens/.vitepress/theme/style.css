@@ -222,6 +222,19 @@
   box-sizing: border-box;
 }
 
+.custom-hero-actions > div {
+  position: relative;
+}
+
+.custom-hero-actions > div::after {
+  content: '¡Próximamente!';
+  bottom: -30px;
+  opacity: 0.8;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
 .custom-hero-actions a.app-web {
   border: 1.5px solid var(--custom-c-active);
   color: var(--custom-c-default);

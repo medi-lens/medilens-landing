@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "MEDI lens"
   text: "Escanea y conoce tus medicamentos al instante"
-  tagline: Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial del CIMA.
+  tagline: Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.
   image:
     src: /assets/img/ml.png
     alt: MEDI lens Screenshot

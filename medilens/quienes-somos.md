@@ -13,7 +13,8 @@ const members = [
   {
     avatar: 'https://avatars.githubusercontent.com/u/9118664',
     name: 'Paul Guillamón',
-    title: 'Creator',
+    title: 'Creador',
+    // desc: 'Lorem ipsum dolor sit amet',
     links: [
       { icon: 'github', link: 'https://github.com/Qu4k3' }
     ]
@@ -21,10 +22,10 @@ const members = [
     {
     avatar: 'https://avatars.githubusercontent.com/u/20914374',
     name: 'Jose Sánchez Fuentes',
-    title: 'Creator',
+    title: 'Creador',
+    // desc: 'Lorem ipsum dolor sit amet',
     links: [
       { icon: 'github', link: 'https://github.com/crimson3d' },
-      { icon: 'twitter', link: 'https://x.com/pixeltroll' }
     ]
   }
 ]
