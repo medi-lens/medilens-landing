@@ -20,7 +20,7 @@ const { Layout } = DefaultTheme;
         </a>
         <a href="#">
           <img
-            src="/assets/img/medilens-apple-store-blk.svg"
+            src="/assets/images/medilens-apple-store-blk.svg"
             alt="Apple Store"
           />
         </a>

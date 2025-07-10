@@ -79,10 +79,10 @@ MEDI Lens integra una serie de funcionalidades clave que aportan un alto valor t
 
 <div class="custom-hero-actions">
     <a href="#">
-        <img src="/assets/img/medilens-google-play.png" alt="Google Play" />
+        <img src="/assets/images/medilens-google-play.png" alt="Google Play" />
     </a>
     <a href="#">
-        <img src="/assets/img/medilens-apple-store-wht.svg" alt="Apple Store" />
+        <img src="/assets/images/medilens-apple-store-wht.svg" alt="Apple Store" />
     </a>
     <a class="app-web no-icon" href="https://app.medilens.es">
         <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />

@@ -2,7 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  transformHead({ assets }) {
+  transformHead({ assets, pageData }) {
+    const head = [];
     const myFontFile = assets.find(file => /Akshar\.[\w-]+\.ttf/.test(file))
     if (myFontFile) {
       return [
@@ -18,6 +19,19 @@ export default defineConfig({
         ]
       ]
     }
+
+    if (pageData.frontmatter?.title) {
+      head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title }]);
+    }
+    if (pageData.frontmatter?.description) {
+      head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }]);
+    }
+
+    head.push(['meta', { property: 'og:type', content: 'website' }]);
+    // head.push(['meta', { property: 'og:url', content: pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/' }]);
+    head.push(['meta', { property: 'og:image', content: 'https://medilens.es/assets/images/medilens-og-image.png' }]);
+
+    return head
   },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],

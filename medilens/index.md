@@ -1,4 +1,7 @@
 ---
+title: MEDI lens - Escanea y descubre tus medicamentos
+description: MEDI lens permite escanear o buscar medicamentos, acceder a su prospecto o ficha técnica, ver composiciones, necesidad de receta, etc.
+
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
@@ -7,7 +10,7 @@ hero:
   text: "Escanea y conoce tus medicamentos al instante"
   tagline: Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.
   image:
-    src: /assets/img/ml.png
+    src: /assets/images/ml.png
     alt: MEDI lens Screenshot
   # actions:
   #   - theme: alt
