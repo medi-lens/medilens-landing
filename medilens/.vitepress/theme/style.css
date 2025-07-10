@@ -3,6 +3,20 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
+:root {
+  --custom-c-active: #F25939;
+  --custom-c-default: rgb(30, 30, 30);
+  --custom-c-bg: #F6F6F6;
+}
+
+
+:root {
+  --vp-c-text-1: rgba(30, 30, 30);
+  --vp-c-text-2: rgba(30, 30, 30, .8);
+  --vp-c-text-3: rgba(30, 30, 30, .6);
+}
+
+
 /**
  * Colors
  *
@@ -49,10 +63,10 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand-1: var(--custom-c-active);
+  --vp-c-brand-2: var(--custom-c-active);
+  --vp-c-brand-3: var(--custom-c-active);
+  --vp-c-brand-soft: var(--custom-c-active);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -90,19 +104,16 @@
  * Component: Home
  * -------------------------------------------------------------------------- */
 
+
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
+  --vp-home-hero-name-background: -webkit-linear-gradient(0deg,
+      var(--custom-c-active) 50%,
+      var(--custom-c-default) 50%);
 
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
+  --vp-home-hero-image-background-image: linear-gradient(0deg,
+      var(--custom-c-active) 50%,
+      var(--custom-c-default) 50%);
   --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -141,9 +152,215 @@
  * CUSTOM
  * -------------------------------------------------------------------------- */
 
- .VPFooter .container {
+.VPNavBarTitle .title {}
+
+.VPNavBarTitle .title span {
+  margin-top: 4px;
+  background: var(--vp-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--vp-home-hero-name-color);
+}
+
+.logo-colored {
+  font-weight: 500;
+  background: var(--vp-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--vp-home-hero-name-color)
+}
+
+.VPHome .main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.VPHome .main .text {
+  font-weight: 500;
+}
+
+.VPHome .main .tagline {
+  font-weight: 300;
+}
+
+.VPTeamPageTitle .lead {
+  font-weight: 400;
+}
+
+.VPFooter .container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.VPFooter .container p {
+  font-weight: 400;
+  text-align: left;
+}
+
+.image-container .image-bg {
+  background-image: none !important;
+  background-color: var(--custom-c-active) !important;
+  opacity: .5;
+}
+
+.custom-hero-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.custom-hero-actions img {
+  width: auto;
+  height: 50px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.custom-hero-actions > div {
+  position: relative;
+}
+
+.custom-hero-actions > div::after {
+  content: '¡Próximamente!';
+  bottom: -30px;
+  opacity: 0.8;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.custom-hero-actions a.app-web {
+  border: 1.5px solid var(--custom-c-active);
+  color: var(--custom-c-default);
+  display: flex;
+  border-radius: 12px;
+  padding: 10px 10px 10px 4px;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
+  gap: 10px;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.custom-hero-actions a.app-web::after {
+  content: "(No requiere instalación)" !important;
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  text-wrap: nowrap;
+  transform: translateX(-50%);
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.custom-hero-actions a.app-web img {
+  max-height: 40px;
+}
+
+.custom-hero-actions a.app-web div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.custom-hero-actions a.app-web div>* {
+  line-height: 18px;
+}
+
+.custom-hero-actions a.app-web div>span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.VPFeature .title {
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.VPFeature .details {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.VPDoc .content-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.VPDoc .content-container .VPDocFooter {
+  margin-top: 0;
+}
+
+.VPLastUpdated {
+  font-weight: 300 !important;
+}
+
+.mailjet-form {
+  padding: 0 24px;
+  margin-top: 80px;
+}
+
+.mailjet-embedded-form {
+  margin: 0 auto;
+  max-width: 600px; /*1152px;*/
+  border-radius: 12px;
+  background-color: var(--custom-c-bg);
+  border: 5px solid var(--custom-c-bg);
+}
+
+.pas-section {
+  display: none !important;
+}
+
+
+@media (min-width: 960px) {
+  .VPHome .main .text {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .VPHome .main .tagline {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .custom-hero-actions {
+    max-width: 576px;
+    justify-content: flex-start;
+    margin-bottom: 100px;
+  }
+
+  .VPHomeHero .VPImage {
+    max-width: auto !important;
+    max-height: 500px !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .VPTeamPage {
+    margin-top: 0 !important;
+  }
+
+  .mailjet-embedded-form {
+    height: 330px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .VPHome .main .text {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
