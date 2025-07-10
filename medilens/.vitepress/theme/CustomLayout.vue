@@ -17,13 +17,13 @@ const { Layout } = DefaultTheme;
       <div class="custom-hero-actions">
         <!--<a href="#">-->
         <div>
-          <img src="/assets/img/medilens-google-play.png" alt="Google Play" />
+          <img src="/assets/images/medilens-google-play.png" alt="Google Play" />
         </div>
         <!--</a>-->
         <!--<a href="#">-->
         <div>
           <img
-            src="/assets/img/medilens-apple-store-blk.svg"
+            src="/assets/images/medilens-apple-store-blk.svg"
             alt="Apple Store"
           />
         </div>

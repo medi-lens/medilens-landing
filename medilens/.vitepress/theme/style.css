@@ -152,8 +152,6 @@
  * CUSTOM
  * -------------------------------------------------------------------------- */
 
-.VPNavBarTitle .title {}
-
 .VPNavBarTitle .title span {
   margin-top: 4px;
   background: var(--vp-home-hero-name-background);
@@ -351,10 +349,6 @@
 @media (min-width: 768px) {
   .VPTeamPage {
     margin-top: 0 !important;
-  }
-
-  .mailjet-embedded-form {
-    height: 330px !important;
   }
 }
 
