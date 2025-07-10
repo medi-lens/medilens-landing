@@ -15,26 +15,22 @@ const { Layout } = DefaultTheme;
   <Layout>
     <template #home-hero-actions-after>
       <div class="custom-hero-actions">
-        <!--<a href="#">-->
-        <div>
+        <a href="#">
           <img src="/assets/img/medilens-google-play.png" alt="Google Play" />
-        </div>
-        <!--</a>-->
-        <!--<a href="#">-->
-        <div>
+        </a>
+        <a href="#">
           <img
             src="/assets/img/medilens-apple-store-blk.svg"
             alt="Apple Store"
           />
-        </div>
-        <!--</a>-->
-        <!--<a class="app-web" href="https://app.medilens.es">
+        </a>
+        <a class="app-web" href="https://app.medilens.es">
           <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
           <div>
             <small>Accede a la</small>
             <span>Versión Web</span>
           </div>
-        </a>-->
+        </a>
       </div>
     </template>
     <template #home-features-after>

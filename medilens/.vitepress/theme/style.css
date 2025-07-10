@@ -221,7 +221,7 @@
   display: block;
   box-sizing: border-box;
 }
-
+/*
 .custom-hero-actions > div {
   position: relative;
 }
@@ -233,7 +233,7 @@
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-}
+}*/
 
 .custom-hero-actions a.app-web {
   border: 1.5px solid var(--custom-c-active);
