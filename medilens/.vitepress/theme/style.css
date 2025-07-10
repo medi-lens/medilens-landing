@@ -308,15 +308,15 @@
 
 .mailjet-form {
   padding: 0 24px;
+  margin-top: 80px;
 }
 
 .mailjet-embedded-form {
   margin: 0 auto;
-  margin-top: 120px;
   max-width: 600px; /*1152px;*/
   border-radius: 12px;
   background-color: var(--custom-c-bg);
-  height: auto !important;
+  border: 5px solid var(--custom-c-bg);
 }
 
 .pas-section {
