@@ -309,7 +309,7 @@
   margin-top: 80px;
 }
 
-.mailjet-embedded-form {
+.mailjet-form iframe {
   margin: 0 auto;
   max-width: 600px; /*1152px;*/
   border-radius: 12px;

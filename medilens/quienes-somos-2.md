@@ -4,7 +4,7 @@ import { VPTeamMembers } from 'vitepress/theme'
 const members = [
   {
     avatar: 'https://avatars.githubusercontent.com/u/9118664',
-    name: 'Paul Guillamón',
+    name: 'Paul Guillamón Thiéry',
     title: 'Creator',
     links: [
       { icon: 'github', link: 'https://github.com/Qu4k3' }
@@ -15,8 +15,7 @@ const members = [
     name: 'Jose Sánchez Fuentes',
     title: 'Creator',
     links: [
-      { icon: 'github', link: 'https://github.com/crimson3d' },
-      { icon: 'twitter', link: 'https://twitter.com/youyuxi' }
+      { icon: 'github', link: 'https://github.com/crimson3d' }
     ]
   }
 ]

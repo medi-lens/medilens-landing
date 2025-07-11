@@ -1,6 +1,6 @@
 ---
 title: Quienes Somos | MEDI lens
-description: MEDI lens ha sido desarrollada por dos desarrolladores de Almería, conocenos un poco más :)
+description: MEDI lens ha sido desarrollada por dos desarrolladores de Almería, conócenos un poco más :)
 
 layout: page
 ---
@@ -15,11 +15,12 @@ import {
 const members = [
   {
     avatar: 'https://avatars.githubusercontent.com/u/9118664',
-    name: 'Paul Guillamón',
+    name: 'Paul Guillamón Thiéry',
     title: 'Creador',
     // desc: 'Lorem ipsum dolor sit amet',
     links: [
-      { icon: 'github', link: 'https://github.com/Qu4k3' }
+      { icon: 'github', link: 'https://github.com/Qu4k3' },
+      { icon: 'vitepress', link: 'https://qu4k3.com' }
     ]
   },
     {

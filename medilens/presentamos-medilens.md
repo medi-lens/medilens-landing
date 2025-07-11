@@ -9,7 +9,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ha sido desarrollada 
 Conscientes del creciente interés por aplicaciones que acercan a los usuarios información relevante sobre alimentación, salud, cosméticos y otros productos, incluyendo sus beneficios y contraindicaciones, impulsamos MEDI Lens con el objetivo de fomentar un uso más informado y responsable de los medicamentos, contribuyendo así al bienestar individual y a la salud pública.
 
 
-## Consulta Detallada de Medicamentos Autorizados
+## Consulta Detallada de Medicamentos
 
 La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo momento información actualizada sobre todos los medicamentos autorizados en España. Como referencia, la base de datos de la AEMPS incluye más de 15.500 medicamentos y más de 2500 principios activos. Para cada uno de ellos, se incorporan los documentos oficiales esenciales para garantizar un uso adecuado del medicamento:
 
@@ -75,7 +75,7 @@ MEDI Lens integra una serie de funcionalidades clave que aportan un alto valor t
 - Es de acceso libre, no requiere registro, es gratuita y está optimizada para funcionar correctamente en cualquier dispositivo móvil.
 
 
-## Descarga la APP de <span class="logo-colored">MEDI lens</span>
+## Descarga/Accede a la APP de <span class="logo-colored">MEDI lens</span>
 
 <div class="custom-hero-actions">
     <a href="#">
