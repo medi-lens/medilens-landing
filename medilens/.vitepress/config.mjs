@@ -22,14 +22,14 @@ export default defineConfig({
     }
 
     // Add Open Graph metadata
-    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title }]);
-    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }]);
+    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'MEDI lens - Escanea y conoce tus medicamentos' }]);
+    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.' }]);
     head.push(['meta', { property: 'og:type', content:  pageData.frontmatter.metaType ? pageData.frontmatter.metaType : 'website' }]);
     head.push(['meta', { property: 'og:url', content: pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/' }]);
 
     // Add Twitter Card metadata
-    head.push(['meta', { name: 'twitter:title', content: pageData.frontmatter.title }]);
-    head.push(['meta', { name: 'twitter:description', content: pageData.frontmatter.description }]);
+    head.push(['meta', { name: 'twitter:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'MEDI lens - Escanea y conoce tus medicamentos' }]);
+    head.push(['meta', { name: 'twitter:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.' }]);
     head.push(['meta', { property: 'twitter:url', content: pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/' }]);
 
     return head
