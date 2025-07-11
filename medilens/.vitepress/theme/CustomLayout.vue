@@ -44,6 +44,7 @@ const { Layout } = DefaultTheme;
           marginwidth="0"
           src="https://s8h2u.mjt.lu/wgt/s8h2u/0s49/form?c=13b8b50e"
           width="100%"
+          style="height: 0"
         ></iframe>
       </section>
     </template>
