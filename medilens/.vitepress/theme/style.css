@@ -162,6 +162,7 @@
 
 .logo-colored {
   font-weight: 500;
+  white-space: nowrap;
   background: var(--vp-home-hero-name-background);
   -webkit-background-clip: text;
   background-clip: text;

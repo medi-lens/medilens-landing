@@ -6,12 +6,12 @@ lastUpdated: true
 
 La aplicación <span class="logo-colored">MEDI lens</span> ha sido desarrollada con el objetivo de brindar a ciudadanos y profesionales de la salud información clara, accesible y actualizada sobre los medicamentos, promoviendo así un uso adecuado, seguro y responsable. Todo ello a través de una experiencia móvil nativa, sencilla y pensada para ser accesible a todos.
 
-Conscientes del creciente interés por aplicaciones que acercan a los usuarios información relevante sobre alimentación, salud, cosméticos y otros productos, incluyendo sus beneficios y contraindicaciones, impulsamos MEDI Lens con el objetivo de fomentar un uso más informado y responsable de los medicamentos, contribuyendo así al bienestar individual y a la salud pública.
+Conscientes del creciente interés por aplicaciones que acercan a los usuarios información relevante sobre alimentación, salud, cosméticos y otros productos, incluyendo sus beneficios y contraindicaciones, impulsamos <span class="logo-colored">MEDI lens</span> con el objetivo de fomentar un uso más informado y responsable de los medicamentos, contribuyendo así al bienestar individual y a la salud pública.
 
 
 ## Consulta Detallada de Medicamentos
 
-La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo momento información actualizada sobre todos los medicamentos autorizados en España. Como referencia, la base de datos de la AEMPS incluye más de 15.500 medicamentos y más de 2500 principios activos. Para cada uno de ellos, se incorporan los documentos oficiales esenciales para garantizar un uso adecuado del medicamento:
+La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo momento información actualizada sobre todos los medicamentos autorizados en España. Como referencia, la base de datos de la AEMPS incluye más de 15.500 medicamentos y más de 2.500 principios activos. Para cada uno de ellos, se incorporan los documentos oficiales esenciales para garantizar un uso adecuado del medicamento:
 
 - Ficha técnica disponible en formatos HTML y PDF.
 
@@ -24,7 +24,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 
 #### Información a nivel de medicamento:
 
-- Foto del medicmento (si se dispone).
+- Foto del medicamento (si se dispone).
 - Nombre del medicamento.
 - Nombre del laboratorio titular de la autorización
 - Documentos de ficha técnica y prospecto.
