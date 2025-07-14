@@ -147,7 +147,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'MEDI lens - Escanea y conoce tus medicamentos',
+      message: '<span class="logo-colored">MEDI lens</span> — Escanea y conoce tus medicamentos · <a href="/politica-privacidad">Política de privacidad</a>',
       copyright: 'Hecho con ❤️ en Almería 🍅 · Copyright © 2025'
     }
   }
