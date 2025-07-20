@@ -46,15 +46,11 @@ export default defineConfig({
     ],
     [
       'script',
-      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-HG4RJR1M0Z' }
-    ],
-    [
-      'script',
-      {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Q5L6NM10BG');`
+      {
+        defer: true,
+        src: 'https://cloud.umami.is/script.js',
+        'data-website-id': '103590ae-2977-4f10-8fc7-52d70ad16a5f',
+      }
     ]
   ],
   lang: 'es',
