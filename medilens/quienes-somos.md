@@ -1,5 +1,5 @@
 ---
-title: Quienes Somos | MEDI lens
+title: Quienes Somos
 description: MEDI lens ha sido desarrollada por dos desarrolladores de Almería, conócenos un poco más :)
 
 layout: page
