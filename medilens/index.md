@@ -27,7 +27,7 @@ hero:
 
 features:
   - title: Escanea y Busca Medicamentos
-    icon: ⛶
+    icon: 🔍
     details: Usa la cámara de tu móvil para escanear cajas o busca por nombre y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.
   - title: Prospecto y Ficha Técnica Siempre a Mano
     icon: 💊
