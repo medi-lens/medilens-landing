@@ -34,5 +34,5 @@ features:
     details: Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.
   - title: Organiza tu Botiquín Digital
     icon: 🧰
-    details: Guarda tus medicamentos en un botiquín virtual, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.
+    details: Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.
 ---
