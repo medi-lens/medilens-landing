@@ -10,7 +10,7 @@ hero:
   text: "Escanea y conoce tus medicamentos al instante"
   tagline: Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.
   image:
-    src: /assets/images/ml.png
+    src: /assets/images/medilens-screenshot.png
     alt: MEDI lens Screenshot
   # actions:
   #   - theme: alt
@@ -34,5 +34,5 @@ features:
     details: Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.
   - title: Organiza tu Botiquín Digital
     icon: 🧰
-    details: Guarda tus medicamentos en un botiquín virtual, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.
+    details: Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.
 ---
