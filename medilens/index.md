@@ -10,7 +10,7 @@ hero:
   text: "Escanea y conoce tus medicamentos al instante"
   tagline: Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.
   image:
-    src: /assets/images/ml.png
+    src: /assets/images/medilens-screenshot.png
     alt: MEDI lens Screenshot
   # actions:
   #   - theme: alt
@@ -27,7 +27,7 @@ hero:
 
 features:
   - title: Escanea y Busca Medicamentos
-    icon: ⛶
+    icon: 🔍
     details: Usa la cámara de tu móvil para escanear cajas o busca por nombre y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.
   - title: Prospecto y Ficha Técnica Siempre a Mano
     icon: 💊
