@@ -60,9 +60,9 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 - Por Grupo Terapéutico.
 
 
-## Beneficios Destacados de MEDI lens
+## Beneficios Destacados de <span class="logo-colored">MEDI lens</span>
 
-MEDI Lens integra una serie de funcionalidades clave que aportan un alto valor tanto para ciudadanos como para profesionales sanitarios:
+<span class="logo-colored">MEDI lens</span> integra una serie de funcionalidades clave que aportan un alto valor tanto para ciudadanos como para profesionales sanitarios:
 
 - Además de la búsqueda manual, la aplicación permite escanear directamente el código de barras o Datamatrix del envase físico, lo que agiliza y optimiza la identificación del medicamento de forma rápida y precisa.
 

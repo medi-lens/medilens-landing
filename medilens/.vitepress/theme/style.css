@@ -152,6 +152,11 @@
  * CUSTOM
  * -------------------------------------------------------------------------- */
 
+div > ul > li::marker {
+  color: var(--custom-c-active);
+  font-size: 1.2em;
+}
+
 .VPNavBarTitle .title span {
   margin-top: 4px;
   background: var(--vp-home-hero-name-background);
@@ -184,7 +189,10 @@
 }
 
 .VPTeamPageTitle .lead {
+  margin-top: 20px;
   font-weight: 400;
+  text-align: left;
+  max-width: 760px;
 }
 
 .VPFooter .container {
@@ -220,6 +228,7 @@
   display: block;
   box-sizing: border-box;
 }
+
 /*
 .custom-hero-actions > div {
   position: relative;
@@ -312,7 +321,8 @@
 
 .mailjet-form iframe {
   margin: 0 auto;
-  max-width: 600px; /*1152px;*/
+  max-width: 600px;
+  /*1152px;*/
   border-radius: 12px;
   background-color: var(--custom-c-bg);
   border: 5px solid var(--custom-c-bg);
@@ -321,7 +331,6 @@
 .pas-section {
   display: none !important;
 }
-
 
 @media (min-width: 960px) {
   .VPHome .main .text {
@@ -357,5 +366,11 @@
   .VPHome .main .text {
     font-size: 40px;
     line-height: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .VPTeamPage {
+    margin: 0 0 48px !important;
   }
 }
