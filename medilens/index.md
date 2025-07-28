@@ -1,5 +1,5 @@
 ---
-title: MEDI lens - Escanea y conoce tus medicamentos
+title: MEDI lens — Escanea y conoce tus medicamentos
 description: La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.
 
 # https://vitepress.dev/reference/default-theme-home-page
