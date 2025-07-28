@@ -157,6 +157,10 @@ div > ul > li::marker {
   font-size: 1.2em;
 }
 
+.release-date {
+  font-weight: 300;
+}
+
 .VPNavBarTitle .title span {
   margin-top: 4px;
   background: var(--vp-home-hero-name-background);

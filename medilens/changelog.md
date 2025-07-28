@@ -2,7 +2,7 @@
 
 Historial de versiones publicadas con sus respectivas mejoras, correcciones y novedades.
 
-## 1.0.0 (2025-XX-XX) [Lanzamiento inicial]
+## 1.0.0 <span class="release-date">(2025-XX-XX)</span>
 
 ### Funcionalidades
 
