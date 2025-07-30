@@ -12,6 +12,7 @@ Una vista general de las funcionalidades previstas, en desarrollo y ya implement
 | Funcionalidad                                | Estado         | Versión       | Notas                                |
 |---------------------------------------------|----------------|----------------|---------------------------------------|
 | **Recomendaciones inteligentes**                | 🧪 | v2.0+ | Basadas en historial y perfil         |
+| **Modal de valoración APP Store / Google Play**                          | 🔜 | v1.X | Añadir modal de valoración de la app de forma orgánica |
 | **Botones de soporte**                          | 🔜 | v1.X | Añadir botones de soporte, para mandar avisos o comentarios sobre la app |
 | **Detalles del medicamento enriquecido**        | 🔜   | v1.X | Añadir en 'detalles del medicamento' las diferentes presentaciones del medicamento |
 | **Modo sin conexión**                           | ✅ | [v1.0](/changelog#_1-0-0-2025-xx-xx-lanzamiento-inicial) | Almacenamiento en caché de consultas y datos de visualización             |
