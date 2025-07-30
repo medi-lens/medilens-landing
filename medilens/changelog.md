@@ -2,6 +2,13 @@
 
 Historial de versiones publicadas con sus respectivas mejoras, correcciones y novedades.
 
+## 1.X.X <span class="release-date">(2025-XX-XX)</span>
+
+### Funcionalidades
+
+- **Detalle del medicamento**
+    - Listado con las diferentes presentaciones del medicamento.
+
 ## 1.0.0 <span class="release-date">(2025-XX-XX)</span>
 
 ### Funcionalidades
@@ -26,7 +33,6 @@ Historial de versiones publicadas con sus respectivas mejoras, correcciones y no
     - Situación actual de la autorización, incluyendo la fecha correspondiente.
     - Principios activos que componen el medicamento.
     - Clasificación terapéutica según el sistema ATC, con indicación de su grupo y subgrupo.
-    - Listado con las diferentes presentaciones del medicamento.
 - **Lista de historial y favoritos** de medicamentos escaneados o marcados como favoritos.
 - **Botiquín virtual** con recordatorios vía notificación local 1 mes antes y el mismo día de la caducidad del  medicamento.
 - **Ajustes** configurables en el dispositivo

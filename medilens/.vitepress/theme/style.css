@@ -247,6 +247,29 @@ div > ul > li::marker {
   position: absolute;
 }*/
 
+/* .custom-hero-actions > a {
+  position: relative;
+}
+
+.custom-hero-actions > a:not(.app-web)::after {
+  bottom: -30px;
+  opacity: 0.8;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border: 1px solid var(--custom-c-default);
+  padding: 0px 8px;
+  border-radius: 15px;
+}
+
+.custom-hero-actions > a.google-play::after {
+  content: "Android 7+";
+}
+
+.custom-hero-actions > a.app-store::after {
+  content: "iOS 15.1+";
+} */
+
 .custom-hero-actions a.app-web {
   border: 1.5px solid var(--custom-c-active);
   color: var(--custom-c-default);

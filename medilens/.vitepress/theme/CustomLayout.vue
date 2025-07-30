@@ -15,13 +15,13 @@ const { Layout } = DefaultTheme;
   <Layout>
     <template #home-hero-actions-after>
       <div class="custom-hero-actions">
-        <a href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
+        <a class="google-play" href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
           <img
             src="/assets/images/medilens-google-play.png"
             alt="Google Play"
           />
         </a>
-        <a href="https://www.apple.com/es/app-store/?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
+        <a class="app-store" href="https://www.apple.com/es/app-store/?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
           <img
             src="/assets/images/medilens-apple-store-blk.svg"
             alt="Apple Store"
