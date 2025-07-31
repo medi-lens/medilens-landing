@@ -64,7 +64,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 
 <span class="logo-colored">MEDI lens</span> integra una serie de funcionalidades clave que aportan un alto valor tanto para ciudadanos como para profesionales sanitarios:
 
-- Además de la búsqueda manual, la aplicación permite escanear directamente el código de barras o Datamatrix del envase físico, lo que agiliza y optimiza la identificación del medicamento de forma rápida y precisa.
+- Además de la búsqueda manual, la aplicación permite **escanear directamente el código de barras o Datamatrix del envase físico**, lo que agiliza y optimiza la identificación del medicamento de forma rápida y precisa.
 
 - Proporciona una información exhaustiva, ya que abarca todos los medicamentos autorizados en España, junto con el estado actual de su autorización.
 
@@ -80,11 +80,11 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 ## Descarga/Accede a la APP de <span class="logo-colored">MEDI lens</span>
 
 <div class="custom-hero-actions">
-    <a href="#">
+    <a href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=presentation_cta">
         <img src="/assets/images/medilens-google-play.png" alt="Google Play" />
     </a>
     <a href="#">
-        <img src="/assets/images/medilens-apple-store-wht.svg" alt="Apple Store" />
+        <img src="/assets/images/medilens-apple-store-blk.svg" alt="Apple Store" />
     </a>
     <a class="app-web no-icon" href="https://app.medilens.es">
         <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />

@@ -2,14 +2,14 @@
 
 Historial de versiones publicadas con sus respectivas mejoras, correcciones y novedades.
 
-## 1.X.X <span class="release-date">(2025-XX-XX)</span>
+## v1.X.X <span class="release-date">(2025-XX-XX)</span>
 
 ### Funcionalidades
 
 - **Detalle del medicamento**
     - Listado con las diferentes presentaciones del medicamento.
 
-## 1.0.0 <span class="release-date">(2025-XX-XX)</span>
+## v1.0.0 <span class="release-date">(2025-XX-XX)</span>
 
 ### Funcionalidades
 
