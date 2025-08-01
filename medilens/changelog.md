@@ -39,3 +39,4 @@ Historial de versiones publicadas con sus respectivas mejoras, correcciones y no
     - Ajustar página de carga al iniciar la app
     - Ajustar notificaciones recibidas de los recordatorios
     - Ajustar respuesta háptica/vibración del dispositivo
+- **Accesibilidad:** La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla TalkBack (Android) y VoiceOver (iOS).

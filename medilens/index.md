@@ -28,11 +28,17 @@ hero:
 features:
   - title: Escanea y Busca Medicamentos
     icon: 🔍
-    details: Usa la cámara de tu móvil para escanear cajas o busca por nombre y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.
+    details: Usa la cámara de tu móvil para escanear códigos de barra o usa el buscador y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.
   - title: Prospecto y Ficha Técnica Siempre a Mano
     icon: 💊
     details: Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.
   - title: Organiza tu Botiquín Digital
     icon: 🧰
     details: Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.
+  - title: Accesible por defecto
+    icon: 🧠
+    details: La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla <strong>TalkBack</strong> y <strong>VoiceOver</strong>.
+  - title:  &lbrack;PRÓXIMAMENTE&rbrack; Tus Datos en la Nube
+    icon: 🔄 # 🌐
+    details: Tus datos se guardan en tu cuenta para que puedas tenerlos sincronizados entre dispositivos y no perder tu botiquín.
 ---

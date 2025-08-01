@@ -15,19 +15,28 @@ const { Layout } = DefaultTheme;
   <Layout>
     <template #home-hero-actions-after>
       <div class="custom-hero-actions">
-        <a class="google-play" href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
+        <a
+          class="google-play"
+          href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta"
+        >
           <img
             src="/assets/images/medilens-google-play.png"
             alt="Google Play"
           />
         </a>
-        <a class="app-store" href="https://www.apple.com/es/app-store/?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
+        <a
+          class="app-store"
+          href="https://www.apple.com/es/app-store/?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta"
+        >
           <img
             src="/assets/images/medilens-apple-store-blk.svg"
             alt="Apple Store"
           />
         </a>
-        <a class="app-web" href="https://app.medilens.es?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta">
+        <a
+          class="app-web"
+          href="https://app.medilens.es?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta"
+        >
           <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
           <div>
             <small>Accede a la</small>
@@ -37,17 +46,32 @@ const { Layout } = DefaultTheme;
       </div>
     </template>
     <template #home-features-after>
-      <section class="mailjet-form">
-        <iframe
-          data-w-type="embedded"
-          frameborder="0"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-          src="https://s8h2u.mjt.lu/wgt/s8h2u/0s49/form?c=13b8b50e"
-          width="100%"
-          style="height: 0"
-        ></iframe>
+      <section class="custom-home-content">
+        <section class="sponsorship-wrapper">
+          <h2>Patrocinadores</h2>
+          <section class="sponsorship">
+            <p>
+              Todavía no tenemos patrocinadores. Esta es tu oportunidad de
+              marcar la diferencia desde el inicio.
+            </p>
+            <a class="custom-button" href="/patrocina-medilens">
+              Patrocina <span>MEDI lens</span>
+            </a>
+          </section>
+        </section>
+        <section class="mailjet-form">
+          <h2>Newsletter</h2>
+          <iframe
+            data-w-type="embedded"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://s8h2u.mjt.lu/wgt/s8h2u/0s49/form?c=13b8b50e"
+            width="100%"
+            style="height: 0"
+          ></iframe>
+        </section>
       </section>
     </template>
   </Layout>

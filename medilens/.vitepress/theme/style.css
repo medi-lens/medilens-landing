@@ -152,7 +152,61 @@
  * CUSTOM
  * -------------------------------------------------------------------------- */
 
-div > ul > li::marker {
+.custom-home-content {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.custom-home-content h2 {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.sponsorship-wrapper {
+  background-color: var(--custom-c-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.sponsorship {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.sponsorship p {
+  opacity: .8;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--custom-c-active);
+  color: var(--vp-c-white);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.custom-button span {
+  font-weight: 600;
+}
+
+.custom-button:hover {
+  filter: brightness(110%);
+}
+
+div>ul>li::marker {
   color: var(--custom-c-active);
   font-size: 1.2em;
 }
@@ -365,6 +419,10 @@ div > ul > li::marker {
     line-height: 56px;
   }
 
+  .VPHomeFeatures .item.grid-4 {
+    width: calc(100% / 3);
+  }
+
   .VPHome .main .tagline {
     font-size: 24px;
     line-height: 36px;
@@ -399,5 +457,9 @@ div > ul > li::marker {
 @media (max-width: 767px) {
   .VPTeamPage {
     margin: 0 0 48px !important;
+  }
+
+  .VPHomeFeatures {
+    margin-top: 20px;
   }
 }

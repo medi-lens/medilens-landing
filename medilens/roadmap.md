@@ -1,3 +1,8 @@
+---
+outline: false
+aside: false
+---
+
 # 🗺️ Roadmap
 
 Una vista general de las funcionalidades previstas, en desarrollo y ya implementadas en <span class="logo-colored">MEDI lens</span>. Nuestro objetivo es mejorar continuamente la experiencia del usuario y ampliar las capacidades de la app en cada versión.
