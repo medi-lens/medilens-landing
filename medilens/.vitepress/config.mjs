@@ -70,11 +70,11 @@ export default defineConfig({
         link: '/quienes-somos',
         activeMatch: '/quienes-somos'
       },
-      {
-        text: '🗃️ Dossier Medios',
-        link: '/dossier-medios',
-        activeMatch: '/dossier-medios'
-      },
+      // {
+      //   text: '🗃️ Dossier Medios',
+      //   link: '/dossier-medios',
+      //   activeMatch: '/dossier-medios'
+      // },
       {
         text: '📣 Presentación',
         link: '/presentamos-medilens',

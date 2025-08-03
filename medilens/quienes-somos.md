@@ -51,7 +51,7 @@ const members = [
       El Equipo
     </template>
     <template #lead>
-      <span class="logo-colored">MEDI lens</span>  ha sido creada por dos desarrolladores de Almería 🍅, con la misión de ofrecer una herramienta nativa, intuitiva y de utilidad pública, basada en datos oficiales de la AEMPS (Agencia Española de Medicamentos y Productos Sanitarios).<br/><br/>
+      <span class="logo-colored">MEDI lens</span>  ha sido creada por dos desarrolladores de Almería 🍅, con la misión de ofrecer una herramienta nativa, intuitiva y de utilidad pública, basada en datos oficiales de la AEMPS.<br/><br/>
 Nuestro objetivo es facilitar el acceso a información sanitaria fiable, clara y accesible para todos.
     </template>
   </VPTeamPageTitle>
