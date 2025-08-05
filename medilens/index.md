@@ -38,9 +38,9 @@ features:
   - title: Accesible por defecto
     icon: 🧠
     details: La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla <strong>TalkBack</strong> y <strong>VoiceOver</strong>.
-  - title:  &lbrack;PRÓXIMAMENTE&rbrack; Tus Datos en la Nube
+  - title:  &lbrack;PRÓXIMAMENTE&rbrack; Tus Datos Sincronizados
     icon: 🔄 # 🌐
-    details: Tus datos se guardan en tu cuenta para que puedas tenerlos sincronizados entre dispositivos y no perder tu botiquín.
+    details: Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.
   - title:  &lbrack;PRÓXIMAMENTE&rbrack; Perfil Personalizado de Salud
     icon: 🩺
     details: Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.

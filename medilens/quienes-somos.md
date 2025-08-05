@@ -16,7 +16,7 @@ const members = [
   {
     avatar: 'https://avatars.githubusercontent.com/u/9118664',
     name: 'Paul Guillamón Thiéry',
-    title: 'Creador',
+    title: 'Co-fundador y Desarrollador',
     // desc: 'Lorem ipsum dolor sit amet',
     links: [
       { icon: 'github', link: 'https://github.com/Qu4k3' },
@@ -31,7 +31,7 @@ const members = [
     {
     avatar: 'https://avatars.githubusercontent.com/u/20914374',
     name: 'Jose Sánchez Fuentes',
-    title: 'Creador',
+    title: 'Co-fundador y Desarrollador',
     // desc: 'Lorem ipsum dolor sit amet',
     links: [
       { icon: 'github', link: 'https://github.com/crimson3d' },
