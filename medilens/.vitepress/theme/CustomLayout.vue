@@ -59,6 +59,17 @@ const { Layout } = DefaultTheme;
             </a>
           </section>
         </section>
+        <section class="news-wrapper">
+          <h2>Prensa y Noticias</h2>
+          <section class="news">
+            <p>
+              Nuestra historia aún no ha sido contada. ¿Serás el primero en compartirla?
+            </p>
+            
+            <p>Contáctanos a: <a href="mailto:prensa@medilens.es"><strong>prensa@medilens.es</strong></a></p>
+
+          </section>
+        </section>
         <section class="mailjet-form">
           <h2>Newsletter</h2>
           <iframe

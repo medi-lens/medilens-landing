@@ -164,8 +164,8 @@
   margin-bottom: 20px;
 }
 
-.sponsorship-wrapper {
-  background-color: var(--custom-c-bg);
+.sponsorship-wrapper,
+.news-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,14 +173,20 @@
   padding: 40px 0;
 }
 
-.sponsorship {
+.news-wrapper {
+  background-color: var(--custom-c-bg);
+}
+
+.sponsorship,
+.news {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 60px;
 }
 
-.sponsorship p {
+.sponsorship p,
+.news p {
   opacity: .8;
   font-size: 1.2em;
   font-weight: 300;
