@@ -37,6 +37,7 @@ Historial de versiones publicadas con sus respectivas mejoras, correcciones y no
 - **Botiquín virtual** con recordatorios vía notificación local 1 mes antes y el mismo día de la caducidad del  medicamento.
 - **Ajustes** configurables en el dispositivo
     - Ajustar página de carga al iniciar la app
+    - Activar/desactivar **modo claro** o **modo oscuro**
     - Ajustar notificaciones recibidas de los recordatorios
     - Ajustar respuesta háptica/vibración del dispositivo
 - **Accesibilidad:** La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla TalkBack (Android) y VoiceOver (iOS).

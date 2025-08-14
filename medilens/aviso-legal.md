@@ -10,8 +10,11 @@ Este aviso legal regula el uso del sitio web y la aplicación MEDI Lens, así co
 
 En cumplimiento del deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se informa que esta aplicación y sitio web son titularidad de:
 
-- **Nombre completo**: Paul Guillamón
-- **DNI/NIF**: 24415217G
+| Nombre | DNI |
+| --- | --- |
+| Paul Guillamón | 244152-XXX |
+| Jose Sanchez |537104-XXX |
+
 - **Correo electrónico**: <contacto@medilens.es>
 - **Nombre comercial**: MEDI lens
 - **Domicilio**: <em>disponible previa solicitud</em>
