@@ -66,9 +66,9 @@ export default defineConfig({
     logo: '/assets/icons/ml-icon-bxd.svg',
     nav: [
       {
-        text: '🙋‍♂️ Quienes Somos',
-        link: '/quienes-somos',
-        activeMatch: '/quienes-somos'
+        text: '🙋‍♂️ Equipo',
+        link: '/equipo',
+        activeMatch: '/equipo'
       },
       // {
       //   text: '🗃️ Dossier Medios',
@@ -144,8 +144,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: '<span class="logo-colored">MEDI lens</span> — Escanea y conoce tus medicamentos · <a href="/politica-privacidad">Política de privacidad</a>',
-      copyright: 'Hecho con ❤️ en Almería 🍅 · Copyright © 2025'
+      message: '<span class="logo-colored">MEDI lens</span> — Escanea y conoce tus medicamentos · <a href="/politica-privacidad">Política de privacidad</a> · <a href="/aviso-legal">Aviso Legal</a>',
+      copyright: 'Hecho con ❤️ en Almería 🍅 · © 2025 MEDI Lens® · Todos los derechos reservados.'
     }
   }
 })
