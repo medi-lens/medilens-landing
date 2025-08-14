@@ -86,11 +86,11 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
     <a href="#">
         <img src="/assets/images/medilens-apple-store-blk.svg" alt="Apple Store" />
     </a>
-    <a class="app-web no-icon" href="https://app.medilens.es">
+    <!-- <a class="app-web no-icon" href="https://app.medilens.es">
         <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
         <div>
             <small>Accede a la</small>
             <span>Versión Web</span>
         </div>
-    </a>
+    </a> -->
 </div>

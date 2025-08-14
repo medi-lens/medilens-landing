@@ -38,10 +38,10 @@ features:
   - title: Accesible por defecto
     icon: 🧠
     details: La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla <strong>TalkBack</strong> y <strong>VoiceOver</strong>.
-  - title:  &lbrack;PRÓXIMAMENTE&rbrack; Tus Datos Sincronizados
+  - title:  Tus Datos Sincronizados
     icon: 🔄 # 🌐
-    details: Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.
-  - title:  &lbrack;PRÓXIMAMENTE&rbrack; Perfil Personalizado de Salud
+    details: --PRÓXIMAMENTE--<br />Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.
+  - title:  Perfil Personalizado de Salud
     icon: 🩺
-    details: Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.
+    details: --PRÓXIMAMENTE--<br />Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.
 ---
