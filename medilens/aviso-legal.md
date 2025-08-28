@@ -4,7 +4,7 @@ lastUpdated: true
 
 # Aviso Legal
 
-Este aviso legal regula el uso del sitio web y la aplicación MEDI Lens, así como la relación entre el usuario y el titular del servicio, en cumplimiento de la legislación vigente.
+Este aviso legal regula el uso del sitio web y la aplicación <span class="logo-colored">MEDI lens</span>, así como la relación entre el usuario y el titular del servicio, en cumplimiento de la legislación vigente.
 
 ## Titular de la aplicación y del sitio web
 
@@ -13,7 +13,7 @@ En cumplimiento del deber de información recogido en el artículo 10 de la Ley 
 | Nombre | DNI |
 | --- | --- |
 | Paul Guillamón | 244152-XXX |
-| Jose Sanchez |537104-XXX |
+| Jose Sánchez |537104-XXX |
 
 - **Correo electrónico**: <contacto@medilens.es>
 - **Nombre comercial**: MEDI lens
@@ -32,7 +32,7 @@ Todos los contenidos de este sitio web y aplicación, incluyendo textos, imágen
 
 ## Exclusión de responsabilidad
 
-MEDI Lens proporciona información de carácter general, basada en fuentes oficiales (AEMPS). No sustituye en ningún caso el asesoramiento médico profesional. El uso de esta aplicación es responsabilidad del usuario.
+MEDI lens proporciona información de carácter general, basada en fuentes oficiales (AEMPS). No sustituye en ningún caso el asesoramiento médico profesional. El uso de esta aplicación es responsabilidad del usuario.
 
 ## Protección de datos personales
 

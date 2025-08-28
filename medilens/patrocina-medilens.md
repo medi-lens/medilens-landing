@@ -9,9 +9,9 @@ title: Patrocina
 
 > Buscamos patrocinadores comprometidos con el acceso responsable a la información médica.
 
-## 💊 ¿Qué es MEDI Lens?
+## 💊 ¿Qué es MEDI lens?
 
-**MEDI Lens** es una app gratuita que permite escanear medicamentos con la cámara del móvil y acceder al instante a su información oficial (prospecto, ficha técnica, advertencias como interferencia con la conducción, disponibilidad, etc.), gracias a la base de datos de la **AEMPS (CIMA)**.
+**<span class="logo-colored">MEDI lens</span>** es una app gratuita que permite escanear medicamentos con la cámara del móvil y acceder al instante a su información oficial (prospecto, ficha técnica, advertencias como interferencia con la conducción, disponibilidad, etc.), gracias a la base de datos de la **AEMPS**.
 
 Además, la app permite:
 - Gestionar un historial de medicamentos.
@@ -46,9 +46,9 @@ Encontrarás más detalles en → [/presentamos-medilens](/presentamos-medilens)
 
 ## 🏷️ Modalidades de patrocinio
 
-| Beneficio / Nivel                  | 🥇 Platino (+5.000 €)     | 🥈 Oro (2.000–5.000 €)     | 🥉 Colaborador (<2.000 €) |
+| Beneficio / Nivel                  | 🥇 Platino (+5.000 €/año)     | 🥈 Oro (2.000–5.000 €/año)     | 🥉 Colaborador (<2.000 €/año) |
 |------------------------------------|---------------------------|----------------------------|---------------------------|
-| **Presencia en web y campañas**       | Web, Newsleter, prensa         | Web, Newsletter                  | Solo web                  |
+| **Presencia en web y campañas**       | Web, Newsletter, prensa         | Web, Newsletter                  | Solo web                  |
 | **Acceso a métricas de uso**       | Completo                  | Parcial                    | No                        |
 | **Mención en campañas**            | Sí                        | Opcional                   | No                        |
 | **Colaboraciones en campañas educativas o de prevención**            | Sí                        | No                    | No                        |
@@ -56,7 +56,7 @@ Encontrarás más detalles en → [/presentamos-medilens](/presentamos-medilens)
 <!-- | **Visibilidad en la app**          | Alta (Inicio + menú)      | Media (menú + créditos)    | Básica (solo créditos)    | -->
 
 
-## 🤝 ¿Por qué asociarse con MEDI Lens?
+## 🤝 ¿Por qué asociarse con <span class="logo-colored">MEDI lens</span>?
 
 - Promoción de la **salud responsable** y la **alfabetización sanitaria**.
 - Imagen de marca vinculada a la **innovación social** y la tecnología ética.
@@ -64,9 +64,9 @@ Encontrarás más detalles en → [/presentamos-medilens](/presentamos-medilens)
 
 ## 📬 Contacto
 
-¿Te interesa colaborar o patrocinar este proyecto? **Contáctanos a:** contacto@medilens.es
+¿Te interesa colaborar o patrocinar este proyecto? **Contáctanos en:** contacto@medilens.es
 
 &nbsp;
 
 
-> MEDI Lens es un proyecto independiente, comprometido con el acceso libre, verificado y fácil a la información médica. Utiliza datos oficiales de la AEMPS.
+> <span class="logo-colored">MEDI lens</span> es un proyecto independiente, comprometido con el acceso libre, verificado y fácil a la información médica. Utiliza datos oficiales de la AEMPS.

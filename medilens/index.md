@@ -1,6 +1,6 @@
 ---
 title: MEDI lens — Escanea y conoce tus medicamentos
-description: MEDI Lens te permite escanear medicamentos, ver prospectos, composición, receta y gestionar un botiquín digital con alertas de caducidad.
+description: MEDI lens te permite escanear medicamentos, ver prospectos, composición, receta y gestionar un botiquín digital con alertas de caducidad.
 
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home

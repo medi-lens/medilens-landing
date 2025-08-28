@@ -77,7 +77,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 - Es de acceso libre, no requiere registro, es gratuita y está optimizada para funcionar correctamente en cualquier dispositivo móvil.
 
 
-## Descarga/Accede a la APP de <span class="logo-colored">MEDI lens</span>
+## Descarga <span class="logo-colored">MEDI lens</span>
 
 <div class="custom-hero-actions">
     <a href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=presentation_cta">
