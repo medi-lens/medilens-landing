@@ -15,8 +15,14 @@ Tu mensaje será gestionado de forma confidencial y personalizada.
   name="contact"
   method="POST"
   action="https://medilens.es/envio"
+  netlify-honeypot="bot-field"
   data-netlify="true"
 >
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" type="text" />
+    </label>
+  </p>
   <div>
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" required>
