@@ -12,7 +12,7 @@ Tu consulta será gestionada de forma confidencial y personalizada.
 <form
   name="support"
   method="POST"
-  action="/envio"
+  action="https://medilens.es/envio"
   data-netlify="true"
 >
   <div>

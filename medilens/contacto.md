@@ -14,7 +14,7 @@ Tu mensaje será gestionado de forma confidencial y personalizada.
 <form
   name="contact"
   method="POST"
-  action="/envio"
+  action="https://medilens.es/envio"
   data-netlify="true"
 >
   <div>
