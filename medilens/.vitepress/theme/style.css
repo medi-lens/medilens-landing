@@ -419,6 +419,33 @@ div>ul>li::marker {
   display: none !important;
 }
 
+/* --------- FORMS --------- */
+
+form {
+  background-color: var(--custom-c-bg);
+  padding: 25px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  input,
+  textarea {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 5px 10px;
+  }
+}
+
+/* --------- RESPONSIVE --------- */
+
 @media (min-width: 960px) {
   .VPHome .main .text {
     font-size: 48px;
