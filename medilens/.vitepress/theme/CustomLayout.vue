@@ -26,7 +26,7 @@ const { Layout } = DefaultTheme;
         </a>
         <a
           class="app-store"
-          href="https://www.apple.com/es/app-store/?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta"
+          href="https://apps.apple.com/es/app/medi-lens/id6749312020?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta"
         >
           <img
             src="/assets/images/medilens-apple-store-blk.svg"
