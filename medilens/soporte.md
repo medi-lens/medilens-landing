@@ -16,11 +16,6 @@ Tu consulta será gestionada de forma confidencial y personalizada.
   netlify-honeypot="bot-field"
   data-netlify="true"
 >
-  <p class="hidden">
-    <label>
-      Don’t fill this out if you’re human: <input name="bot-field" type="text" />
-    </label>
-  </p>
   <div>
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" required>
@@ -33,6 +28,11 @@ Tu consulta será gestionada de forma confidencial y personalizada.
     <label for="message">Mensaje</label>
     <textarea name="message" rows="4" required></textarea>
   </div>
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" type="text" />
+    </label>
+  </p>
   <button class="custom-button" type="submit">Enviar</button>
 </form>
 

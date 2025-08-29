@@ -430,6 +430,12 @@ form {
   flex-direction: column;
   gap: 15px;
 
+  .hidden {
+    visibility: hidden;
+    height: 0;
+    margin: 0 !important;
+  }
+
   > div {
     display: flex;
     flex-direction: column;
