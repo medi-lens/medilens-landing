@@ -1,6 +1,6 @@
 ---
-title: MEDI lens - Escanea y conoce tus medicamentos
-description: La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.
+title: MEDI lens — Escanea y conoce tus medicamentos
+description: MEDI lens te permite escanear medicamentos, ver prospectos, composición, receta y gestionar un botiquín digital con alertas de caducidad.
 
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
@@ -16,7 +16,7 @@ hero:
   #   - theme: alt
   #     text: Google Play
   #     link: https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=home_cta
-  #     target: _blank 
+  #     target: _blank
   #     rel: noopener
   #   - theme: alt
   #     text: Apple Store
@@ -28,11 +28,20 @@ hero:
 features:
   - title: Escanea y Busca Medicamentos
     icon: 🔍
-    details: Usa la cámara de tu móvil para escanear cajas o busca por nombre y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.
+    details: Usa la cámara de tu móvil para escanear códigos de barra o usa el buscador y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.
   - title: Prospecto y Ficha Técnica Siempre a Mano
     icon: 💊
     details: Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.
   - title: Organiza tu Botiquín Digital
     icon: 🧰
     details: Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.
+  - title: Accesible por defecto
+    icon: 🧠
+    details: La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla <strong>TalkBack</strong> y <strong>VoiceOver</strong>.
+  - title:  Tus Datos Sincronizados
+    icon: 🔄 # 🌐
+    details: --PRÓXIMAMENTE--<br />Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.
+  - title:  Perfil Personalizado de Salud
+    icon: 🩺
+    details: --PRÓXIMAMENTE--<br />Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.
 ---

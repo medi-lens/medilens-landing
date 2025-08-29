@@ -1,16 +1,18 @@
-# Soporte
-
-¿Tienes dudas, sugerencias o necesitas ayuda con la app?  
-→ Estamos aquí para ayudarte.
+# Contacto
+¿Quieres ponerte en contacto con el equipo de <span class="logo-colored">MEDI lens</span>?  
+Estamos aquí para atender tus dudas, sugerencias, propuestas de colaboración o cualquier consulta relacionada con la app.
 
 Completa el siguiente formulario y te responderemos lo antes posible.  
-Tu consulta será gestionada de forma confidencial y personalizada.
+Tu mensaje será gestionado de forma confidencial y personalizada.
 
-### Formulario de soporte
+> ℹ️ **¿Tienes una duda técnica o problema con la app?**  
+> Para consultas técnicas o soporte, por favor utiliza la página de [Soporte](/soporte). 
 
+
+### Formulario de contacto
 <br />
 <form
-  name="support"
+  name="contact"
   method="POST"
   action="https://medilens.es/envio"
   netlify-honeypot="bot-field"
@@ -36,8 +38,6 @@ Tu consulta será gestionada de forma confidencial y personalizada.
   <button class="custom-button" type="submit">Enviar</button>
 </form>
 
-<br />
-
 ---
 
-Si tienes problemas con el formulario, también puedes escribirnos a [soporte@medilens.es](mailto:soporte@medilens.es).
+Si tienes problemas con el formulario, también puedes escribirnos a [contacto@medilens.es](mailto:contacto@medilens.es).

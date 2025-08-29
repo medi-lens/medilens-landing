@@ -107,11 +107,11 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(0deg,
+  --vp-home-hero-name-background: -webkit-linear-gradient(180deg,
       var(--custom-c-active) 50%,
       var(--custom-c-default) 50%);
 
-  --vp-home-hero-image-background-image: linear-gradient(0deg,
+  --vp-home-hero-image-background-image: linear-gradient(180deg,
       var(--custom-c-active) 50%,
       var(--custom-c-default) 50%);
   --vp-home-hero-image-filter: blur(44px);
@@ -152,6 +152,75 @@
  * CUSTOM
  * -------------------------------------------------------------------------- */
 
+.custom-home-content {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.custom-home-content h2 {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.sponsorship-wrapper,
+.news-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.news-wrapper {
+  background-color: var(--custom-c-bg);
+}
+
+.sponsorship,
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.sponsorship p,
+.news p {
+  opacity: .8;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--custom-c-active);
+  color: var(--vp-c-white);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.custom-button span {
+  font-weight: 600;
+}
+
+.custom-button:hover {
+  filter: brightness(110%);
+}
+
+div>ul>li::marker {
+  color: var(--custom-c-active);
+  font-size: 1.2em;
+}
+
+.release-date {
+  font-weight: 300;
+}
+
 .VPNavBarTitle .title span {
   margin-top: 4px;
   background: var(--vp-home-hero-name-background);
@@ -162,6 +231,7 @@
 
 .logo-colored {
   font-weight: 500;
+  white-space: nowrap;
   background: var(--vp-home-hero-name-background);
   -webkit-background-clip: text;
   background-clip: text;
@@ -183,7 +253,10 @@
 }
 
 .VPTeamPageTitle .lead {
+  margin-top: 20px;
   font-weight: 400;
+  text-align: left;
+  max-width: 760px;
 }
 
 .VPFooter .container {
@@ -220,6 +293,7 @@
   box-sizing: border-box;
 }
 
+/*
 .custom-hero-actions > div {
   position: relative;
 }
@@ -231,7 +305,30 @@
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
+}*/
+
+/* .custom-hero-actions > a {
+  position: relative;
 }
+
+.custom-hero-actions > a:not(.app-web)::after {
+  bottom: -30px;
+  opacity: 0.8;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border: 1px solid var(--custom-c-default);
+  padding: 0px 8px;
+  border-radius: 15px;
+}
+
+.custom-hero-actions > a.google-play::after {
+  content: "Android 7+";
+}
+
+.custom-hero-actions > a.app-store::after {
+  content: "iOS 15.1+";
+} */
 
 .custom-hero-actions a.app-web {
   border: 1.5px solid var(--custom-c-active);
@@ -309,9 +406,10 @@
   margin-top: 80px;
 }
 
-.mailjet-embedded-form {
+.mailjet-form iframe {
   margin: 0 auto;
-  max-width: 600px; /*1152px;*/
+  max-width: 600px;
+  /*1152px;*/
   border-radius: 12px;
   background-color: var(--custom-c-bg);
   border: 5px solid var(--custom-c-bg);
@@ -321,11 +419,47 @@
   display: none !important;
 }
 
+/* --------- FORMS --------- */
+
+form {
+  background-color: var(--custom-c-bg);
+  padding: 25px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .hidden {
+    visibility: hidden;
+    height: 0;
+    margin: 0 !important;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  input,
+  textarea {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 5px 10px;
+  }
+}
+
+/* --------- RESPONSIVE --------- */
 
 @media (min-width: 960px) {
   .VPHome .main .text {
     font-size: 48px;
     line-height: 56px;
+  }
+
+  .VPHomeFeatures .item.grid-4 {
+    width: calc(100% / 3);
   }
 
   .VPHome .main .tagline {
@@ -356,5 +490,15 @@
   .VPHome .main .text {
     font-size: 40px;
     line-height: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .VPTeamPage {
+    margin: 0 0 48px !important;
+  }
+
+  .VPHomeFeatures {
+    margin-top: 20px;
   }
 }

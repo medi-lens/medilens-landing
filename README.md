@@ -3,3 +3,23 @@
 # MEDI lens
 
 Escanea y conoce tus medicamentos
+
+## CHANGELOG
+
+Lista de categorías de sección a la hora de definir elementos en el `Changelog`
+
+```Markdown
+### Bug Fixes (arreglo de bugs)
+### Features (funcionalidades añadidas)
+### Performance Improvements (mejoras de rendimiento)
+### BREAKING CHANGES (cambios que implican ruptura con el modelo anterior)
+### Miscellaneous (actualización de librería)
+
+------------------
+
+### Corrección de errores
+### Funcionalidades
+### Mejoras de rendimiento
+### CAMBIOS INCOMPATIBLES
+### Varios
+```
