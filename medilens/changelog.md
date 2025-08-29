@@ -9,6 +9,13 @@ Historial de versiones publicadas con sus respectivas mejoras, correcciones y no
 - **Detalle del medicamento**
     - Listado con las diferentes presentaciones del medicamento. -->
 
+## v1.0.1  <span class="release-date">(2025-08-29)</span>
+
+### Corrección de errores
+
+- Se corrige una inconsistencia en idioma de literales
+
+
 ## v1.0.0 <span class="release-date">(2025-08-28)</span>
 
 ### Funcionalidades
