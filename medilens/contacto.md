@@ -1,3 +1,7 @@
+---
+lastUpdated: false
+---
+
 # Contacto
 ¿Quieres ponerte en contacto con el equipo de <span class="logo-colored">MEDI lens</span>?  
 Estamos aquí para atender tus dudas, sugerencias, propuestas de colaboración o cualquier consulta relacionada con la app.
@@ -14,7 +18,7 @@ Tu mensaje será gestionado de forma confidencial y personalizada.
 <form
   name="contact"
   method="POST"
-  action="https://medilens.es/envio"
+  action="/envio"
   netlify-honeypot="bot-field"
   data-netlify="true"
 >

@@ -1,3 +1,7 @@
+---
+lastUpdated: false
+---
+
 # Soporte
 
 ¿Tienes dudas, sugerencias o necesitas ayuda con la app?  
@@ -12,7 +16,7 @@ Tu consulta será gestionada de forma confidencial y personalizada.
 <form
   name="support"
   method="POST"
-  action="https://medilens.es/envio"
+  action="/envio"
   netlify-honeypot="bot-field"
   data-netlify="true"
 >
