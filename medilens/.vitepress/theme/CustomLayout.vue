@@ -45,6 +45,21 @@ const { Layout } = DefaultTheme;
         </a> -->
       </div>
     </template>
+    <template #not-found>
+      <div class="NotFound">
+        <p class="code">404</p>
+        <h1 class="title">PÁGINA NO ENCONTRADA</h1>
+        <div class="divider"></div>
+        <blockquote class="quote">
+          No llegaste donde querías, pero llegaste a algún lugar.
+        </blockquote>
+        <div class="action">
+          <a class="link" href="/" aria-label="go to home"
+            >Volver al inicio</a
+          >
+        </div>
+      </div>
+    </template>
     <template #home-features-after>
       <section class="custom-home-content">
         <section class="sponsorship-wrapper">
@@ -63,11 +78,16 @@ const { Layout } = DefaultTheme;
           <h2>Prensa y Noticias</h2>
           <section class="news">
             <p>
-              Nuestra historia aún no ha sido contada. ¿Serás el primero en compartirla?
+              Nuestra historia aún no ha sido contada. ¿Serás el primero en
+              compartirla?
             </p>
-            
-            <p>Contáctanos a: <a href="mailto:prensa@medilens.es"><strong>prensa@medilens.es</strong></a></p>
 
+            <p>
+              Contáctanos a:
+              <a href="mailto:prensa@medilens.es"
+                ><strong>prensa@medilens.es</strong></a
+              >
+            </p>
           </section>
         </section>
         <section class="mailjet-form">
