@@ -1,3 +1,7 @@
+---
+lastUpdated: false
+---
+
 # ¡Gracias por tu mensaje!
 
 Tu consulta ha sido enviada correctamente.  
