@@ -86,7 +86,7 @@ export default defineConfig({
         activeMatch: '/contacto'
       },
       {
-        text: 'v1.0.1',
+        text: 'v1.1.0',
         items: [
           { text: '🚀 Changelog', link: 'changelog' },
           { text: '🗺️ Roadmap', link: 'roadmap' },
