@@ -66,15 +66,15 @@ export default defineConfig({
     logo: '/assets/icons/ml-icon-bxd.svg',
     nav: [
       {
+        text: '📰 NOTA PRENSA',
+        link: '/docs/NOTA_PRENSA_MEDILENS_N.pdf',
+        target: '_blank'
+      },
+      {
         text: '🙋‍♂️ Equipo',
         link: '/equipo',
         activeMatch: '/equipo'
       },
-      // {
-      //   text: '🗃️ Dossier Medios',
-      //   link: '/dossier-medios',
-      //   activeMatch: '/dossier-medios'
-      // },
       {
         text: '📣 Presentación',
         link: '/presentamos-medilens',
