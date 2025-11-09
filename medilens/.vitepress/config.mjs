@@ -3,8 +3,64 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   transformHead({ assets, pageData }) {
-    const head = [];
+    const fm = pageData.frontmatter || {};
+    const title = fm.title || 'MEDI lens - Escanea y conoce tus medicamentos';
+    const description = fm.description || 'La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.';
+    const url = pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/';
+    const image = fm.image || 'https://medilens.es/assets/images/medilens-og.png';
     const myFontFile = assets.find(file => /Akshar\.[\w-]+\.ttf/.test(file))
+
+    // JSON-LD personalizado por página
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": title,
+      "description": description,
+      "url": url,
+      "image": image,
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "HealthApplication",
+      "downloadUrl": [
+        "https://play.google.com/store/apps/details?id=es.medilens.app",
+        "https://apps.apple.com/es/app/medi-lens/id6749312020"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "MEDI lens",
+        "logo": "https://medilens.es/assets/icons/ml-icon-bxd.svg",
+        "url": "https://medilens.es"
+      },
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Paul Guillamón Thiéry",
+          "givenName": "Paul",
+          "familyName": "Guillamón Thiéry",
+          "jobTitle": "Co‑founder",
+          "url": "https://qu4k3.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/paulguillamon",
+            "https://github.com/Qu4k3"
+          ],
+          "image": "https://avatars.githubusercontent.com/u/9118664?v=4",
+          "description": "Product lead en MEDI lens / Responsable de diseño y experiencia de usuario"
+        },
+        {
+          "@type": "Person",
+          "name": "José Antonio Sánchez Fuentes",
+          "givenName": "José",
+          "familyName": "Antonio Sánchez Fuentes",
+          "jobTitle": "Co‑founder",
+          "url": "https://crimson3d.github.io/portfolio/",
+          "sameAs": [
+            "https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/",
+            "https://github.com/crimson3d"
+          ],
+          "image": "https://avatars.githubusercontent.com/u/20914374?v=4",
+          "description": "Desarrollador"
+        }
+      ]
+    };
     
     if (myFontFile) {
       return [
@@ -21,25 +77,31 @@ export default defineConfig({
       ]
     }
 
-    // Add Open Graph metadata
-    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'MEDI lens - Escanea y conoce tus medicamentos' }]);
-    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.' }]);
-    head.push(['meta', { property: 'og:type', content:  pageData.frontmatter.metaType ? pageData.frontmatter.metaType : 'website' }]);
-    head.push(['meta', { property: 'og:url', content: pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/' }]);
-
-    // Add Twitter Card metadata
-    head.push(['meta', { name: 'twitter:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'MEDI lens - Escanea y conoce tus medicamentos' }]);
-    head.push(['meta', { name: 'twitter:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.' }]);
-    head.push(['meta', { property: 'twitter:url', content: pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/' }]);
-
-    return head
+    return [
+      // Add Open Graph metadata
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:type', content: fm.metaType || 'website' }],
+      ['meta', { property: 'og:url', content: url }],
+      // Add Twitter Card metadata
+      ['meta', { property: 'twitter:title', content: title }],
+      ['meta', { property: 'twitter:description', content: description }],
+      ['meta', { property: 'twitter:url', content: url }],
+      // Inline JSON-LD (varía por página)
+      ['script', { type: 'application/ld+json' }, JSON.stringify(jsonLd)]
+    ];
   },
   head: [
     ['meta', { name: 'robots', content: 'noindex, nofollow' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { property: 'og:image', content: 'https://medilens.es/assets/images/medilens-og-image.png' }],
+    ['link', { rel: 'canonical', href: 'https://medilens.es/' }],
+    ['link', { rel: 'alternate', hreflang: 'es', href: 'https://medilens.es/' }],
+    // Add App Banner
+    ['meta', { name: 'apple-itunes-app', content: 'app-id=6749312020, affiliate-data=medilens_website, app-argument=https://medilens.es' }],
+    ['meta', { name: 'google-play-app', content: 'app-id=es.medilens.app' }],
+    ['meta', { property: 'og:image', content: 'https://medilens.es/assets/images/medilens-og.png' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: 'https://medilens.es/assets/images/medilens-og-image.png' }],
+    ['meta', { name: 'twitter:image', content: 'https://medilens.es/assets/images/medilens-og.png' }],
     ['meta', { property: 'twitter:domain', content: 'medilens.es' }],
     [
       'script',
@@ -54,6 +116,9 @@ export default defineConfig({
       }
     ]
   ],
+  sitemap: {
+    hostname: 'https://medilens.es'
+  },
   lang: 'es',
   title: "MEDI lens",
   titleTemplate: ' MEDI lens',
@@ -67,15 +132,15 @@ export default defineConfig({
     logo: '/assets/icons/ml-icon-bxd.svg',
     nav: [
       {
+        text: '📰 NOTA PRENSA',
+        link: '/docs/NOTA_PRENSA_MEDILENS_N.pdf',
+        target: '_blank'
+      },
+      {
         text: '🙋‍♂️ Equipo',
         link: '/equipo',
         activeMatch: '/equipo'
       },
-      // {
-      //   text: '🗃️ Dossier Medios',
-      //   link: '/dossier-medios',
-      //   activeMatch: '/dossier-medios'
-      // },
       {
         text: '📣 Presentación',
         link: '/presentamos-medilens',
@@ -87,7 +152,7 @@ export default defineConfig({
         activeMatch: '/contacto'
       },
       {
-        text: '1.0.0',
+        text: 'v1.1.0',
         items: [
           { text: '🚀 Changelog', link: 'changelog' },
           { text: '🗺️ Roadmap', link: 'roadmap' },

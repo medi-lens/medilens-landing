@@ -9,11 +9,33 @@ Historial de versiones publicadas con sus respectivas mejoras, correcciones y no
 - **Detalle del medicamento**
     - Listado con las diferentes presentaciones del medicamento. -->
 
+## v1.1.0  <span class="release-date">(2025-10-23)</span>
+
+### Funcionalidades
+
+- Se añade un nuevo botón en la pantalla de detalle de medicamento para poder alternar entre datos básicos y completos 
+- Se añade un nuevo botón en la pantalla de ajustes para enviar comentarios:
+  - Enviar comentarios/sugerencias: se habilita un campo para notificar cualquier valoración.
+  - Reportar incidencias o bugs: se habilitan dos campos para describir el problema e indicar los pasos para reproducirlo.
+- Se añade una modal de valoración App Store / Google Play tras realizar ciertas acciones en la app.
+
+### Cambios
+
+- Se renueva la pantalla de detalle de medicamento con nuevo diseño y nuevos campos informativos (biosimilar, huérfano, notas, materiales, problemas de suministro, presentaciones, etc.).
+- Ajustes UI varios.
+- Se modifica la pantalla al arrancar la app.
+
+### Corrección de errores
+
+- Se corrigen problemas visuales con ciertos dispositivos Xiaomi con capa MIUI.
+- Se corrigen problemas con las alertas de caducidad que no llegaban a mostrarse.
+
+
 ## v1.0.1  <span class="release-date">(2025-08-29)</span>
 
 ### Corrección de errores
 
-- Se corrige una inconsistencia en idioma de literales
+- Se corrige una inconsistencia en idioma de literales.
 
 
 ## v1.0.0 <span class="release-date">(2025-08-28)</span>
