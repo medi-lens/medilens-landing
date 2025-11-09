@@ -75,8 +75,8 @@ const { Layout } = DefaultTheme;
             <details>
               <summary>¿Es gratuita? ¿Hay compras dentro de la app?</summary>
               <p>
-                La app es totalmente gratuita. No incluye compras
-                dentro de la aplicación.
+                La app es totalmente gratuita. No incluye compras dentro de la
+                aplicación.
               </p>
             </details>
 
@@ -105,7 +105,8 @@ const { Layout } = DefaultTheme;
               <p>
                 MEDI lens está disponible en Google Play y App Store.
                 Recomendamos usar versiones recientes de iOS y Android; La app
-                es compatible con <strong>Android 7+</strong> y <strong>iOS 15.1+</strong>.
+                es compatible con <strong>Android 7+</strong> y
+                <strong>iOS 15.1+</strong>.
               </p>
             </details>
 
@@ -171,19 +172,46 @@ const { Layout } = DefaultTheme;
         </section>
         <section class="news-wrapper">
           <h2>Prensa y Noticias</h2>
+          <p>
+            Nuestra historia aún no ha sido contada. ¿Serás el primero en
+            compartirla?
+          </p>
           <section class="news">
-            <p>
-              Nuestra historia aún no ha sido contada. ¿Serás el primero en
-              compartirla?
-            </p>
-
-            <p>
-              Contáctanos a:
-              <a href="mailto:prensa@medilens.es"
-                ><strong>prensa@medilens.es</strong></a
+            <article class="news-item">
+              <a
+                href="https://medioexterno.example.com/articulo-sobre-medilens"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-            </p>
+                <img
+                  src="/assets/images/news/diario-almeria.jpg"
+                  alt="Diario de Almería"
+                  class="news-logo"
+                />
+                <img
+                  src="/assets/images/medilens-og.png"
+                  alt="Accesibilidad: mejoras para TalkBack y VoiceOver"
+                  class="news-thumb"
+                />
+                <div class="news-content">
+                  <h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p>
+                    Vitae placeat voluptatum cum ipsam aliquam. Non quam
+                    suscipit eaque, est iure in.
+                  </p>
+                  <time datetime="2025-06-30">30 jun 2025</time>
+                </div>
+              </a>
+            </article>
           </section>
+          <p>
+            Contáctanos a:
+            <a href="mailto:prensa@medilens.es"
+              ><strong>prensa@medilens.es</strong></a
+            >
+          </p>
         </section>
         <section class="mailjet-form">
           <h2>Newsletter</h2>
