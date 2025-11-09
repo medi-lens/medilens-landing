@@ -18,6 +18,8 @@ export default defineConfig({
       "description": description,
       "url": url,
       "image": image,
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "HealthApplication",
       "downloadUrl": [
         "https://play.google.com/store/apps/details?id=es.medilens.app",
         "https://apps.apple.com/es/app/medi-lens/id6749312020"
