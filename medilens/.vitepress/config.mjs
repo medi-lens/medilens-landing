@@ -92,7 +92,6 @@ export default defineConfig({
     ];
   },
   head: [
-    ['meta', { name: 'robots', content: 'noindex, nofollow' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'canonical', href: 'https://medilens.es/' }],
     ['link', { rel: 'alternate', hreflang: 'es', href: 'https://medilens.es/' }],
