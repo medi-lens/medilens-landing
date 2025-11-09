@@ -73,7 +73,7 @@ const { Layout } = DefaultTheme;
             </details>
 
             <details>
-              <summary>¿Es gratuita y hay compras dentro de la app?</summary>
+              <summary>¿Es gratuita? ¿Hay compras dentro de la app?</summary>
               <p>
                 La app es totalmente gratuita. No incluye compras
                 dentro de la aplicación.
