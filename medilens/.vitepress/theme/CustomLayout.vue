@@ -54,14 +54,109 @@ const { Layout } = DefaultTheme;
           No llegaste donde querías, pero llegaste a algún lugar.
         </blockquote>
         <div class="action">
-          <a class="link" href="/" aria-label="go to home"
-            >Volver al inicio</a
-          >
+          <a class="link" href="/" aria-label="go to home">Volver al inicio</a>
         </div>
       </div>
     </template>
     <template #home-features-after>
       <section class="custom-home-content">
+        <section class="faq-wrapper">
+          <h2>Preguntas frecuentes</h2>
+          <section class="faq">
+            <details>
+              <summary>¿MEDI lens necesita conexión a Internet?</summary>
+              <p>
+                Sí. Para recuperar datos oficiales y prospectos la app consulta
+                fuentes externas; algunas funciones (búsquedas recientes,
+                historial, favoritos, botiquín) pueden funcionar sin conexión.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Es gratuita y hay compras dentro de la app?</summary>
+              <p>
+                La app es totalmente gratuita. No incluye compras
+                dentro de la aplicación.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Qué permisos solicita la app y por qué?</summary>
+              <p>
+                Solicita principalmente acceso a la cámara para escanear códigos
+                y permiso de notificaciones para alertas de caducidad. Solo se
+                piden permisos necesarios para la funcionalidad.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Qué hace la app con mis datos personales?</summary>
+              <p>
+                No se recoge ningún dato pernonal. Consulta nuestra
+                <a href="/politica-privacidad">Política de privacidad</a> para
+                detalles sobre almacenamiento, sincronización y eliminación.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                ¿Funciona en iOS y Android y qué versiones son compatibles?
+              </summary>
+              <p>
+                MEDI lens está disponible en Google Play y App Store.
+                Recomendamos usar versiones recientes de iOS y Android; La app
+                es compatible con <strong>Android 7+</strong> y <strong>iOS 15.1+</strong>.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿La app es accesible para lectores de pantalla?</summary>
+              <p>
+                Sí. Está diseñada para ser compatible con TalkBack (Android) y
+                VoiceOver (iOS) y seguir buenas prácticas de accesibilidad.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Puedo usar la app sin conexión (modo offline)?</summary>
+              <p>
+                Algunas consultas quedan en caché para uso offline, pero la
+                búsqueda completa y prospectos suelen requerir conexión.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Cómo funcionan las alertas de caducidad?</summary>
+              <p>
+                Puedes guardar la fecha de caducidad en tu botiquín; la app
+                envía notificaciones locales según los permisos y las
+                preferencias de aviso.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                ¿Puedo sincronizar mis datos entre dispositivos?
+              </summary>
+              <p>
+                La sincronización en la nube está planificada. Actualmente la
+                función no está disponible; habrá opción de cuenta y backup en
+                futuras versiones.
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Cómo reporto errores o doy feedback?</summary>
+              <p>
+                Usa la sección de soporte en la web o escribe a
+                <a href="mailto:soporte@medilens.es"
+                  ><strong>soporte@medilens.es</strong></a
+                >. Incluye versión de la app y pasos para reproducir el
+                problema.
+              </p>
+            </details>
+          </section>
+        </section>
         <section class="sponsorship-wrapper">
           <h2>Patrocinadores</h2>
           <section class="sponsorship">
