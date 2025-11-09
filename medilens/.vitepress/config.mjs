@@ -35,6 +35,7 @@ export default defineConfig({
     return head
   },
   head: [
+    ['meta', { name: 'robots', content: 'noindex, nofollow' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { property: 'og:image', content: 'https://medilens.es/assets/images/medilens-og-image.png' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
