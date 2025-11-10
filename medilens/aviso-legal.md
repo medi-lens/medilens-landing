@@ -32,7 +32,7 @@ Todos los contenidos de este sitio web y aplicación, incluyendo textos, imágen
 
 ## Exclusión de responsabilidad
 
-MEDI lens proporciona información de carácter general, basada en fuentes oficiales (AEMPS). No sustituye en ningún caso el asesoramiento médico profesional. El uso de esta aplicación es responsabilidad del usuario.
+<span class="logo-colored">MEDI lens</span> proporciona información de carácter general, basada en fuentes oficiales (AEMPS). No sustituye en ningún caso el asesoramiento médico profesional. El uso de esta aplicación es responsabilidad del usuario.
 
 ## Protección de datos personales
 
