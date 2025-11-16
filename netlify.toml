@@ -1,0 +1,9 @@
+
+
+[[edge_functions]]
+function = "discord-forward"
+path = "/contacto"
+
+[[edge_functions]]
+function = "discord-forward"
+path = "/soporte"
