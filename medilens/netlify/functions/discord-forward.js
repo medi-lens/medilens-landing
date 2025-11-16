@@ -30,41 +30,16 @@ export async function handler(event, context) {
     }
   }
 
-  // Normalizar campos a enviar a Discord
-  // Preferimos ordered_human_fields -> data -> human_fields
-  let fields = []
+  // ONLY use payload.data (ignore ordered_human_fields)
+  const data = payload?.data && typeof payload.data === 'object' ? payload.data : {}
 
-  if (Array.isArray(payload?.ordered_human_fields) && payload.ordered_human_fields.length) {
-    fields = payload.ordered_human_fields.map(f => ({
-      name: f.name ?? (typeof f.title === 'string' ? f.title.toLowerCase() : f.title),
-      value: String(f.value ?? '')
-    }))
-  } else if (payload?.data && typeof payload.data === 'object') {
-    // Mantener orden preferente: nombre, email, message
-    const preferred = ['nombre', 'email', 'message']
-    for (const k of preferred) {
-      if (Object.prototype.hasOwnProperty.call(payload.data, k)) {
-        fields.push({ name: k, value: String(payload.data[k] ?? '') })
-      }
-    }
-    // Añadir el resto de keys del objeto data
-    for (const [k, v] of Object.entries(payload.data)) {
-      if (!preferred.includes(k)) fields.push({ name: k, value: String(v ?? '') })
-    }
-  } else if (payload?.human_fields && typeof payload.human_fields === 'object') {
-    // human_fields normalmente es un map de "Nombre": "Valor"
-    for (const [title, value] of Object.entries(payload.human_fields)) {
-      // intentar obtener un key simple en minúsculas si procede
-      const key = title.toLowerCase()
-      fields.push({ name: key, value: String(value ?? '') })
-    }
-  } else {
-    // Fallback: mapear atributos top-level conocidos
-    const pick = ['title', 'email', 'name', 'first_name', 'last_name', 'company', 'summary', 'body']
-    for (const k of pick) {
-      if (Object.prototype.hasOwnProperty.call(payload, k) && payload[k] != null) {
-        fields.push({ name: k, value: String(payload[k]) })
-      }
+  // Preferred order for Discord fields
+  const preferred = ['nombre', 'email', 'message', 'ip', 'user_agent', 'referrer']
+  const fields = []
+
+  for (const key of preferred) {
+    if (Object.prototype.hasOwnProperty.call(data, key) && data[key] != null && String(data[key]).trim() !== '') {
+      fields.push({ name: key, value: String(data[key]) })
     }
   }
 
@@ -73,7 +48,6 @@ export async function handler(event, context) {
   const createdAt = payload.created_at || new Date().toISOString()
   let siteUrl = payload.site_url || 'https://medilens.es'
   try {
-    // normalizar a host
     siteUrl = new URL(siteUrl).hostname
   } catch (e) {
     siteUrl = 'medilens.es'
