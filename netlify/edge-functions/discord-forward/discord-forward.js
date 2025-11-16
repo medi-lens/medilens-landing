@@ -2,10 +2,10 @@ export default async (request, context) => {
   console.log('request: ', request)
   console.log('context: ', context)
   try {
-    // read env from Edge context
-    const env = (context && context.env) || {}
-    console.log('Environment:', env)
-    const DISCORD_WEBHOOK_URL = env.DISCORD_WEBHOOK_URL
+    // For Edge Functions, use Netlify.env.get()
+    const DISCORD_WEBHOOK_URL = Netlify.env.get('DISCORD_WEBHOOK_URL')
+
+    console.log('Environment variables available:', DISCORD_WEBHOOK_URL ? 'YES' : 'NO')
 
     if (!DISCORD_WEBHOOK_URL) {
       console.error('Missing DISCORD_WEBHOOK_URL')
