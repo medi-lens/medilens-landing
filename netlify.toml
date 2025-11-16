@@ -1,0 +1,3 @@
+[[edge_functions]]
+function = "discord-forward"
+path = "/netlify/functions/discord-forward"
