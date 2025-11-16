@@ -1,16 +1,34 @@
 export default async (request, context) => {
-  console.log('request: ', request)
-  console.log('context: ', context)
   try {
-    // For Edge Functions, use Netlify.env.get()
-    const DISCORD_WEBHOOK_URL = Netlify.env.get('DISCORD_WEBHOOK_URL')
-
-    console.log('Environment variables available:', DISCORD_WEBHOOK_URL ? 'YES' : 'NO')
+    // Get environment variables
+    const DISCORD_WEBHOOK_URL = Netlify.env.get('DISCORD_WEBHOOK_URL') || context?.env?.DISCORD_WEBHOOK_URL
+    const NETLIFY_WEBHOOK_SECRET = Netlify.env.get('NETLIFY_WEBHOOK_SECRET') || context?.env?.NETLIFY_WEBHOOK_SECRET
 
     if (!DISCORD_WEBHOOK_URL) {
       console.error('Missing DISCORD_WEBHOOK_URL')
       return new Response('Missing DISCORD_WEBHOOK_URL', { status: 500 })
     }
+
+    if (!NETLIFY_WEBHOOK_SECRET) {
+      console.error('Missing NETLIFY_WEBHOOK_SECRET')
+      return new Response('Missing NETLIFY_WEBHOOK_SECRET', { status: 500 })
+    }
+
+    // Validate JWS secret token
+    const jwsToken = request.headers.get('x-webhook-signature')
+    
+    if (!jwsToken) {
+      console.error('Missing JWS token')
+      return new Response('Unauthorized: Missing token', { status: 401 })
+    }
+
+    // Simple constant-time comparison to prevent timing attacks
+    if (jwsToken !== NETLIFY_WEBHOOK_SECRET) {
+      console.error('Invalid JWS token')
+      return new Response('Unauthorized: Invalid token', { status: 401 })
+    }
+
+    console.log('JWS token validation successful')
 
     let body
     try {
