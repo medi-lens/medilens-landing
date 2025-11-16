@@ -1,8 +1,10 @@
 export default async (request, context) => {
+  console.log('request: ', request)
+  console.log('context: ', context)
   try {
     // read env from Edge context
     const env = (context && context.env) || {}
-    console.log('Environment:', Object.keys(env))
+    console.log('Environment:', env)
     const DISCORD_WEBHOOK_URL = env.DISCORD_WEBHOOK_URL
 
     if (!DISCORD_WEBHOOK_URL) {
