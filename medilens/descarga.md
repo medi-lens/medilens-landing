@@ -1,3 +1,7 @@
+---
+lastUpdated: false
+---
+
 <script>
   // Detectar el dispositivo y redirigir
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
