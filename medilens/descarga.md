@@ -26,6 +26,8 @@ lastUpdated: false
 
 Si no eres redirigido automáticamente, haz clic en el botón correspondiente:
 
+<br />
+
 <div class="custom-hero-actions">
     <a href="https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=descarga_cta">
         <img src="/assets/images/medilens-google-play.png" alt="Google Play" />
