@@ -3,7 +3,7 @@ outline: false
 aside: false
 ---
 
-# 🗺️ Roadmap
+# 🗺️ Hoja de ruta (Roadmap)
 
 Una vista general de las funcionalidades previstas, en desarrollo y ya implementadas en <span class="logo-colored">MEDI lens</span>.
 

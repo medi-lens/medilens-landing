@@ -5,7 +5,7 @@ export default defineConfig({
   transformHead({ assets, pageData }) {
     const fm = pageData.frontmatter || {};
     const title = fm.title || 'MEDI lens - Escanea y conoce tus medicamentos';
-    const description = fm.description || 'La app de MEDI lens permite escanear y buscar medicamentos, acceder a su prospecto y ficha técnica, ver composiciones, necesidad de receta, así como guardar en un botiquín digital tus medicamentos y recibir notificaciones sobre su fecha próxima de caducidad.';
+    const description = fm.description || 'MEDI lens permite escanear y buscar medicamentos, consultar prospectos, ver composiciones y guardar un botiquín con alertas de caducidad.';
     const url = pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/';
     const image = fm.image || 'https://medilens.es/assets/images/medilens-og.png';
     const myFontFile = assets.find(file => /Akshar\.[\w-]+\.ttf/.test(file))
@@ -61,7 +61,7 @@ export default defineConfig({
         }
       ]
     };
-    
+
     if (myFontFile) {
       return [
         [
@@ -153,8 +153,8 @@ export default defineConfig({
       {
         text: 'v1.1.0',
         items: [
-          { text: '🚀 Changelog', link: 'changelog' },
-          { text: '🗺️ Roadmap', link: 'roadmap' },
+          { text: '🚀 Registro de cambios', link: 'changelog' },
+          { text: '🗺️ Hoja de ruta', link: 'roadmap' },
         ]
       }
     ],

@@ -1,4 +1,4 @@
-# Changelog / Registro de cambios
+# Registro de cambios (Changelog)
 
 Historial de versiones publicadas con sus respectivas mejoras, correcciones y novedades.
 
@@ -13,7 +13,7 @@ Historial de versiones publicadas con sus respectivas mejoras, correcciones y no
 
 ### Funcionalidades
 
-- Se añade un nuevo botón en la pantalla de detalle de medicamento para poder alternar entre datos básicos y completos 
+- Se añade un nuevo botón en la pantalla de detalle de medicamento para poder alternar entre datos básicos y completos
 - Se añade un nuevo botón en la pantalla de ajustes para enviar comentarios:
   - Enviar comentarios/sugerencias: se habilita un campo para notificar cualquier valoración.
   - Reportar incidencias o bugs: se habilitan dos campos para describir el problema e indicar los pasos para reproducirlo.
