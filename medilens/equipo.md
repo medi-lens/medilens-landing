@@ -16,10 +16,9 @@ const linkedInIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height=
 
 const members = [
   {
-    avatar: 'https://avatars.githubusercontent.com/u/9118664',
+    avatar: '/assets/images/team/paul.webp',
     name: 'Paul Guillamón Thiéry',
-    title: 'Co-fundador y Desarrollador',
-    // desc: 'Lorem ipsum dolor sit amet',
+    title: 'Producto, Gestión de Proyecto, Diseño UX/UI y Control de Calidad (QA)',
     links: [
       { icon: 'github', link: 'https://github.com/Qu4k3' },
       { icon: 'vitepress', link: 'https://qu4k3.com' },
@@ -31,16 +30,27 @@ const members = [
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/20914374',
+    avatar: '/assets/images/team/jose.webp',
     name: 'Jose Sánchez Fuentes',
-    title: 'Co-fundador y Desarrollador',
-    // desc: 'Lorem ipsum dolor sit amet',
+    title: 'Desarrollo de la aplicación móvil para Android e iOS',
     links: [
       { icon: 'github', link: 'https://github.com/crimson3d' },
       { icon: {
           svg: linkedInIcon
         },
         link: 'https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/'
+      }
+    ]
+  },
+  {
+    avatar: '/assets/images/team/felipe.webp',
+    name: 'Felipe Bernal Martinez',
+    title: 'Backend, Infraestructura, Seguridad y DevOps',
+    links: [
+      { icon: {
+          svg: linkedInIcon
+        },
+        link: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/'
       }
     ]
   }
@@ -53,8 +63,8 @@ const members = [
       El Equipo
     </template>
     <template #lead>
-      <span class="logo-colored">MEDI lens</span>  ha sido creada por dos desarrolladores de Almería 🍅, con la misión de ofrecer una herramienta nativa, intuitiva y de utilidad pública, basada en datos oficiales de la AEMPS.<br/><br/>
-Nuestro objetivo es facilitar el acceso a información sanitaria fiable, clara y accesible para todos.
+      <span class="logo-colored">MEDI lens</span> nace con la misión de ofrecer una herramienta nativa, intuitiva y de utilidad pública, basada en datos oficiales de la AEMPS.<br/><br/>
+      Buscamos acercar la información sanitaria a cualquier persona mediante una experiencia intuitiva, priorizando la fiabilidad de la información, la transparencia y la facilidad de uso.
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members />

@@ -36,28 +36,41 @@ export default defineConfig({
           "name": "Paul Guillamón Thiéry",
           "givenName": "Paul",
           "familyName": "Guillamón Thiéry",
-          "jobTitle": "Co‑founder",
+          "jobTitle": "Producto / Diseño UX/UI / QA",
           "url": "https://qu4k3.com",
           "sameAs": [
             "https://www.linkedin.com/in/paulguillamon",
             "https://github.com/Qu4k3"
           ],
-          "image": "https://avatars.githubusercontent.com/u/9118664?v=4",
-          "description": "Product lead en MEDI lens / Responsable de diseño y experiencia de usuario"
+          "image": "https://medilens.es/assets/images/team/paul.webp",
+          "description": "Producto, Gestión de Proyecto, Diseño UX/UI y Control de Calidad (QA)"
         },
         {
           "@type": "Person",
-          "name": "José Antonio Sánchez Fuentes",
-          "givenName": "José",
-          "familyName": "Antonio Sánchez Fuentes",
-          "jobTitle": "Co‑founder",
+          "name": "Jose Sánchez Fuentes",
+          "givenName": "Jose",
+          "familyName": "Sánchez Fuentes",
+          "jobTitle": "Desarrollo móvil",
           "url": "https://crimson3d.github.io/portfolio/",
           "sameAs": [
             "https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/",
             "https://github.com/crimson3d"
           ],
-          "image": "https://avatars.githubusercontent.com/u/20914374?v=4",
-          "description": "Desarrollador"
+          "image": "https://medilens.es/assets/images/team/jose.webp",
+          "description": "Desarrollo de la aplicación móvil para Android e iOS"
+        },
+        {
+          "@type": "Person",
+          "name": "Felipe Bernal Martinez",
+          "givenName": "Felipe",
+          "familyName": "Bernal Martinez",
+          "jobTitle": "Backend / Infraestructura / DevOps",
+          "url": "https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/",
+          "sameAs": [
+            "https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/"
+          ],
+          "image": "https://medilens.es/assets/images/team/felipe.webp",
+          "description": "Backend, Infraestructura, Seguridad y DevOps"
         }
       ]
     };
