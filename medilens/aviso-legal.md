@@ -13,7 +13,6 @@ En cumplimiento del deber de información recogido en el artículo 10 de la Ley 
 | Nombre | DNI |
 | --- | --- |
 | Paul Guillamón | 244152-XXX |
-| Jose Sánchez |537104-XXX |
 
 - **Correo electrónico**: <contacto@medilens.es>
 - **Nombre comercial**: MEDI lens

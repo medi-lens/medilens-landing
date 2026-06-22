@@ -1,7 +1,7 @@
 ---
 title: Presentación
 
-lastUpdated: true
+lastUpdated: false
 ---
 
 # Presentamos <span class="logo-colored">MEDI lens</span>

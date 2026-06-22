@@ -63,8 +63,8 @@ const members = [
       El Equipo
     </template>
     <template #lead>
-      <span class="logo-colored">MEDI lens</span> nace con la misión de ofrecer una herramienta nativa, intuitiva y de utilidad pública, basada en datos oficiales de la AEMPS.<br/><br/>
-      Buscamos acercar la información sanitaria a cualquier persona mediante una experiencia intuitiva, priorizando la fiabilidad de la información, la transparencia y la facilidad de uso.
+      <p>Detrás de <span class="logo-colored">MEDI lens</span> hay un equipo pequeño y multidisciplinar que se formó alrededor de una idea simple: ofrecer una herramienta de utilidad pública, sobre medicamentos disponibles en España.</p><br/>
+      <p>Buscamos acercar la información sanitaria a cualquier persona mediante una experiencia nativa e intuitiva, priorizando la fiabilidad de la información, la transparencia y la facilidad de uso.</p>
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members />
