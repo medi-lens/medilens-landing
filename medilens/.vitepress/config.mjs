@@ -1,7 +1,25 @@
 import { defineConfig } from 'vitepress'
 
+const excludedSitemapPaths = new Set();
+
+const normalizeSitemapPath = (value) => {
+  if (!value) return '/';
+
+  try {
+    return new URL(value).pathname.replace(/\/$/, '') || '/';
+  } catch {
+    return value.replace(/\/$/, '') || '/';
+  }
+};
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  transformPageData(pageData) {
+    if (pageData.frontmatter?.sitemap === false) {
+      const route = pageData.url || (pageData.relativePath ? `/${pageData.relativePath.replace(/\.md$/, '').replace(/\/index$/, '')}` : '/');
+      excludedSitemapPaths.add(normalizeSitemapPath(route));
+    }
+  },
   transformHead({ assets, pageData }) {
     const fm = pageData.frontmatter || {};
     const title = fm.title || 'MEDI lens - Escanea y conoce tus medicamentos';
@@ -129,7 +147,12 @@ export default defineConfig({
     ]
   ],
   sitemap: {
-    hostname: 'https://medilens.es'
+    hostname: 'https://medilens.es',
+    transformItems(items) {
+      return items.filter((item) => {
+        return !excludedSitemapPaths.has(normalizeSitemapPath(item.url));
+      });
+    }
   },
   lang: 'es',
   title: "MEDI lens",
