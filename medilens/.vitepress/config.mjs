@@ -24,7 +24,9 @@ export default defineConfig({
     const fm = pageData.frontmatter || {};
     const title = fm.title || 'MEDI lens - Escanea y conoce tus medicamentos';
     const description = fm.description || 'MEDI lens permite escanear y buscar medicamentos, consultar prospectos, ver composiciones y guardar un botiquín con alertas de caducidad.';
-    const url = pageData.relativePath ? `https://medilens.es/${pageData.relativePath}` : 'https://medilens.es/';
+    const relativePath = pageData.relativePath || '';
+    const pageUrl = relativePath ? `https://medilens.es/${relativePath.replace(/\.md$/, '').replace(/\/index$/, '')}` : 'https://medilens.es/';
+    const url = relativePath ? `${pageUrl}` : 'https://medilens.es/';
     const image = fm.image || 'https://medilens.es/assets/images/medilens-og.png';
     const myFontFile = assets.find(file => /Akshar\.[\w-]+\.ttf/.test(file))
 
@@ -109,6 +111,7 @@ export default defineConfig({
     }
 
     return [
+      ['link', { rel: 'canonical', href: url }],
       // Add Open Graph metadata
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: description }],
@@ -124,7 +127,6 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'canonical', href: 'https://medilens.es/' }],
     ['link', { rel: 'alternate', hreflang: 'es', href: 'https://medilens.es/' }],
     // Add App Banner
     ['meta', { name: 'apple-itunes-app', content: 'app-id=6749312020, affiliate-data=medilens_website, app-argument=https://medilens.es' }],
