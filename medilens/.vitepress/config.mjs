@@ -22,12 +22,14 @@ export default defineConfig({
   },
   transformHead({ assets, pageData }) {
     const fm = pageData.frontmatter || {};
-    const title = fm.title || 'MEDI lens - Escanea y conoce tus medicamentos';
-    const description = fm.description || 'MEDI lens permite escanear y buscar medicamentos, consultar prospectos, ver composiciones y guardar un botiquín con alertas de caducidad.';
+    const title = fm.title || 'MEDI lens — Escanea y conoce tus medicamentos';
+    const description = fm.description || 'MEDI lens te permite escanear medicamentos, ver prospectos, composición, necesidad de receta y gestionar un botiquín digital con alertas de caducidad.';
     const relativePath = pageData.relativePath || '';
-    const pageUrl = relativePath ? `https://medilens.es/${relativePath.replace(/\.md$/, '').replace(/\/index$/, '')}` : 'https://medilens.es/';
-    const url = relativePath ? `${pageUrl}` : 'https://medilens.es/';
+    const normalizedPath = relativePath.replace(/\.md$/, '').replace(/^\/+/, '');
+    const route = normalizedPath === 'index' ? '' : normalizedPath.replace(/\/index$/, '');
+    const url = route ? `https://medilens.es/${route}` : 'https://medilens.es/';
     const image = fm.image || 'https://medilens.es/assets/images/medilens-og.png';
+    const imageAlt = fm.imageAlt || 'MEDI lens — Escanea y conoce tus medicamentos';
     const myFontFile = assets.find(file => /Akshar\.[\w-]+\.ttf/.test(file))
 
     // JSON-LD personalizado por página
@@ -47,7 +49,7 @@ export default defineConfig({
       "publisher": {
         "@type": "Organization",
         "name": "MEDI lens",
-        "logo": "https://medilens.es/assets/icons/ml-icon-bxd.svg",
+        "logo": "https://medilens.es/assets/icons/medilens-icon.svg",
         "url": "https://medilens.es"
       },
       "creator": [
@@ -95,6 +97,30 @@ export default defineConfig({
       ]
     };
 
+    const seoHead = [
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { name: 'description', content: description }],
+      ['meta', { name: 'theme-color', content: '#F25939' }],
+      ['meta', { property: 'og:site_name', content: 'MEDI lens' }],
+      ['meta', { property: 'og:locale', content: 'es_ES' }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:type', content: fm.metaType || 'website' }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:image', content: image }],
+      ['meta', { property: 'og:image:width', content: '1200' }],
+      ['meta', { property: 'og:image:height', content: '630' }],
+      ['meta', { property: 'og:image:alt', content: imageAlt }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:site', content: '@medilens_es' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:url', content: url }],
+      ['meta', { name: 'twitter:image', content: image }],
+      ['meta', { name: 'twitter:image:alt', content: imageAlt }],
+      ['script', { type: 'application/ld+json' }, JSON.stringify(jsonLd)]
+    ];
+
     if (myFontFile) {
       return [
         [
@@ -106,35 +132,23 @@ export default defineConfig({
             type: 'font/ttf',
             crossorigin: ''
           }
-        ]
+        ],
+        ...seoHead
       ]
     }
 
-    return [
-      ['link', { rel: 'canonical', href: url }],
-      // Add Open Graph metadata
-      ['meta', { property: 'og:title', content: title }],
-      ['meta', { property: 'og:description', content: description }],
-      ['meta', { property: 'og:type', content: fm.metaType || 'website' }],
-      ['meta', { property: 'og:url', content: url }],
-      // Add Twitter Card metadata
-      ['meta', { property: 'twitter:title', content: title }],
-      ['meta', { property: 'twitter:description', content: description }],
-      ['meta', { property: 'twitter:url', content: url }],
-      // Inline JSON-LD (varía por página)
-      ['script', { type: 'application/ld+json' }, JSON.stringify(jsonLd)]
-    ];
+    return seoHead;
   },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['link', { rel: 'alternate', hreflang: 'es', href: 'https://medilens.es/' }],
     // Add App Banner
     ['meta', { name: 'apple-itunes-app', content: 'app-id=6749312020, affiliate-data=medilens_website, app-argument=https://medilens.es' }],
     ['meta', { name: 'google-play-app', content: 'app-id=es.medilens.app' }],
-    ['meta', { property: 'og:image', content: 'https://medilens.es/assets/images/medilens-og.png' }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: 'https://medilens.es/assets/images/medilens-og.png' }],
-    ['meta', { property: 'twitter:domain', content: 'medilens.es' }],
     [
       'script',
       { src: 'https://app.mailjet.com/pas-nc-embedded-v1.js' }
@@ -166,7 +180,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: 'MEDI lens',
-    logo: '/assets/icons/ml-icon-bxd.svg',
+    logo: '/assets/icons/medilens-icon.svg',
     nav: [
       {
         text: '📰 NOTA PRENSA',
@@ -286,7 +300,7 @@ export default defineConfig({
 
     footer: {
       message: '<span class="logo-colored">MEDI lens</span> — Escanea y conoce tus medicamentos · <a href="/politica-privacidad">Política de privacidad</a> · <a href="/aviso-legal">Aviso Legal</a> · <a href="/soporte">Soporte</a>',
-      copyright: 'Hecho con ❤️ en Almería 🍅 · © 2025 MEDI lens® · Todos los derechos reservados.'
+      copyright: 'Hecho con ❤️ en Almería 🍅 · © 2024-2026 MEDI lens® · Todos los derechos reservados.'
     }
   }
 })

@@ -37,7 +37,7 @@ const { Layout } = DefaultTheme;
           class="app-web"
           href="https://app.medilens.es?utm_source=medilens_website&utm_medium=referral&utm_campaign=heroActions_cta"
         >
-          <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
+          <img src="/assets/icons/medilens-icon.svg" alt="Medilens Logo" />
           <div>
             <small>Accede a la</small>
             <span>Versión Web</span>
