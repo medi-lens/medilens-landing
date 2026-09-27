@@ -6,5 +6,8 @@
     "dev": "vitepress dev medilens",
     "build": "vitepress build medilens",
     "preview": "vitepress preview medilens"
+  },
+  "dependencies": {
+    "web-vitals": "^6.2.2"
   }
 }
