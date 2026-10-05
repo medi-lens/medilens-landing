@@ -1,11 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 const excludedSitemapPaths = new Set();
-const umamiScriptAttrs = {
-  defer: '',
-  'data-website-id': 'f708bd69-3f66-47c0-9d0f-100a118e2b14',
-  'data-host-url': 'https://umami.qu4k3.com'
-};
+const isProduction = process.env.NODE_ENV === 'production';
 
 const normalizeSitemapPath = (value) => {
   if (!value) return '/';
@@ -158,8 +154,19 @@ export default defineConfig({
       'script',
       { src: 'https://app.mailjet.com/pas-nc-embedded-v1.js' }
     ],
-    ['script', { ...umamiScriptAttrs, src: '/js/umami/script.js' }],
-    ['script', { ...umamiScriptAttrs, src: '/js/umami/recorder.js' }]
+    ...(isProduction
+      ? [
+          [
+            'script',
+            {
+              defer: '',
+              src: '/js/umami/script.js',
+              'data-website-id': 'f708bd69-3f66-47c0-9d0f-100a118e2b14',
+              'data-host-url': 'https://umami.qu4k3.com'
+            }
+          ]
+        ]
+      : [])
   ],
   sitemap: {
     hostname: 'https://medilens.es',
