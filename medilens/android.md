@@ -1,4 +1,11 @@
+---
+sitemap: false
+lastUpdated: false
+---
+
 <meta http-equiv="refresh" content="0; url=https://play.google.com/store/apps/details?id=es.medilens.app" />
+
+# Descarga <span class="logo-colored">MEDI lens</span> para Android
 
 Estás siendo redirigido a Google Play.  
 Si no eres redirigido automáticamente, haz clic en el siguiente botón:

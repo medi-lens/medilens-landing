@@ -7,8 +7,5 @@ import './style.css'
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
-  Layout: CustomLayout,
-  enhanceApp({ app, router, siteData }) {
-    // ...
-  }
+  Layout: CustomLayout
 }

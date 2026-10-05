@@ -10,7 +10,7 @@ lastUpdated: false
 Completa el siguiente formulario y te responderemos lo antes posible.  
 Tu consulta será gestionada de forma confidencial y personalizada.
 
-### Formulario de soporte
+## Formulario de soporte
 
 <br />
 

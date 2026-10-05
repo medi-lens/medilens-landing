@@ -1,7 +1,7 @@
 ---
 title: Presentación
 
-lastUpdated: true
+lastUpdated: false
 ---
 
 # Presentamos <span class="logo-colored">MEDI lens</span>
@@ -24,7 +24,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
     <span style="font-weight: 300">Este documento, dirigido al paciente o usuario, acompaña al medicamento e incluye la información necesaria para su correcta utilización.</span>
 
 
-#### Información a nivel de medicamento:
+### Información a nivel de medicamento:
 
 - Foto del medicamento (si se dispone).
 - Nombre del medicamento.
@@ -49,7 +49,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
 - Listado de los medicamentos no sustituibles por el farmacéutico (medicamentos biológicos, con principios activos de estrecho margen terapéutico, de especial control médico, o del aparato respiratorio de administración por vía inhalatoria).
  -->
 
-#### ¿Cómo se puede buscar la información de un medicamento?
+### ¿Cómo se puede buscar la información de un medicamento?
 
 - Por el nombre del medicamento.
 - Por el Laboratorio titular de la autorización de comercialización.
@@ -87,7 +87,7 @@ La aplicación <span class="logo-colored">MEDI lens</span> ofrece en todo moment
         <img src="/assets/images/medilens-apple-store-blk.svg" alt="Apple Store" />
     </a>
     <!-- <a class="app-web no-icon" href="https://app.medilens.es">
-        <img src="/assets/icons/ml-icon-bxd.svg" alt="Medilens Logo" />
+        <img src="/assets/icons/medilens-icon.svg" alt="Medilens Logo" />
         <div>
             <small>Accede a la</small>
             <span>Versión Web</span>

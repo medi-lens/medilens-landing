@@ -14,7 +14,7 @@ Tu mensaje será gestionado de forma confidencial y personalizada.
 > Para consultas técnicas o soporte, por favor utiliza la página de [Soporte](/soporte).
 
 
-### Formulario de contacto
+## Formulario de contacto
 
 <br />
 

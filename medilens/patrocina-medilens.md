@@ -1,5 +1,6 @@
 ---
 title: Patrocina
+lastUpdated: false
 
 # outline: false
 # aside: false
