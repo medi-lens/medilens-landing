@@ -1,0 +1,19 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import ContactForm from '@/components/ContactForm.astro';
+---
+<SiteLayout title="Contacto" seoTitle="MEDI lens — Escanea y conoce tus medicamentos">
+  <main class="contact-page">
+    <h1>Contacto</h1>
+    <p>¿Quieres ponerte en contacto con el equipo de <span class="logo-colored">MEDI lens</span>?<br />Estamos aquí para atender tus dudas, sugerencias, propuestas de colaboración o cualquier consulta relacionada con la app.</p>
+    <p>Completa el siguiente formulario y te responderemos lo antes posible.<br />Tu mensaje será gestionado de forma confidencial y personalizada.</p>
+    <blockquote>ℹ️ <strong>¿Tienes una duda técnica o problema con la app?</strong><br />Para consultas técnicas o soporte, por favor utiliza la página de <a href="/soporte">Soporte</a>.</blockquote>
+    <h2>Formulario de contacto</h2>
+    <ContactForm
+      name="contact"
+      successTitle="¡Gracias por tu mensaje!"
+      successMessage="Tu consulta ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
+    />
+    <p>Si tienes problemas con el formulario, también puedes escribirnos a <a href="mailto:contacto@medilens.es">contacto@medilens.es</a>.</p>
+  </main>
+</SiteLayout>

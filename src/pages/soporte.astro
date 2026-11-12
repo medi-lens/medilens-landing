@@ -1,0 +1,18 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import ContactForm from '@/components/ContactForm.astro';
+---
+<SiteLayout title="Soporte" seoTitle="MEDI lens — Escanea y conoce tus medicamentos">
+  <main class="contact-page">
+    <h1>Soporte</h1>
+    <p>¿Tienes dudas, sugerencias o necesitas ayuda con la app?<br />→ Estamos aquí para ayudarte.</p>
+    <p>Completa el siguiente formulario y te responderemos lo antes posible.<br />Tu consulta será gestionada de forma confidencial y personalizada.</p>
+    <h2>Formulario de soporte</h2>
+    <ContactForm
+      name="support"
+      successTitle="¡Gracias por tu mensaje!"
+      successMessage="Tu incidencia ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
+    />
+    <p>Si tienes problemas con el formulario, también puedes escribirnos a <a href="mailto:soporte@medilens.es">soporte@medilens.es</a>.</p>
+  </main>
+</SiteLayout>

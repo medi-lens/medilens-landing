@@ -1,13 +1,39 @@
 {
-  "devDependencies": {
-    "vitepress": "1.6.4"
+  "name": "medilens-landing",
+  "description": "Sitio web estático de MEDI lens, desarrollado con Astro y JavaScript vanilla.",
+  "homepage": "https://medilens.es/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medi-lens/medilens-landing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/medi-lens/medilens-landing/issues"
+  },
+  "keywords": [
+    "medilens",
+    "astro",
+    "salud",
+    "medicamentos",
+    "sitio-web",
+    "landing-page"
+  ],
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.3",
+    "npm": ">=11.3.0"
   },
   "scripts": {
-    "dev": "vitepress dev medilens",
-    "build": "vitepress build medilens",
-    "preview": "vitepress preview medilens"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "web-vitals": "^6.2.2"
+    "@fontsource-variable/akshar": "5.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/netlify": "8.2.13",
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.4.11"
   }
 }

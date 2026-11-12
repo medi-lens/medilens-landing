@@ -1,0 +1,51 @@
+---
+import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
+
+const currentPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '') || '/';
+const navItems = [
+  { href: '/equipo', text: '🙋‍♂️ Equipo' },
+  { href: '/presentamos-medilens', text: '📣 Presentación' },
+  { href: '/contacto', text: '✉️ Contacto' },
+];
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="MEDI lens, inicio">
+      <img src={medilensIcon} alt="" width="38" height="38" />
+      <span class="logo-colored">MEDI lens</span>
+    </a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="header-navigation" id="main-navigation" data-navigation>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a class="nav-link" href="/docs/NOTA_PRENSA_MEDILENS_N.pdf" target="_blank" rel="noopener">
+          📰 NOTA PRENSA<span class="visually-hidden"> (se abre en una pestaña nueva)</span>
+        </a>
+        {navItems.map((item) => (
+          <a class="nav-link" href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.text}</a>
+        ))}
+        <details class="version-menu">
+          <summary>v1.1.0</summary>
+          <div class="version-menu-panel">
+            <a href="/changelog">🚀 Registro de cambios</a>
+            <a href="/roadmap">🗺️ Hoja de ruta</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/medilens.es/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+          <a href="https://www.instagram.com/medilens.es/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">◎</a>
+          <a href="https://www.threads.com/@medilens.es" aria-label="Threads" target="_blank" rel="noopener noreferrer">@</a>
+          <a href="https://x.com/medilens_es" aria-label="X" target="_blank" rel="noopener noreferrer">𝕏</a>
+          <a href="https://bsky.app/profile/medilens.es" aria-label="Bluesky" target="_blank" rel="noopener noreferrer">b</a>
+          <a href="https://www.linkedin.com/showcase/medi-lens" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+        </div>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro">
+          <span aria-hidden="true" data-theme-icon>🌙</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

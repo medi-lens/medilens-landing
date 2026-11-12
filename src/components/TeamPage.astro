@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import paul from '@/assets/images/team/paul.jpg';
+import jose from '@/assets/images/team/jose.jpg';
+import felipe from '@/assets/images/team/felipe.png';
+
+const members = [
+  { name: 'Paul Guillamón Thiéry', title: 'Producto, Gestión de Proyecto, Diseño UX/UI y Control de Calidad (QA)', avatar: paul, links: [
+    { label: 'GitHub', text: 'GH', href: 'https://github.com/Qu4k3' },
+    { label: 'Sitio web', text: '↗', href: 'https://qu4k3.com' },
+    { label: 'LinkedIn', text: 'in', href: 'https://www.linkedin.com/in/paulguillamon' },
+  ] },
+  { name: 'Jose Sánchez Fuentes', title: 'Desarrollo de la aplicación móvil para Android e iOS', avatar: jose, links: [
+    { label: 'GitHub', text: 'GH', href: 'https://github.com/crimson3d' },
+    { label: 'LinkedIn', text: 'in', href: 'https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/' },
+  ] },
+  { name: 'Felipe Bernal Martinez', title: 'Backend, Infraestructura, Seguridad y DevOps', avatar: felipe, links: [
+    { label: 'LinkedIn', text: 'in', href: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/' },
+  ] },
+];
+---
+<SiteLayout title="Quienes Somos" seoTitle="Quienes Somos" description="MEDI lens ha sido desarrollada por dos desarrolladores de Almería, conócenos un poco más :)">
+  <main class="team-page">
+    <header class="team-intro">
+      <h1>El Equipo</h1>
+      <p>Detrás de <span class="logo-colored">MEDI lens</span> hay un equipo pequeño y multidisciplinar que se formó alrededor de una idea simple: ofrecer una herramienta de utilidad pública, sobre medicamentos disponibles en España.</p>
+      <p>Buscamos acercar la información sanitaria a cualquier persona mediante una experiencia nativa e intuitiva, priorizando la fiabilidad de la información, la transparencia y la facilidad de uso.</p>
+    </header>
+    <div class="team-grid">
+      {members.map((member) => (
+        <article class="team-card">
+          <Image src={member.avatar} alt={'Fotografía de ' + member.name} width={176} height={176} quality={82} format="webp" />
+          <h2>{member.name}</h2>
+          <p>{member.title}</p>
+          <div class="member-links" aria-label={'Enlaces de ' + member.name}>
+            {member.links.map((link) => (
+              <a href={link.href} aria-label={link.label + ': ' + member.name} title={link.label} target="_blank" rel="noopener noreferrer">{link.text}</a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</SiteLayout>

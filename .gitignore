@@ -5,3 +5,5 @@ cache
 .DS_Store
 # Local Netlify folder
 .netlify
+
+.astro

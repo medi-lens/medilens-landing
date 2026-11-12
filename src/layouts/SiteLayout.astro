@@ -1,0 +1,153 @@
+---
+import SiteHeader from '@/components/SiteHeader.astro';
+import SiteFooter from '@/components/SiteFooter.astro';
+import { getImage } from 'astro:assets';
+import faviconSvg from '@/assets/icons/favicons/favicon.svg?no-inline';
+import faviconPng from '@/assets/icons/favicons/favicon-32x32.png?no-inline';
+import appleTouchIcon from '@/assets/icons/favicons/apple-touch-icon.png?no-inline';
+import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
+import paulPhoto from '@/assets/images/team/paul.jpg';
+import josePhoto from '@/assets/images/team/jose.jpg';
+import umamiScriptUrl from '@/scripts/umami.js?url&no-inline';
+import '@fontsource-variable/akshar';
+import aksharLatin from '@fontsource-variable/akshar/files/akshar-latin-wght-normal.woff2';
+import '@/styles/global.css';
+import felipePhoto from '@/assets/images/team/felipe.png';
+
+const defaultTitle = 'MEDI lens — Escanea y conoce tus medicamentos';
+const defaultDescription = 'MEDI lens te permite escanear medicamentos, ver prospectos, composición, necesidad de receta y gestionar un botiquín digital con alertas de caducidad.';
+const {
+  title = defaultTitle,
+  seoTitle = title,
+  description = defaultDescription,
+  image = 'https://medilens.es/assets/images/medilens-og.png',
+  imageAlt = 'MEDI lens — Escanea y conoce tus medicamentos',
+  metaType = 'website',
+} = Astro.props;
+const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
+const canonicalUrl = new URL(canonicalPath, Astro.site).href;
+const [paulSchemaImage, joseSchemaImage, felipeSchemaImage] = await Promise.all([
+  getImage({ src: paulPhoto, width: 400, height: 400, quality: 82, format: 'webp' }),
+  getImage({ src: josePhoto, width: 400, height: 400, quality: 82, format: 'webp' }),
+  getImage({ src: felipePhoto, width: 400, height: 400, quality: 82, format: 'webp' }),
+]);
+const creators = [
+  {
+    '@type': 'Person',
+    name: 'Paul Guillamón Thiéry',
+    givenName: 'Paul',
+    familyName: 'Guillamón Thiéry',
+    jobTitle: 'Producto / Diseño UX/UI / QA',
+    url: 'https://qu4k3.com',
+    sameAs: ['https://www.linkedin.com/in/paulguillamon', 'https://github.com/Qu4k3'],
+    image: new URL(paulSchemaImage.src, Astro.site).href,
+    description: 'Producto, Gestión de Proyecto, Diseño UX/UI y Control de Calidad (QA)',
+  },
+  {
+    '@type': 'Person',
+    name: 'Jose Sánchez Fuentes',
+    givenName: 'Jose',
+    familyName: 'Sánchez Fuentes',
+    jobTitle: 'Desarrollo móvil',
+    url: 'https://crimson3d.github.io/portfolio/',
+    sameAs: ['https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/', 'https://github.com/crimson3d'],
+    image: new URL(joseSchemaImage.src, Astro.site).href,
+    description: 'Desarrollo de la aplicación móvil para Android e iOS',
+  },
+  {
+    '@type': 'Person',
+    name: 'Felipe Bernal Martinez',
+    givenName: 'Felipe',
+    familyName: 'Bernal Martinez',
+    jobTitle: 'Backend / Infraestructura / DevOps',
+    url: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/',
+    sameAs: ['https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/'],
+    image: new URL(felipeSchemaImage.src, Astro.site).href,
+    description: 'Backend, Infraestructura, Seguridad y DevOps',
+  },
+];
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: seoTitle,
+  description,
+  url: canonicalUrl,
+  image,
+  operatingSystem: 'Android, iOS',
+  applicationCategory: 'HealthApplication',
+  downloadUrl: [
+    'https://play.google.com/store/apps/details?id=es.medilens.app',
+    'https://apps.apple.com/es/app/medi-lens/id6749312020',
+  ],
+  publisher: {
+    '@type': 'Organization',
+    name: 'MEDI lens',
+    logo: new URL(medilensIcon, Astro.site).href,
+    url: 'https://medilens.es',
+  },
+  creator: creators,
+};
+const isProduction = import.meta.env.PROD;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#F25939" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href="https://medilens.es/" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={faviconSvg} />
+    <link rel="icon" type="image/png" sizes="32x32" href={faviconPng} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" href={aksharLatin} as="font" type="font/woff2" crossorigin />
+    <meta name="apple-itunes-app" content="app-id=6749312020, affiliate-data=medilens_website, app-argument=https://medilens.es" />
+    <meta name="google-play-app" content="app-id=es.medilens.app" />
+    <meta property="og:site_name" content="MEDI lens" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={metaType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@medilens_es" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    <title>{title} · MEDI lens</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem('medilens-theme');
+          const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <script src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
+    {isProduction && (
+      <script defer src={umamiScriptUrl} data-website-id="f708bd69-3f66-47c0-9d0f-100a118e2b14" data-host-url="https://umami.qu4k3.com" />
+    )}
+  </head>
+  <body>
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+    <script>
+      import '@/scripts/site.js';
+    </script>
+  </body>
+</html>

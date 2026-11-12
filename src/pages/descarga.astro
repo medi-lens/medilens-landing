@@ -1,0 +1,22 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import StoreBadges from '@/components/StoreBadges.astro';
+---
+<SiteLayout title="Descargar MEDI lens" seoTitle="MEDI lens — Escanea y conoce tus medicamentos">
+  <main class="download-page">
+    <h1>Descargar MEDI lens</h1>
+    <p><em>Detectando tu dispositivo...</em></p>
+    <p>Si no eres redirigido automáticamente, haz clic en el botón correspondiente:</p>
+    <StoreBadges placement="download" />
+  </main>
+</SiteLayout>
+<script>
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const iosUrl = 'https://apps.apple.com/es/app/medi-lens/id6749312020';
+  const androidUrl = 'https://play.google.com/store/apps/details?id=es.medilens.app';
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    window.location.replace(iosUrl);
+  } else if (/Android/.test(userAgent)) {
+    window.location.replace(androidUrl);
+  }
+</script>

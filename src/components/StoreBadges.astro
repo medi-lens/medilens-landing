@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import googlePlayBadge from '@/assets/images/medilens-google-play.png';
+import appleStoreBadge from '@/assets/images/medilens-apple-store-blk.svg';
+
+const { placement = 'hero' } = Astro.props;
+const suffix = placement === 'presentation' ? 'presentation_cta' : placement === 'download' ? 'descarga_cta' : 'heroActions_cta';
+const playUrl = 'https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=' + suffix;
+const appleUrl = 'https://apps.apple.com/es/app/medi-lens/id6749312020?utm_source=medilens_website&utm_medium=referral&utm_campaign=' + suffix;
+---
+<div class:list={['store-badges', 'store-badges-' + placement]}>
+  <a class="google-play" href={playUrl} aria-label="Descargar MEDI lens en Google Play">
+    <Image src={googlePlayBadge} alt="Disponible en Google Play" quality={82} format="webp" />
+  </a>
+  <a class="app-store" href={appleUrl} aria-label="Descargar MEDI lens en App Store">
+    <Image src={appleStoreBadge} alt="Disponible en App Store" />
+  </a>
+</div>

@@ -1,0 +1,39 @@
+---
+const { name, successTitle, successMessage } = Astro.props;
+---
+<form
+  class="contact-form"
+  name={name}
+  method="POST"
+  action="/"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-async-netlify-form
+  data-success-title={successTitle}
+  data-success-message={successMessage}
+>
+  <input type="hidden" name="form-name" value={name} />
+  <div class="visually-hidden" aria-hidden="true">
+    <label>Deja este campo vacío: <input name="bot-field" type="text" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  <div>
+    <label for={name + '-nombre'}>Nombre</label>
+    <input id={name + '-nombre'} type="text" name="nombre" autocomplete="name" required />
+  </div>
+  <div>
+    <label for={name + '-email'}>Email</label>
+    <input id={name + '-email'} type="email" name="email" autocomplete="email" required />
+  </div>
+  <div>
+    <label for={name + '-message'}>Mensaje</label>
+    <textarea id={name + '-message'} name="message" rows="4" required></textarea>
+  </div>
+  <button class="custom-button" type="submit">Enviar</button>
+</form>
+<dialog class="feedback-dialog" data-feedback-dialog aria-labelledby={name + '-dialog-title'}>
+  <div class="feedback-dialog-inner">
+    <h2 id={name + '-dialog-title'} data-dialog-title></h2>
+    <p data-dialog-message></p>
+    <button class="custom-button" type="button" data-dialog-close>Cerrar</button>
+  </div>
+</dialog>
