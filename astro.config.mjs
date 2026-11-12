@@ -15,7 +15,11 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },
-  adapter: netlify(),
+  adapter: netlify({
+    devFeatures: {
+      edgeFunctions: false,
+    },
+  }),
   session: false,
   vite: {
     resolve: {
