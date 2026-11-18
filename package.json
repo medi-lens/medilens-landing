@@ -29,11 +29,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@fontsource-variable/akshar": "5.3.1"
+    "@fontsource-variable/akshar": "5.3.1",
+    "@phosphor-icons/web": "2.1.2"
   },
   "devDependencies": {
-    "@astrojs/netlify": "8.2.13",
-    "@astrojs/sitemap": "3.7.4",
-    "astro": "7.4.11"
+    "@astrojs/netlify": "8.2.14",
+    "@astrojs/sitemap": "3.7.5",
+    "astro": "7.4.12"
   }
 }

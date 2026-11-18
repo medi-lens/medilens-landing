@@ -3,16 +3,14 @@ import { Image } from 'astro:assets';
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import StoreBadges from './StoreBadges.astro';
 import screenshot from '@/assets/images/medilens-screenshot.png';
-import diarioAlmeria from '@/assets/images/news/diario-almeria.jpg';
-import newsThumbnail from '@/assets/images/medilens-og.png';
 
 const features = [
-  { icon: '🔍', title: 'Escanea y Busca Medicamentos', details: 'Usa la cámara de tu móvil para escanear códigos de barra o usa el buscador y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.' },
-  { icon: '💊', title: 'Prospecto y Ficha Técnica Siempre a Mano', details: 'Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.' },
-  { icon: '🧰', title: 'Organiza tu Botiquín Digital', details: 'Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.' },
-  { icon: '🧠', title: 'Accesible por defecto', details: 'La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla <strong>TalkBack</strong> y <strong>VoiceOver</strong>.' },
-  { icon: '🔄', title: 'Tus Datos Sincronizados', details: '--PRÓXIMAMENTE--<br />Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.' },
-  { icon: '🩺', title: 'Perfil Personalizado de Salud', details: '--PRÓXIMAMENTE--<br />Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.' },
+  { icon: 'ph-barcode', title: 'Escanea y Busca Medicamentos', details: 'Usa la cámara de tu móvil para escanear códigos de barra o usa el buscador y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.' },
+  { icon: 'ph-pill', title: 'Prospecto y Ficha Técnica Siempre a Mano', details: 'Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.' },
+  { icon: 'ph-first-aid-kit', title: 'Organiza tu Botiquín Digital', details: 'Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.' },
+  { icon: 'ph-person-arms-spread', title: 'Accesible por defecto', details: 'La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla TalkBack y VoiceOver.' },
+  { icon: 'ph-arrows-clockwise', title: 'Tus Datos Sincronizados', details: 'Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.', upcoming: true },
+  { icon: 'ph-stethoscope', title: 'Perfil Personalizado de Salud', details: 'Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.', upcoming: true },
 ];
 const faq = [
   { question: '¿MEDI lens necesita conexión a Internet?', answer: 'Sí. Para recuperar datos oficiales y prospectos la app consulta fuentes externas; algunas funciones (búsquedas recientes, historial, favoritos, botiquín) pueden funcionar sin conexión.' },
@@ -35,23 +33,26 @@ const faq = [
   <main>
     <section class="home-hero">
       <div class="hero-copy">
-        <p class="hero-brand logo-colored">MEDI lens</p>
         <h1>Escanea y conoce tus medicamentos al instante</h1>
         <p class="hero-tagline">Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.</p>
         <StoreBadges />
+        <div class="hero-notes" aria-label="Características de MEDI lens">
+          <span class="hero-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Información oficial de la AEMPS</span>
+          <span class="hero-note"><i class="ph ph-device-mobile" aria-hidden="true"></i> Gratis · Para Android y iPhone</span>
+        </div>
       </div>
       <div class="hero-media">
-        <div class="hero-image-glow"></div>
-        <Image class="hero-image" src={screenshot} alt="MEDI lens Screenshot" width={520} quality={82} format="webp" loading="eager" fetchpriority="high" />
+        <Image class="hero-image" src={screenshot} alt="Pantalla de MEDI lens con el buscador, las búsquedas recientes y el acceso al botiquín" width={420} quality={88} format="webp" loading="eager" fetchpriority="high" />
       </div>
     </section>
 
     <section class="feature-section" aria-label="Funciones de MEDI lens">
       <div class="feature-grid">
         {features.map((feature) => (
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">{feature.icon}</div>
+          <article class:list={['feature-card', feature.upcoming && 'feature-card-upcoming']}>
+            <div class="feature-icon" aria-hidden="true"><i class:list={['ph', feature.icon]}></i></div>
             <h2>{feature.title}</h2>
+            {feature.upcoming && <p class="feature-status">Próximamente</p>}
             <p set:html={feature.details}></p>
           </article>
         ))}
@@ -82,19 +83,6 @@ const faq = [
       <section class="news-wrapper">
         <h2>Prensa y Noticias</h2>
         <p>Nuestra historia aún no ha sido contada. ¿Serás el primero en compartirla?</p>
-        <div class="news">
-          <article class="news-item">
-            <a href="https://medioexterno.example.com/articulo-sobre-medilens" target="_blank" rel="noopener noreferrer">
-              <Image src={diarioAlmeria} alt="Diario de Almería" class="news-logo" width={64} quality={78} format="webp" />
-              <Image src={newsThumbnail} alt="Accesibilidad: mejoras para TalkBack y VoiceOver" class="news-thumb" width={210} quality={80} format="webp" />
-              <div class="news-content">
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p>Vitae placeat voluptatum cum ipsam aliquam. Non quam suscipit eaque, est iure in.</p>
-                <time datetime="2025-06-30">30 jun 2025</time>
-              </div>
-            </a>
-          </article>
-        </div>
         <p>Contáctanos a: <a href="mailto:prensa@medilens.es"><strong>prensa@medilens.es</strong></a></p>
       </section>
 
