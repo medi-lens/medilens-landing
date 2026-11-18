@@ -2,18 +2,33 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import ContactForm from '@/components/ContactForm.astro';
 ---
-<SiteLayout title="Contacto" seoTitle="MEDI lens — Escanea y conoce tus medicamentos">
-  <main class="contact-page">
-    <h1>Contacto</h1>
-    <p>¿Quieres ponerte en contacto con el equipo de <span class="logo-colored">MEDI lens</span>?<br />Estamos aquí para atender tus dudas, sugerencias, propuestas de colaboración o cualquier consulta relacionada con la app.</p>
-    <p>Completa el siguiente formulario y te responderemos lo antes posible.<br />Tu mensaje será gestionado de forma confidencial y personalizada.</p>
-    <blockquote>ℹ️ <strong>¿Tienes una duda técnica o problema con la app?</strong><br />Para consultas técnicas o soporte, por favor utiliza la página de <a href="/soporte">Soporte</a>.</blockquote>
-    <h2>Formulario de contacto</h2>
-    <ContactForm
-      name="contact"
-      successTitle="¡Gracias por tu mensaje!"
-      successMessage="Tu consulta ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
-    />
-    <p>Si tienes problemas con el formulario, también puedes escribirnos a <a href="mailto:contacto@medilens.es">contacto@medilens.es</a>.</p>
+<SiteLayout title="Contacto" seoTitle="Contacto con MEDI lens" description="Contacta con el equipo de MEDI lens para consultas, sugerencias y colaboraciones.">
+  <main class="contact-page contact-page-wide">
+    <section class="contact-copy" aria-labelledby="contact-title">
+      <span class="page-eyebrow"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i> Estamos al otro lado</span>
+      <h1 id="contact-title">Hablemos.</h1>
+      <p class="contact-lead">¿Quieres ponerte en contacto con el equipo de <span class="logo-colored">MEDI lens</span>?</p>
+      <p>Estamos aquí para atender tus dudas, sugerencias, propuestas de colaboración o cualquier consulta relacionada con la app. Completa el formulario y te responderemos lo antes posible; tu mensaje será gestionado de forma confidencial y personalizada.</p>
+
+      <a class="contact-email-card" href="mailto:contacto@medilens.es">
+        <span class="contact-card-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span>
+        <span><small>También puedes escribirnos</small><strong>contacto@medilens.es</strong></span>
+        <i class="ph ph-arrow-up-right contact-email-arrow" aria-hidden="true"></i>
+      </a>
+
+      <aside class="contact-support-card">
+        <span class="contact-card-icon"><i class="ph ph-lifebuoy" aria-hidden="true"></i></span>
+        <div><h2>¿Necesitas ayuda con la app?</h2><p>Para dudas técnicas o problemas de funcionamiento, tenemos un canal específico de soporte.</p><a href="/soporte">Ir a soporte <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+      </aside>
+    </section>
+
+    <section class="contact-form-panel" aria-labelledby="contact-form-title">
+      <header><span class="page-eyebrow">Cuéntanos</span><h2 id="contact-form-title">Envíanos un mensaje</h2><p>Todos los campos son obligatorios.</p></header>
+      <ContactForm
+        name="contact"
+        successTitle="¡Gracias por tu mensaje!"
+        successMessage="Tu consulta ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
+      />
+    </section>
   </main>
 </SiteLayout>

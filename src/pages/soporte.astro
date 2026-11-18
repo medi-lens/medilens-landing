@@ -2,17 +2,33 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import ContactForm from '@/components/ContactForm.astro';
 ---
-<SiteLayout title="Soporte" seoTitle="MEDI lens — Escanea y conoce tus medicamentos">
-  <main class="contact-page">
-    <h1>Soporte</h1>
-    <p>¿Tienes dudas, sugerencias o necesitas ayuda con la app?<br />→ Estamos aquí para ayudarte.</p>
-    <p>Completa el siguiente formulario y te responderemos lo antes posible.<br />Tu consulta será gestionada de forma confidencial y personalizada.</p>
-    <h2>Formulario de soporte</h2>
-    <ContactForm
-      name="support"
-      successTitle="¡Gracias por tu mensaje!"
-      successMessage="Tu incidencia ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
-    />
-    <p>Si tienes problemas con el formulario, también puedes escribirnos a <a href="mailto:soporte@medilens.es">soporte@medilens.es</a>.</p>
+<SiteLayout title="Soporte" seoTitle="Soporte de MEDI lens" description="¿Tienes dudas o necesitas ayuda con MEDI lens? Contacta con nuestro equipo de soporte.">
+  <main class="contact-page contact-page-wide support-page">
+    <section class="contact-copy" aria-labelledby="support-title">
+      <span class="page-eyebrow"><i class="ph ph-lifebuoy" aria-hidden="true"></i> Estamos aquí para ayudarte</span>
+      <h1 id="support-title">¿En qué podemos ayudarte?</h1>
+      <p class="contact-lead">¿Tienes dudas, sugerencias o necesitas ayuda con la app?</p>
+      <p>Cuéntanos qué ocurre y te responderemos lo antes posible. Tu consulta será gestionada de forma confidencial y personalizada.</p>
+
+      <a class="contact-email-card" href="mailto:soporte@medilens.es">
+        <span class="contact-card-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span>
+        <span><small>Si lo prefieres, escríbenos</small><strong>soporte@medilens.es</strong></span>
+        <i class="ph ph-arrow-up-right contact-email-arrow" aria-hidden="true"></i>
+      </a>
+
+      <aside class="contact-support-card">
+        <span class="contact-card-icon"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i></span>
+        <div><h2>¿Es una consulta general?</h2><p>Para propuestas, colaboraciones u otros temas, escríbenos desde la página de contacto.</p><a href="/contacto">Ir a contacto <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+      </aside>
+    </section>
+
+    <section class="contact-form-panel" aria-labelledby="support-form-title">
+      <header><span class="page-eyebrow">Soporte de MEDI lens</span><h2 id="support-form-title">Envíanos tu consulta</h2><p>Todos los campos son obligatorios.</p></header>
+      <ContactForm
+        name="support"
+        successTitle="¡Gracias por tu mensaje!"
+        successMessage="Tu incidencia ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
+      />
+    </section>
   </main>
 </SiteLayout>

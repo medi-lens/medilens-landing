@@ -1,45 +1,87 @@
 ---
 import { Image } from 'astro:assets';
 import SiteLayout from '@/layouts/SiteLayout.astro';
+import IconTooltip from '@/components/IconTooltip.astro';
 import paul from '@/assets/images/team/paul.jpg';
 import jose from '@/assets/images/team/jose.jpg';
 import felipe from '@/assets/images/team/felipe.png';
 
 const members = [
-  { name: 'Paul Guillamón Thiéry', title: 'Producto, Gestión de Proyecto, Diseño UX/UI y Control de Calidad (QA)', avatar: paul, links: [
-    { label: 'GitHub', text: 'GH', href: 'https://github.com/Qu4k3' },
-    { label: 'Sitio web', text: '↗', href: 'https://qu4k3.com' },
-    { label: 'LinkedIn', text: 'in', href: 'https://www.linkedin.com/in/paulguillamon' },
-  ] },
-  { name: 'Jose Sánchez Fuentes', title: 'Desarrollo de la aplicación móvil para Android e iOS', avatar: jose, links: [
-    { label: 'GitHub', text: 'GH', href: 'https://github.com/crimson3d' },
-    { label: 'LinkedIn', text: 'in', href: 'https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/' },
-  ] },
-  { name: 'Felipe Bernal Martinez', title: 'Backend, Infraestructura, Seguridad y DevOps', avatar: felipe, links: [
-    { label: 'LinkedIn', text: 'in', href: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/' },
-  ] },
+  {
+    name: 'Paul Guillamón Thiéry',
+    focus: 'Producto y experiencia',
+    title: 'Producto, gestión de proyecto, diseño UX/UI y control de calidad (QA)',
+    avatar: paul,
+    links: [
+      { label: 'GitHub', icon: 'ph-github-logo', href: 'https://github.com/Qu4k3' },
+      { label: 'Sitio web', icon: 'ph-globe', href: 'https://qu4k3.com' },
+      { label: 'LinkedIn', icon: 'ph-linkedin-logo', href: 'https://www.linkedin.com/in/paulguillamon' },
+    ],
+  },
+  {
+    name: 'Jose Sánchez Fuentes',
+    focus: 'Aplicación móvil',
+    title: 'Desarrollo de la aplicación móvil para Android e iOS',
+    avatar: jose,
+    links: [
+      { label: 'GitHub', icon: 'ph-github-logo', href: 'https://github.com/crimson3d' },
+      { label: 'LinkedIn', icon: 'ph-linkedin-logo', href: 'https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/' },
+    ],
+  },
+  {
+    name: 'Felipe Bernal Martínez',
+    focus: 'Plataforma y operaciones',
+    title: 'Backend, infraestructura, seguridad y DevOps',
+    avatar: felipe,
+    links: [
+      { label: 'LinkedIn', icon: 'ph-linkedin-logo', href: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/' },
+    ],
+  },
+];
+
+const principles = [
+  { icon: 'ph-shield-check', title: 'Información fiable', text: 'Acercamos la información oficial de los medicamentos de forma clara y transparente.' },
+  { icon: 'ph-hand-heart', title: 'Diseñada para las personas', text: 'Priorizamos la facilidad de uso y la accesibilidad en la experiencia móvil.' },
+  { icon: 'ph-leaf', title: 'Uso responsable', text: 'Trabajamos para que cada persona pueda informarse mejor sobre sus medicamentos.' },
 ];
 ---
-<SiteLayout title="Quienes Somos" seoTitle="Quienes Somos" description="MEDI lens ha sido desarrollada por dos desarrolladores de Almería, conócenos un poco más :)">
-  <main class="team-page">
-    <header class="team-intro">
-      <h1>El Equipo</h1>
-      <p>Detrás de <span class="logo-colored">MEDI lens</span> hay un equipo pequeño y multidisciplinar que se formó alrededor de una idea simple: ofrecer una herramienta de utilidad pública, sobre medicamentos disponibles en España.</p>
-      <p>Buscamos acercar la información sanitaria a cualquier persona mediante una experiencia nativa e intuitiva, priorizando la fiabilidad de la información, la transparencia y la facilidad de uso.</p>
+<SiteLayout title="El equipo" seoTitle="El equipo de MEDI lens" description="Conoce a las personas detrás de MEDI lens y el propósito que guía el proyecto.">
+  <main class="team-page team-page-editorial">
+    <header class="team-intro team-intro-editorial">
+      <span class="page-eyebrow">Personas detrás de la app</span>
+      <h1>Una idea compartida,<br /><span class="logo-colored">MEDI lens</span></h1>
+      <p>Somos un equipo pequeño y multidisciplinar que se formó alrededor de una idea simple: ofrecer una herramienta de utilidad pública sobre los medicamentos disponibles en España.</p>
+      <p>Reunimos distintas especialidades para acercar la información sanitaria a cualquier persona mediante una experiencia nativa e intuitiva.</p>
     </header>
-    <div class="team-grid">
-      {members.map((member) => (
-        <article class="team-card">
-          <Image src={member.avatar} alt={'Fotografía de ' + member.name} width={176} height={176} quality={82} format="webp" />
-          <h2>{member.name}</h2>
-          <p>{member.title}</p>
-          <div class="member-links" aria-label={'Enlaces de ' + member.name}>
-            {member.links.map((link) => (
-              <a href={link.href} aria-label={link.label + ': ' + member.name} title={link.label} target="_blank" rel="noopener noreferrer">{link.text}</a>
-            ))}
-          </div>
-        </article>
-      ))}
-    </div>
+
+    <section class="team-members" aria-labelledby="team-members-title">
+      <div class="team-section-heading"><span class="page-eyebrow">El equipo</span><h2 id="team-members-title">Tres especialidades, un mismo propósito</h2></div>
+      <div class="team-grid team-grid-editorial">
+        {members.map((member) => (
+          <article class="team-card team-card-editorial">
+            <div class="team-photo-wrap"><Image src={member.avatar} alt={'Fotografía de ' + member.name} width={420} height={420} quality={82} format="webp" /></div>
+            <div class="team-card-body">
+              <span class="team-focus">{member.focus}</span>
+              <h3>{member.name}</h3>
+              <p>{member.title}</p>
+              <div class="member-links" aria-label={'Enlaces de ' + member.name}>
+                {member.links.map((link) => (
+                  <IconTooltip label={link.label}><a href={link.href} aria-label={link.label + ': ' + member.name} target="_blank" rel="noopener noreferrer"><i class:list={['ph', link.icon]} aria-hidden="true"></i></a></IconTooltip>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="team-principles" aria-labelledby="team-principles-title">
+      <header><span class="page-eyebrow">Lo que nos guía</span><h2 id="team-principles-title">Tecnología con sentido</h2><p>El proyecto pone en el centro la fiabilidad de la información, la transparencia y la facilidad de uso.</p></header>
+      <div class="team-principles-grid">
+        {principles.map((principle) => <article><span class="icon-container"><i class:list={['ph', principle.icon]} aria-hidden="true"></i></span><h3>{principle.title}</h3><p>{principle.text}</p></article>)}
+      </div>
+    </section>
+
+    <aside class="team-contact-cta"><div><span class="page-eyebrow">¿Quieres hablar con nosotros?</span><h2>Estamos aquí para escucharte.</h2></div><a class="custom-button" href="/contacto">Contactar con el equipo <i class="ph ph-arrow-right" aria-hidden="true"></i></a></aside>
   </main>
 </SiteLayout>
