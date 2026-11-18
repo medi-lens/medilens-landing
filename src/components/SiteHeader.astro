@@ -1,12 +1,15 @@
 ---
 import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
+import IconTooltip from '@/components/IconTooltip.astro';
 
 const currentPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '') || '/';
 const navItems = [
-  { href: '/equipo', text: '🙋‍♂️ Equipo' },
-  { href: '/presentamos-medilens', text: '📣 Presentación' },
-  { href: '/contacto', text: '✉️ Contacto' },
+  { href: '/equipo', text: 'Equipo' },
+  { href: '/presentamos-medilens', text: 'Presentación' },
+  { href: '/contacto', text: 'Contacto' },
 ];
+const playUrl = 'https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=header_nav_cta';
+const appleUrl = 'https://apps.apple.com/es/app/medi-lens/id6749312020?utm_source=medilens_website&utm_medium=referral&utm_campaign=header_nav_cta';
 ---
 <header class="site-header">
   <div class="header-inner">
@@ -20,31 +23,43 @@ const navItems = [
     <div class="header-navigation" id="main-navigation" data-navigation>
       <nav class="main-nav" aria-label="Navegación principal">
         <a class="nav-link" href="/docs/NOTA_PRENSA_MEDILENS_N.pdf" target="_blank" rel="noopener">
-          📰 NOTA PRENSA<span class="visually-hidden"> (se abre en una pestaña nueva)</span>
+          Nota de prensa <i class="ph ph-arrow-square-out external-link-icon" aria-hidden="true"></i><span class="visually-hidden"> (se abre en una pestaña nueva)</span>
         </a>
         {navItems.map((item) => (
           <a class="nav-link" href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.text}</a>
         ))}
-        <details class="version-menu">
-          <summary>v1.1.0</summary>
-          <div class="version-menu-panel">
-            <a href="/changelog">🚀 Registro de cambios</a>
-            <a href="/roadmap">🗺️ Hoja de ruta</a>
-          </div>
-        </details>
       </nav>
+      <div class="store-links">
+        <IconTooltip label="Google Play">
+          <a href={playUrl} aria-label="Descargar MEDI lens en Google Play"><i class="ph ph-google-play-logo" aria-hidden="true"></i></a>
+        </IconTooltip>
+        <IconTooltip label="App Store">
+          <a href={appleUrl} aria-label="Descargar MEDI lens en App Store"><i class="ph ph-app-store-logo" aria-hidden="true"></i></a>
+        </IconTooltip>
+      </div>
+      <details class="version-menu">
+        <summary>v1.1.0</summary>
+        <div class="version-menu-panel">
+          <a href="/changelog">Registro de cambios</a>
+          <a href="/roadmap">Hoja de ruta</a>
+        </div>
+      </details>
       <div class="header-actions">
         <div class="social-links" aria-label="Redes sociales">
-          <a href="https://www.facebook.com/medilens.es/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
-          <a href="https://www.instagram.com/medilens.es/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">◎</a>
-          <a href="https://www.threads.com/@medilens.es" aria-label="Threads" target="_blank" rel="noopener noreferrer">@</a>
-          <a href="https://x.com/medilens_es" aria-label="X" target="_blank" rel="noopener noreferrer">𝕏</a>
-          <a href="https://bsky.app/profile/medilens.es" aria-label="Bluesky" target="_blank" rel="noopener noreferrer">b</a>
-          <a href="https://www.linkedin.com/showcase/medi-lens" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <IconTooltip label="Facebook"><a href="https://www.facebook.com/medilens.es/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a></IconTooltip>
+          <IconTooltip label="Instagram"><a href="https://www.instagram.com/medilens.es/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a></IconTooltip>
+          <IconTooltip label="Threads"><a href="https://www.threads.com/@medilens.es" aria-label="Threads" target="_blank" rel="noopener noreferrer"><i class="ph ph-threads-logo" aria-hidden="true"></i></a></IconTooltip>
+          <IconTooltip label="X"><a href="https://x.com/medilens_es" aria-label="X" target="_blank" rel="noopener noreferrer"><i class="ph ph-x-logo" aria-hidden="true"></i></a></IconTooltip>
+          <IconTooltip label="Bluesky"><a href="https://bsky.app/profile/medilens.es" aria-label="Bluesky" target="_blank" rel="noopener noreferrer"><i class="ph ph-butterfly" aria-hidden="true"></i></a></IconTooltip>
+          <IconTooltip label="LinkedIn"><a href="https://www.linkedin.com/showcase/medi-lens" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a></IconTooltip>
         </div>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro">
-          <span aria-hidden="true" data-theme-icon>🌙</span>
-        </button>
+        <div class="theme-control">
+          <IconTooltip label="Cambiar a modo oscuro">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo oscuro">
+              <i class="ph ph-moon" aria-hidden="true" data-theme-icon></i>
+            </button>
+          </IconTooltip>
+        </div>
       </div>
     </div>
   </div>
