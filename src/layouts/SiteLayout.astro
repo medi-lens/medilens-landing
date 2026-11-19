@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '@/components/SiteHeader.astro';
 import SiteFooter from '@/components/SiteFooter.astro';
+import PrivacyConsent from '@/components/PrivacyConsent.astro';
 import { getImage } from 'astro:assets';
 import faviconSvg from '@/assets/icons/favicons/favicon.svg?no-inline';
 import faviconPng from '@/assets/icons/favicons/favicon-32x32.png?no-inline';
@@ -24,6 +25,7 @@ const {
   image = 'https://medilens.es/assets/images/medilens-og.png',
   imageAlt = 'MEDI lens — Escanea y conoce tus medicamentos',
   metaType = 'website',
+  hasMailjetNewsletter = false,
 } = Astro.props;
 const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, Astro.site).href;
@@ -127,6 +129,7 @@ const isProduction = import.meta.env.PROD;
     <meta name="twitter:image:alt" content={imageAlt} />
     <title>{title} · MEDI lens</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    {hasMailjetNewsletter && <script is:inline src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>}
     <script is:inline>
       (() => {
         try {
@@ -138,14 +141,11 @@ const isProduction = import.meta.env.PROD;
         }
       })();
     </script>
-    <script src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
-    {isProduction && (
-      <script defer src={umamiScriptUrl} data-website-id="f708bd69-3f66-47c0-9d0f-100a118e2b14" data-host-url="https://umami.qu4k3.com" />
-    )}
   </head>
   <body>
     <SiteHeader />
     <slot />
+    <PrivacyConsent analyticsSrc={isProduction ? umamiScriptUrl : ''} />
     <SiteFooter />
     <script>
       import '@/scripts/site.js';

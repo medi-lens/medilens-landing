@@ -30,6 +30,11 @@ const { name, successTitle, successMessage } = Astro.props;
     <textarea id={name + '-message'} name="message" rows="4" required></textarea>
   </div>
   <button class="custom-button" type="submit">Enviar</button>
+  <p class="contact-form-privacy">
+    Responsable: Paul Guillamón, titular de MEDI lens (<a href="/aviso-legal">Aviso Legal</a>). Usaremos tu nombre,
+    email y mensaje para responder a tu consulta. Netlify gestiona y almacena el envío. Consulta el
+    <a href="/politica-privacidad">tratamiento de tus datos</a>.
+  </p>
 </form>
 <dialog class="feedback-dialog" data-feedback-dialog aria-labelledby={name + '-dialog-title'}>
   <div class="feedback-dialog-inner">

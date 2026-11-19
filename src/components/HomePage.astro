@@ -29,11 +29,15 @@ const faq = [
   title="MEDI lens — Escanea y conoce tus medicamentos"
   seoTitle="MEDI lens — Escanea y conoce tus medicamentos"
   description="MEDI lens te permite escanear medicamentos, ver prospectos, composición, receta y gestionar un botiquín digital con alertas de caducidad."
+  hasMailjetNewsletter
 >
   <main>
     <section class="home-hero">
       <div class="hero-copy">
-        <h1>Escanea y conoce tus medicamentos al instante</h1>
+        <div class="hero-title-group">
+          <p class="hero-brand logo-colored">MEDI lens</p>
+          <h1>Escanea y conoce tus medicamentos al instante</h1>
+        </div>
         <p class="hero-tagline">Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.</p>
         <StoreBadges />
         <div class="hero-notes" aria-label="Características de MEDI lens">
@@ -42,6 +46,7 @@ const faq = [
         </div>
       </div>
       <div class="hero-media">
+        <div class="hero-image-glow" aria-hidden="true"></div>
         <Image class="hero-image" src={screenshot} alt="Pantalla de MEDI lens con el buscador, las búsquedas recientes y el acceso al botiquín" width={420} quality={88} format="webp" loading="eager" fetchpriority="high" />
       </div>
     </section>
@@ -72,23 +77,27 @@ const faq = [
         </div>
       </section>
 
-      <section class="sponsorship-wrapper">
-        <h2>Patrocinadores</h2>
+      <section class="sponsorship-wrapper" aria-labelledby="sponsorship-heading">
+        <h2 id="sponsorship-heading">Patrocinadores</h2>
         <div class="sponsorship">
           <p>Todavía no tenemos patrocinadores. Esta es tu oportunidad de marcar la diferencia desde el inicio.</p>
           <a class="custom-button" href="/patrocina-medilens">Patrocina <span>MEDI lens</span></a>
         </div>
       </section>
 
-      <section class="news-wrapper">
-        <h2>Prensa y Noticias</h2>
+      <section class="news-wrapper" aria-labelledby="news-heading">
+        <h2 id="news-heading">Prensa y Noticias</h2>
         <p>Nuestra historia aún no ha sido contada. ¿Serás el primero en compartirla?</p>
-        <p>Contáctanos a: <a href="mailto:prensa@medilens.es"><strong>prensa@medilens.es</strong></a></p>
+        <p class="news-contact">
+          <span>Contacto de prensa</span>
+          <a href="mailto:prensa@medilens.es"><i class="ph ph-envelope-simple" aria-hidden="true"></i> prensa@medilens.es</a>
+        </p>
       </section>
 
-      <section class="mailjet-form">
-        <h2>Newsletter</h2>
+      <section class="mailjet-form" aria-labelledby="newsletter-heading">
+        <h2 id="newsletter-heading">Newsletter</h2>
         <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s8h2u.mjt.lu/wgt/s8h2u/0s49/form?c=13b8b50e" width="100%" style="height: 0" title="Suscripción al boletín de MEDI lens"></iframe>
+        <p>El formulario de suscripción lo proporciona Mailjet. Al enviar tu email recibirás un mensaje para confirmar la suscripción. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a>.</p>
       </section>
     </section>
   </main>

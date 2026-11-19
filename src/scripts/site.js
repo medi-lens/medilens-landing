@@ -3,6 +3,90 @@ const themeButton = document.querySelector('[data-theme-toggle]');
 const menuButton = document.querySelector('[data-menu-toggle]');
 const navigation = document.querySelector('[data-navigation]');
 const versionMenu = document.querySelector('.version-menu');
+const privacyConsent = document.querySelector('[data-privacy-consent]');
+const privacySettingsButton = document.querySelector('[data-privacy-settings]');
+
+function initializePrivacyConsent() {
+  if (!(privacyConsent instanceof HTMLElement)) return;
+
+  const consentKey = 'medilens-analytics-consent-v1';
+  const analyticsSrc = privacyConsent.dataset.analyticsSrc;
+  const rejectButton = privacyConsent.querySelector('[data-privacy-reject]');
+  const acceptButton = privacyConsent.querySelector('[data-privacy-accept]');
+  const readConsent = () => {
+    try {
+      return localStorage.getItem(consentKey);
+    } catch (error) {
+      console.warn('No se pudo leer la preferencia de analítica.', error);
+      return null;
+    }
+  };
+  const storeConsent = (choice) => {
+    try {
+      localStorage.setItem(consentKey, choice);
+      return true;
+    } catch (error) {
+      console.warn('No se pudo guardar la preferencia de analítica.', error);
+      return false;
+    }
+  };
+  const loadAnalytics = () => {
+    if (!analyticsSrc || document.querySelector('[data-medilens-umami]')) return;
+
+    const script = document.createElement('script');
+    script.src = analyticsSrc;
+    script.async = true;
+    script.dataset.websiteId = 'f708bd69-3f66-47c0-9d0f-100a118e2b14';
+    script.dataset.hostUrl = 'https://umami.qu4k3.com';
+    script.dataset.medilensUmami = '';
+    document.head.append(script);
+  };
+  const setConsent = (choice) => {
+    const stored = storeConsent(choice);
+    try {
+      if (choice === 'accepted') {
+        localStorage.removeItem('umami.disabled');
+      } else {
+        localStorage.setItem('umami.disabled', '1');
+      }
+    } catch (error) {
+      console.warn('No se pudo actualizar la preferencia local de Umami.', error);
+    }
+
+    privacyConsent.hidden = true;
+    privacySettingsButton?.setAttribute('aria-expanded', 'false');
+    if (choice === 'accepted') {
+      loadAnalytics();
+    } else if (document.querySelector('[data-medilens-umami]') || !stored) {
+      window.location.reload();
+    }
+  };
+
+  const consent = readConsent();
+  if (consent === 'accepted') {
+    try {
+      localStorage.removeItem('umami.disabled');
+    } catch (error) {
+      console.warn('No se pudo actualizar la preferencia local de Umami.', error);
+    }
+    loadAnalytics();
+  } else if (consent === 'rejected') {
+    privacyConsent.hidden = true;
+  } else {
+    privacyConsent.hidden = false;
+    privacySettingsButton?.setAttribute('aria-expanded', 'true');
+  }
+
+  rejectButton?.addEventListener('click', () => setConsent('rejected'));
+  acceptButton?.addEventListener('click', () => setConsent('accepted'));
+  privacySettingsButton?.addEventListener('click', () => {
+    privacyConsent.hidden = false;
+    privacySettingsButton.setAttribute('aria-expanded', 'true');
+    rejectButton?.focus();
+  });
+}
+
+initializePrivacyConsent();
 
 function positionIconTooltip(wrapper) {
   const trigger = wrapper.querySelector('a, button');

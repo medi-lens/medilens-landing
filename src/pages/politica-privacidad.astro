@@ -5,25 +5,44 @@ import SiteLayout from '@/layouts/SiteLayout.astro';
   <main class="document-main">
     <article class="prose">
 <h1 id="política-de-privacidad">Política de Privacidad</h1>
-<p>La aplicación <span class="logo-colored">MEDI lens</span> tiene como objetivo ofrecer a los usuarios información oficial sobre medicamentos mediante el uso de la API pública de aempsCIMA. La App permite escanear el código de medicamentos para facilitar su consulta, así como gestionar un listado local de productos guardados por el usuario con recordatorios de caducidad.</p>
-<h2 id="recogida-de-datos">Recogida de datos</h2>
-<p><strong>No recopilamos, almacenamos ni compartimos ningún dato personal del usuario.</strong></p>
-<p>Toda la información que el usuario introduce (como historial de búsquedas recientes, medicamentos guardados, fechas de caducidad, etc.) se gestiona <strong>de forma local</strong> en el dispositivo y <strong>nunca se transmite a servidores externos</strong>.</p>
-<h2 id="permisos-del-dispositivo">Permisos del dispositivo</h2>
+<p>Esta política informa sobre el tratamiento de datos personales en el sitio web y la aplicación <span class="logo-colored">MEDI lens</span>. El responsable es Paul Guillamón, titular de MEDI lens; sus datos de identificación se indican en el <a href="/aviso-legal">Aviso Legal</a>. Para consultas sobre privacidad o para ejercer tus derechos, escribe a <a href="mailto:contacto@medilens.es">contacto@medilens.es</a>.</p>
+
+<h2 id="datos-tratados-finalidad-base-juridica">Datos tratados, finalidad y base jurídica</h2>
+<h3 id="app">Aplicación móvil</h3>
+<p>El botiquín, el historial y los recordatorios se guardan localmente en el dispositivo; MEDI lens no los sincroniza ni los copia en la nube. La app no usa cuentas, analítica ni informes de errores. Al buscar o escanear un medicamento, realiza una petición GET a CIMA/AEMPS para obtener la información pública correspondiente. No se envían el nombre del usuario ni su lista local, pero AEMPS recibe los datos técnicos necesarios para la conexión, como la dirección IP, y el identificador del medicamento consultado. La cámara se usa para leer el código y las notificaciones son locales.</p>
+<p>Los medicamentos guardados pueden revelar información relacionada con la salud. Esa información permanece en el dispositivo y no se transmite a servidores de MEDI lens. El usuario puede borrar los datos desde la aplicación o eliminar sus datos locales desde el dispositivo.</p>
+
+<h3 id="formularios-de-contacto-y-soporte">Formularios de contacto y soporte</h3>
+<p>Si envías una consulta, tratamos tu nombre, email y mensaje para responderte y gestionar la solicitud. La base jurídica es atender tu petición y nuestro interés legítimo en gestionar las comunicaciones. Netlify procesa y almacena el envío hasta que el titular lo elimina manualmente; además, el mensaje se reenvía al correo de contacto. Las copias en el buzón se conservan mientras sean necesarias para gestionar la consulta y las obligaciones derivadas.</p>
+
+<h3 id="datos-tecnicos-de-navegacion">Datos técnicos de navegación</h3>
+<p>Al visitar el sitio, Netlify puede tratar datos técnicos de la conexión, como la dirección IP, la fecha y hora de acceso, la URL solicitada y datos del navegador, para servir y proteger el sitio. La conservación de estos registros depende de la configuración y las condiciones del proveedor.</p>
+
+<h3 id="boletin">Boletín</h3>
+<p>Si te suscribes, Mailjet/Sinch trata tu dirección de email para enviarte el boletín. La suscripción se confirma mediante doble opt-in y se conserva mientras sigas suscrito; puedes darte de baja desde el enlace incluido en cada mensaje. El seguimiento de aperturas y clics está desactivado.</p>
+
+<h3 id="analitica">Analítica del sitio web</h3>
+<p>La analítica de Umami solo se activa si la aceptas en el aviso de preferencias. Registra datos de navegación y rendimiento, como páginas y URL visitadas, referente, idioma, dimensiones de pantalla y métricas de rendimiento. La conexión también transmite la dirección IP al servidor para poder atender la solicitud. Umami está alojado por el titular en España; los eventos analíticos se conservan durante un máximo de un año. La base jurídica es tu consentimiento, que puedes retirar o cambiar en cualquier momento mediante «Preferencias de privacidad» en el pie de página.</p>
+
+<h2 id="almacenamiento-local-y-cookies">Almacenamiento local y cookies</h2>
+<p>El sitio usa el almacenamiento local del navegador para recordar el tema visual elegido y la decisión sobre analítica. Umami no utiliza cookies, pero consulta el almacenamiento local para comprobar su opción de desactivación; por eso no se carga antes de que aceptes la analítica. Puedes borrar estos datos desde la configuración del navegador. El formulario del boletín es proporcionado por Mailjet y solo se carga en la página de inicio.</p>
+
+<h2 id="destinatarios-y-transferencias">Destinatarios y transferencias</h2>
+<p>Para prestar el servicio se utilizan Netlify (alojamiento y formularios), Mailjet/Sinch (boletín), el servidor de Umami gestionado por el titular en España y CIMA/AEMPS cuando consultas medicamentos. Netlify y Mailjet/Sinch pueden utilizar infraestructura y subencargados en distintos países. Sus documentos contemplan, cuando corresponda, garantías de transferencia previstas por el RGPD, como decisiones de adecuación o cláusulas contractuales tipo. La ubicación concreta depende de la configuración de las cuentas. Puedes consultar la <a href="https://www.netlify.com/privacy/" rel="noopener noreferrer" target="_blank">información de privacidad de Netlify</a>, el <a href="https://www.mailjet.com/legal/privacy-policy/" rel="noopener noreferrer" target="_blank">aviso de privacidad de Mailjet/Sinch</a> y el <a href="https://www.mailjet.com/legal/dpa/" rel="noopener noreferrer" target="_blank">acuerdo de tratamiento de Mailjet/Sinch</a>.</p>
+
+<h2 id="conservacion">Conservación</h2>
 <ul>
-<li>
-<p><strong>Cámara</strong>: Se utiliza únicamente para escanear códigos de barras de medicamentos y facilitar su identificación. No se almacenan ni transmiten imágenes o datos de la cámara.</p>
-</li>
-<li>
-<p><strong>Notificaciones</strong>: Se utilizan para enviar recordatorios locales sobre la próxima caducidad de medicamentos guardados. No implican el uso de servidores externos ni la recopilación de información personal.</p>
-</li>
+  <li>Consultas: en Netlify hasta que el titular las elimina manualmente; los emails se conservan mientras sean necesarios para gestionar y documentar la consulta.</li>
+  <li>Boletín: hasta que solicites la baja.</li>
+  <li>Analítica: hasta un año.</li>
+  <li>Datos de la aplicación: en el dispositivo hasta que los elimines.</li>
 </ul>
-<h2 id="uso-de-datos-de-terceros">Uso de datos de terceros</h2>
-<p>La información sobre medicamentos es obtenida directamente de la <strong>API pública de CIMA</strong> (Agencia Española de Medicamentos y Productos Sanitarios), garantizando que el contenido es oficial y actualizado.</p>
-<h2 id="cambios-en-esta-política">Cambios en esta política</h2>
-<p>Nos reservamos el derecho de actualizar esta política de privacidad si se introducen nuevas funcionalidades o cambios legales. Se notificará adecuadamente dentro de la App o en esta página.</p>
-<h2 id="contacto">Contacto</h2>
-<p>Si tienes alguna duda sobre esta política de privacidad, puedes escribirnos a: <a href="mailto:contacto@medilens.es">contacto@medilens.es</a></p>
+
+<h2 id="derechos">Tus derechos</h2>
+<p>Puedes solicitar acceso, rectificación, supresión, limitación del tratamiento, oposición y portabilidad, así como retirar el consentimiento cuando el tratamiento se base en él. Escribe a <a href="mailto:contacto@medilens.es">contacto@medilens.es</a>. También puedes reclamar ante la <a href="https://www.aepd.es/" rel="noopener noreferrer" target="_blank">Agencia Española de Protección de Datos</a>. Las solicitudes se atenderán dentro de los plazos previstos por la normativa.</p>
+
+<h2 id="actualizaciones">Actualizaciones</h2>
+<p>Esta política podrá actualizarse si cambian las funcionalidades o los tratamientos de datos. La versión vigente estará publicada en esta página.</p>
 
     </article>
   </main>
