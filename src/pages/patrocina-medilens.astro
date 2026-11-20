@@ -1,103 +1,238 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
----
-<SiteLayout title="Patrocina" seoTitle="Patrocina">
-  <main class="document-main">
-    <article class="prose">
-<h1 id="patrocina-medi-lens">Patrocina <span class="logo-colored">MEDI lens</span></h1>
-<blockquote>
-<p>Buscamos patrocinadores comprometidos con el acceso responsable a la información médica.</p>
-</blockquote>
-<h2 id="-qué-es-medi-lens">💊 ¿Qué es MEDI lens?</h2>
-<p><strong><span class="logo-colored">MEDI lens</span></strong> es una app gratuita que permite escanear medicamentos con la cámara del móvil y acceder al instante a su información oficial (prospecto, ficha técnica, advertencias como interferencia con la conducción, disponibilidad, etc.), gracias a la base de datos de la <strong>AEMPS</strong>.</p>
-<p>Además, la app permite:</p>
-<ul>
-<li>Gestionar un historial de medicamentos.</li>
-<li>Crear un botiquín digital con alertas de caducidad.</li>
-<li>Acceder de forma rápida, nativa y accesible a la información de los medicamentos.</li>
-</ul>
-<p>Encontrarás más detalles en → <a href="/presentamos-medilens">/presentamos-medilens</a></p>
-<h2 id="-público-objetivo">🎯 Público Objetivo</h2>
-<ul>
-<li>Público general que busca información médica clara y verificada.</li>
-<li>Familias y personas mayores.</li>
-<li>Profesionales sanitarios y farmacéuticos.</li>
-</ul>
-<h2 id="-estado-del-proyecto">📈 Estado del Proyecto</h2>
-<ul>
-<li>Activamente en desarrollo.</li>
-<li>Integración directa con datos oficiales de la Agencia Española de Medicamentos (AEMPS).</li>
-<li>Roadmap público disponible para seguir el avance del desarrollo y futuras funcionalidades → <a href="/roadmap">/roadmap</a></li>
-</ul>
-<h2 id="-qué-ofrecemos-al-patrocinador">🎁 ¿Qué ofrecemos al patrocinador?</h2>
-<blockquote>
-<p>Visibilidad y asociación con una solución innovadora en salud digital.</p>
-</blockquote>
-<h3 id="opciones-de-presencia">Opciones de presencia:</h3>
-<ul>
-<li>Mención como patrocinador principal o colaborador (Web).</li>
-<li>Mención en la app (sección “Acerca de”).</li>
-<li>Inclusión en sitio web, redes sociales y comunicados de prensa.</li>
-<li>Participación en campañas educativas o de promoción conjunta.</li>
-<li>Acceso a métricas de uso generales (respetando la privacidad del usuario).</li>
-</ul>
-<h2 id="️-modalidades-de-patrocinio">🏷️ Modalidades de patrocinio</h2>
-<table>
-<thead>
-<tr>
-<th>Beneficio / Nivel</th>
-<th>🥇 Platino (+5.000 €/año)</th>
-<th>🥈 Oro (2.000–5.000 €/año)</th>
-<th>🥉 Colaborador (&lt;2.000 €/año)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Presencia en web y campañas</strong></td>
-<td>Web, Newsletter, prensa</td>
-<td>Web, Newsletter</td>
-<td>Solo web</td>
-</tr>
-<tr>
-<td><strong>Acceso a métricas de uso</strong></td>
-<td>Completo</td>
-<td>Parcial</td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Mención en campañas</strong></td>
-<td>Sí</td>
-<td>Opcional</td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Colaboraciones en campañas educativas o de prevención</strong></td>
-<td>Sí</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Prioridad en futuras colaboraciones</strong></td>
-<td>Alta</td>
-<td>Media</td>
-<td>Baja</td>
-</tr>
-</tbody>
-</table>
-<!-- | **Visibilidad en la app**          | Alta (Inicio + menú)      | Media (menú + créditos)    | Básica (solo créditos)    | -->
-<h2 id="-por-qué-asociarse-con-medi-lens">🤝 ¿Por qué asociarse con <span class="logo-colored">MEDI lens</span>?</h2>
-<ul>
-<li>Promoción de la <strong>salud responsable</strong> y la <strong>alfabetización sanitaria</strong>.</li>
-<li>Imagen de marca vinculada a la <strong>innovación social</strong> y la tecnología ética.</li>
-<li>Participación activa en la mejora del sistema de acceso a medicamentos.</li>
-</ul>
-<h2 id="-contacto">📬 Contacto</h2>
-<p>¿Te interesa colaborar o patrocinar este proyecto? <strong>Contáctanos en:</strong> <a href="mailto:contacto@medilens.es">contacto@medilens.es</a></p>
-<p> </p>
-<blockquote>
-<p><span class="logo-colored">MEDI lens</span> es un proyecto independiente, comprometido con el acceso libre, verificado y fácil a la información médica. Utiliza datos oficiales de la AEMPS.</p>
-</blockquote>
 
-    </article>
+const appHighlights = [
+  { icon: 'ph-clock-counter-clockwise', title: 'Historial de medicamentos', text: 'Consulta de forma rápida la información que ya has revisado.' },
+  { icon: 'ph-first-aid-kit', title: 'Botiquín digital', text: 'Organiza tus medicamentos y recibe alertas de caducidad.' },
+  { icon: 'ph-device-mobile', title: 'Acceso para todos', text: 'Una experiencia móvil nativa, sencilla y accesible.' },
+];
+
+const sponsorBenefits = [
+  { icon: 'ph-globe', title: 'Presencia en web', text: 'Logo, enlace y nivel de colaboración en la página durante 12 meses.' },
+  { icon: 'ph-device-mobile', title: 'Presencia en la app', text: 'Reconocimiento en «Acerca de», con visibilidad según el plan.' },
+  { icon: 'ph-share-network', title: 'Difusión', text: 'Menciones en newsletter según la modalidad.' },
+  { icon: 'ph-megaphone', title: 'Campañas conjuntas', text: 'Participación en campañas educativas o de prevención, según el plan.' },
+  { icon: 'ph-chart-line-up', title: 'Informes de uso', text: 'Métricas agregadas y anónimas; nunca datos personales o de salud.' },
+];
+
+const sponsorshipTiers = [
+  { benefit: 'Presencia en web durante 12 meses', platinum: 'Logo destacado y enlace', gold: 'Logo y enlace', collaborator: 'Logo y enlace' },
+  { benefit: 'Presencia en la app', platinum: 'Logo destacado en «Acerca de»', gold: 'Logo y enlace en «Acerca de»', collaborator: 'Nombre en «Acerca de»' },
+  { benefit: 'Menciones en newsletter', platinum: 'Todas las ediciones', gold: '4 al año', collaborator: '—' },
+  { benefit: 'Informe de uso agregado y anónimo', platinum: 'Trimestral y revisión anual', gold: 'Semestral', collaborator: '—' },
+  { benefit: 'Campaña educativa conjunta', platinum: 'Prioridad: una al año', gold: 'Participación opcional', collaborator: '—' },
+  { benefit: 'Agradecimiento en comunicación anual', platinum: 'Incluido', gold: 'Incluido', collaborator: 'Incluido' },
+];
+
+const sponsorshipPlans = [
+  {
+    key: 'collaborator',
+    name: 'Colaborador',
+    price: '<2.000 €/año',
+    summary: 'Una forma sencilla de apoyar el proyecto.',
+    highlights: ['Logo y enlace en la web durante 12 meses', 'Mención con el nombre en «Acerca de» de la app', 'Agradecimiento en la comunicación anual de avances'],
+  },
+  {
+    key: 'gold',
+    name: 'Oro',
+    price: '2.000–5.000 €/año',
+    summary: 'Presencia digital con opciones de colaboración flexibles.',
+    highlights: ['Todo lo incluido en Colaborador', '4 menciones en newsletter al año', 'Logo y enlace en «Acerca de» de la app', 'Informe semestral de uso agregado y anónimo', 'Participación opcional en campañas educativas'],
+  },
+  {
+    key: 'platinum',
+    name: 'Platino',
+    price: '+5.000 €/año',
+    summary: 'La colaboración con mayor alcance y participación.',
+    highlights: ['Todo lo incluido en Oro', 'Mención en todas las ediciones de la newsletter', 'Logo destacado en la app', 'Informe trimestral y revisión anual de uso agregado y anónimo', 'Prioridad para una campaña educativa conjunta al año'],
+  },
+];
+
+const otherCollaborationWays = [
+  { icon: 'ph-share-network', title: 'Difusión', text: 'Comparte MEDI lens con redes profesionales, asociaciones y comunidades.' },
+  { icon: 'ph-first-aid-kit', title: 'Conocimiento sanitario', text: 'Participa en actividades educativas o revisa materiales divulgativos con independencia editorial.' },
+  { icon: 'ph-globe', title: 'Accesibilidad y traducción', text: 'Ayuda a mejorar la lectura clara, la accesibilidad y la traducción de contenidos.' },
+  { icon: 'ph-lightbulb', title: 'Recursos y espacios', text: 'Aporta horas profesionales, herramientas, créditos tecnológicos o espacios para actividades y pruebas.' },
+];
+
+const reasonsToPartner = [
+  { icon: 'ph-heart', text: 'Promoción de la salud responsable y la alfabetización sanitaria.' },
+  { icon: 'ph-lightbulb', text: 'Asociación con la innovación social y la tecnología ética.' },
+  { icon: 'ph-hand-heart', text: 'Participación en la mejora del acceso a información sobre medicamentos.' },
+];
+---
+
+<SiteLayout
+  title="Patrocina MEDI lens"
+  seoTitle="Colabora con MEDI lens — Patrocinio"
+  description="Conoce el proyecto MEDI lens y sus modalidades de patrocinio para colaborar en el acceso responsable a información oficial sobre medicamentos."
+>
+  <main class="sponsor-page">
+    <section class="sponsor-hero" aria-labelledby="sponsor-title">
+      <div class="sponsor-hero-copy">
+        <span class="page-eyebrow"><span class="icon-container page-eyebrow-icon"><i class="ph ph-handshake" aria-hidden="true"></i></span> Colabora con el proyecto</span>
+        <h1 id="sponsor-title">Patrocina <span class="logo-colored">MEDI lens</span></h1>
+        <p class="sponsor-hero-lead">Buscamos patrocinadores comprometidos con el acceso responsable a la información médica.</p>
+        <a class="custom-button" href="/contacto">Hablar sobre patrocinio <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <aside class="sponsor-hero-panel" aria-label="Características del proyecto">
+        <div class="sponsor-hero-panel-heading">
+          <span class="icon-container"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
+          <h2>Información clara y oficial</h2>
+        </div>
+        <p>MEDI lens acerca a ciudadanos y profesionales sanitarios información de medicamentos procedente de la AEMPS.</p>
+        <ul>
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i> Acceso gratuito</li>
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i> Información verificada</li>
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i> Uso responsable de los datos</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="sponsor-section" aria-labelledby="sponsor-project-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">El proyecto</span>
+        <h2 id="sponsor-project-title">Una herramienta útil para el día a día</h2>
+        <p><span class="logo-colored">MEDI lens</span> es una app gratuita que permite escanear medicamentos con la cámara del móvil y consultar información oficial, como prospectos, fichas técnicas, advertencias de conducción y disponibilidad.</p>
+      </header>
+      <div class="sponsor-feature-grid">
+        {appHighlights.map((item) => (
+          <article class="sponsor-card">
+            <span class="icon-container"><i class:list={['ph', item.icon]} aria-hidden="true"></i></span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="sponsor-project-link">Descubre cómo funciona <a href="/presentamos-medilens">la presentación de MEDI lens <i class="ph ph-arrow-right" aria-hidden="true"></i></a></p>
+    </section>
+
+    <section class="sponsor-info-grid" aria-label="Público y estado del proyecto">
+      <article class="sponsor-info-panel" aria-labelledby="sponsor-audience-title">
+        <span class="page-eyebrow">A quién se dirige</span>
+        <h2 id="sponsor-audience-title">Información para distintas personas</h2>
+        <ul class="sponsor-audience-list">
+          <li>Público general que busca información médica clara y verificada.</li>
+          <li>Familias y personas mayores.</li>
+          <li>Profesionales sanitarios y farmacéuticos.</li>
+        </ul>
+      </article>
+      <article class="sponsor-info-panel" aria-labelledby="sponsor-status-title">
+        <span class="page-eyebrow">Estado del proyecto</span>
+        <h2 id="sponsor-status-title">En desarrollo activo</h2>
+        <p>La app integra datos oficiales de la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS).</p>
+        <a class="sponsor-text-link" href="/roadmap">Consulta la hoja de ruta <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </article>
+    </section>
+
+    <section class="sponsor-section" aria-labelledby="sponsor-benefits-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">La colaboración</span>
+        <h2 id="sponsor-benefits-title">Visibilidad y asociación con un propósito</h2>
+        <p>Ofrecemos visibilidad y asociación con una solución innovadora en salud digital.</p>
+      </header>
+      <div class="sponsor-benefit-grid">
+        {sponsorBenefits.map((item) => (
+          <article class="sponsor-card">
+            <span class="icon-container"><i class:list={['ph', item.icon]} aria-hidden="true"></i></span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="sponsor-section sponsor-tiers" aria-labelledby="sponsor-tiers-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">Modalidades</span>
+        <h2 id="sponsor-tiers-title">Elige cómo colaborar</h2>
+        <p>Escoge el nivel que mejor encaje con tu colaboración. Puedes consultar las diferencias detalladas en la comparativa.</p>
+      </header>
+      <div class="sponsor-plan-grid">
+        {sponsorshipPlans.map((plan) => (
+          <article class="sponsor-plan-card" aria-labelledby={'sponsor-plan-' + plan.key}>
+            <header>
+              <h3 id={'sponsor-plan-' + plan.key}>{plan.name}</h3>
+              <p class="sponsor-plan-price">{plan.price}</p>
+            </header>
+            <p class="sponsor-plan-summary">{plan.summary}</p>
+            <ul>
+              {plan.highlights.map((highlight) => (
+                <li><i class="ph ph-check-circle" aria-hidden="true"></i>{highlight}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <details class="sponsor-comparison">
+        <summary><span class="sponsor-comparison-closed">Mostrar comparativa</span><span class="sponsor-comparison-open">Ocultar comparativa</span></summary>
+        <div class="sponsor-comparison-content">
+          <div class="sponsor-table-wrap" tabindex="0" role="region" aria-labelledby="sponsor-tiers-title">
+            <table class="sponsor-tier-table">
+              <caption class="visually-hidden">Comparativa de beneficios por nivel de patrocinio</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Beneficio</th>
+                  {sponsorshipPlans.map((plan) => (
+                    <th scope="col"><span class="sponsor-tier-name">{plan.name}</span><span class="sponsor-tier-price">{plan.price}</span></th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {sponsorshipTiers.map((tier) => (
+                  <tr>
+                    <th scope="row">{tier.benefit}</th>
+                    {sponsorshipPlans.map((plan) => <td>{tier[plan.key]}</td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+      <p class="sponsor-plan-principle">Cada modalidad cubre 12 meses. Las menciones y campañas se coordinan con el equipo. Los informes usan métricas agregadas y anónimas; no se comparten datos personales ni de salud.</p>
+    </section>
+
+    <section class="sponsor-section sponsor-other-ways" aria-labelledby="sponsor-other-ways-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">Otras formas de colaborar</span>
+        <h2 id="sponsor-other-ways-title">También puedes aportar tiempo, conocimiento o recursos</h2>
+        <p>Si ahora no encaja un patrocinio económico, hay otras maneras de ayudar a que el proyecto llegue más lejos.</p>
+      </header>
+      <div class="sponsor-support-grid">
+        {otherCollaborationWays.map((item) => (
+          <article class="sponsor-support-card">
+            <span class="icon-container"><i class:list={['ph', item.icon]} aria-hidden="true"></i></span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="sponsor-section sponsor-reasons" aria-labelledby="sponsor-reasons-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">Por qué colaborar</span>
+        <h2 id="sponsor-reasons-title">Un proyecto con impacto social</h2>
+      </header>
+      <div class="sponsor-reason-grid">
+        {reasonsToPartner.map((reason) => (
+          <article class="sponsor-reason-card">
+            <span class="icon-container"><i class:list={['ph', reason.icon]} aria-hidden="true"></i></span>
+            <p>{reason.text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="sponsor-project-note"><span class="logo-colored">MEDI lens</span> es un proyecto independiente, comprometido con el acceso libre, verificado y fácil a la información médica. Utiliza datos oficiales de la AEMPS.</p>
+    </section>
+
+    <aside class="sponsor-cta" aria-labelledby="sponsor-contact-title">
+      <div>
+        <span class="page-eyebrow">Contacto</span>
+        <h2 id="sponsor-contact-title">¿Hablamos de colaboración?</h2>
+        <p>Escríbenos y cuéntanos qué tienes en mente.</p>
+      </div>
+      <a class="custom-button" href="/contacto">Ir al formulario de contacto <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </aside>
   </main>
 </SiteLayout>
