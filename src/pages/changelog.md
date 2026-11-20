@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/PageLayout.astro
+layout: ../layouts/ChangelogLayout.astro
 ---
 
 # Registro de cambios (Changelog)

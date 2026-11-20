@@ -1,0 +1,99 @@
+---
+import { execFileSync } from 'node:child_process';
+import SiteLayout from './SiteLayout.astro';
+
+const { frontmatter = {}, headings = [] } = Astro.props;
+const pageHeadings = headings.filter((heading) => heading.depth === 2);
+const releaseSlug = (text, fallback) => {
+  const match = text.match(/v(\d+)\.(\d+)\.(\d+).*?(\d{4})-(\d{2})-(\d{2})/i);
+  return match
+    ? `v${match[1]}-${match[2]}-${match[3]}-${match[4]}-${match[5]}-${match[6]}`
+    : fallback;
+};
+const pageTitle = frontmatter.title || 'Registro de cambios';
+let lastUpdated = '';
+
+try {
+  const gitTimestamp = execFileSync('git', ['log', '-1', '--format=%cI', '--', 'src/pages/changelog.md'], {
+    cwd: process.cwd(),
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'ignore'],
+  }).trim();
+
+  if (gitTimestamp) {
+    lastUpdated = new Intl.DateTimeFormat('es-ES', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23',
+      timeZone: 'Europe/Madrid',
+    }).format(new Date(gitTimestamp));
+  }
+} catch {
+  // The page can still render in environments without Git metadata.
+}
+---
+<SiteLayout
+  title={pageTitle}
+  seoTitle={frontmatter.seoTitle || 'Registro de cambios de MEDI lens'}
+  description={frontmatter.description || 'Consulta las novedades, mejoras y correcciones incluidas en las versiones de MEDI lens.'}
+  image={frontmatter.image}
+  imageAlt={frontmatter.imageAlt}
+  metaType={frontmatter.metaType}
+>
+  <main class:list={['document-main', pageHeadings.length > 0 && 'changelog-main-with-toc']}>
+    {pageHeadings.length > 0 && (
+      <>
+      <aside class="changelog-toc-desktop" aria-label="Contenido de página">
+        <p class="changelog-toc-title">Contenido de página</p>
+        <nav aria-label="Secciones del registro de cambios">
+          <ol>
+            {pageHeadings.map((heading) => (
+              <li class="changelog-toc-item">
+                <a href={`/changelog#${releaseSlug(heading.text, heading.slug)}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </aside>
+      <details class="changelog-toc-mobile">
+        <summary>Contenido de página</summary>
+        <nav aria-label="Secciones del registro de cambios">
+          <ol>
+            {pageHeadings.map((heading) => (
+              <li class="changelog-toc-item">
+                <a href={`/changelog#${releaseSlug(heading.text, heading.slug)}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </details>
+      </>
+    )}
+    <article class="prose changelog-content">
+      {lastUpdated && <p class="changelog-last-updated">Última actualización: {lastUpdated}</p>}
+      <slot />
+    </article>
+  </main>
+</SiteLayout>
+<script>
+  const changelogHeadings = document.querySelectorAll('.changelog-content h2[id]');
+
+  changelogHeadings.forEach((heading) => {
+    if (heading.querySelector('.changelog-heading-anchor')) return;
+
+    const releaseMatch = heading.textContent.match(/v(\d+)\.(\d+)\.(\d+).*?(\d{4})-(\d{2})-(\d{2})/i);
+    if (releaseMatch) {
+      heading.id = `v${releaseMatch[1]}-${releaseMatch[2]}-${releaseMatch[3]}-${releaseMatch[4]}-${releaseMatch[5]}-${releaseMatch[6]}`;
+    }
+
+    const anchor = document.createElement('a');
+    anchor.className = 'changelog-heading-anchor';
+    anchor.href = `/changelog#${heading.id}`;
+    anchor.textContent = '#';
+    anchor.setAttribute('aria-label', `Enlace al encabezado: ${heading.textContent.trim()}`);
+    heading.append(anchor);
+  });
+</script>

@@ -2,11 +2,7 @@
 import SiteLayout from './SiteLayout.astro';
 
 const { frontmatter = {} } = Astro.props;
-const routeTitles = {
-  '/changelog': 'Registro de cambios',
-};
-const routePath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '') || '/';
-const pageTitle = frontmatter.title || routeTitles[routePath] || 'MEDI lens';
+const pageTitle = frontmatter.title || 'MEDI lens';
 const defaultSeoTitle = 'MEDI lens — Escanea y conoce tus medicamentos';
 ---
 <SiteLayout
