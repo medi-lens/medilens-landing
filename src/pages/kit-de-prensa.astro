@@ -1,0 +1,274 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+
+const logos = [
+  {
+    name: 'Positivo',
+    description: 'Logotipo para fondos claros.',
+    image: '/media-kit/logos/medilens-logo-positivo.svg',
+    svg: '/media-kit/logos/medilens-logo-positivo.svg',
+    png: '/media-kit/logos/medilens-logo-positivo.png',
+    panel: 'media-kit-logo-positive',
+  },
+  {
+    name: 'Negativo',
+    description: 'Logotipo para fondos oscuros.',
+    image: '/media-kit/logos/medilens-logo-negativo.svg',
+    svg: '/media-kit/logos/medilens-logo-negativo.svg',
+    png: '/media-kit/logos/medilens-logo-negativo.png',
+    panel: 'media-kit-logo-negative',
+  },
+];
+
+const teamPhotos = [
+  { src: '/media-kit/previews/equipo-1.webp', alt: 'Paul y Jose en una farmacia mostrando MEDI lens', width: 960, height: 720 },
+  { src: '/media-kit/previews/equipo-2.webp', alt: 'Paul y Jose durante una prueba de MEDI lens en una farmacia', width: 960, height: 1280 },
+];
+
+const mediaCollections = [
+  {
+    eyebrow: 'Google Play',
+    title: 'Pantallas de la ficha',
+    count: '6 pantallas',
+    description: 'Imágenes de la ficha de MEDI lens en Google Play, en su orden original.',
+    download: '/docs/medilens-google-play.zip',
+    downloadText: 'Descargar pantallas de Google Play',
+    galleryClass: 'media-kit-store-gallery',
+    items: [
+      { src: '/media-kit/stores/google-play-01.webp', caption: 'Escanea y conoce tus medicamentos', width: 1080, height: 1920 },
+      { src: '/media-kit/stores/google-play-02.webp', caption: 'Accede al prospecto y a información oficial', width: 1080, height: 1920 },
+      { src: '/media-kit/stores/google-play-03.webp', caption: 'Tu app para el día a día', width: 1080, height: 1920 },
+      { src: '/media-kit/stores/google-play-04.webp', caption: 'Historial de búsqueda y favoritos', width: 1080, height: 1920 },
+      { src: '/media-kit/stores/google-play-05.webp', caption: 'Prospecto y ficha técnica oficiales', width: 1080, height: 1920 },
+      { src: '/media-kit/stores/google-play-06.webp', caption: 'Gestiona tu botiquín digital', width: 1080, height: 1920 },
+    ],
+  },
+  {
+    eyebrow: 'App Store',
+    title: 'Pantallas de la ficha',
+    count: '6 pantallas',
+    description: 'Imágenes preparadas para la ficha de MEDI lens en App Store.',
+    download: '/docs/medilens-app-store.zip',
+    downloadText: 'Descargar pantallas de App Store',
+    galleryClass: 'media-kit-store-gallery',
+    items: [
+      { src: '/media-kit/stores/app-store-01.webp', caption: 'Escanea y conoce tus medicamentos', width: 1320, height: 2868 },
+      { src: '/media-kit/stores/app-store-02.webp', caption: 'Accede al prospecto y a información oficial', width: 1320, height: 2868 },
+      { src: '/media-kit/stores/app-store-03.webp', caption: 'Tu app para el día a día', width: 1320, height: 2868 },
+      { src: '/media-kit/stores/app-store-04.webp', caption: 'Historial de búsqueda y favoritos', width: 1320, height: 2868 },
+      { src: '/media-kit/stores/app-store-05.webp', caption: 'Prospecto y ficha técnica oficiales', width: 1320, height: 2868 },
+      { src: '/media-kit/stores/app-store-06.webp', caption: 'Gestiona tu botiquín digital', width: 1320, height: 2868 },
+    ],
+  },
+  {
+    eyebrow: 'XVIII Feria de las Ideas de Almería',
+    title: 'Diapositivas de MEDI lens',
+    count: '8 diapositivas',
+    description: 'Presentación de MEDI lens utilizada en la XVIII Feria de las Ideas de Almería.',
+    download: '/docs/diapositivas-xviii-feria-ideas-almeria.zip',
+    downloadText: 'Descargar diapositivas de la feria',
+    galleryClass: 'media-kit-slide-gallery',
+    items: [
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-01.webp', caption: 'Escanea y obtén la información', width: 4098, height: 2304 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-02.webp', caption: 'Tu app para el día a día', width: 1366, height: 768 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-03.webp', caption: 'Gestiona tu botiquín digital', width: 1366, height: 768 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-04.webp', caption: 'Consulta el prospecto', width: 1366, height: 768 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-05.webp', caption: 'Modo claro y oscuro', width: 1366, height: 768 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-06.webp', caption: 'Historial y favoritos', width: 1366, height: 768 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-07.webp', caption: 'Acceso sin conexión', width: 1366, height: 768 },
+      { src: '/media-kit/feria-de-las-ideas-xviii/diapositiva-08.webp', caption: 'Alertas de caducidad', width: 1366, height: 768 },
+    ],
+  },
+];
+---
+
+<SiteLayout
+  title="Kit de prensa"
+  seoTitle="Kit de prensa | MEDI lens"
+  description="Descarga la nota de prensa, el brief, los logotipos, las pantallas de Google Play y App Store y las diapositivas de MEDI lens."
+>
+  <main class="media-kit-page" aria-labelledby="media-kit-title">
+    <section class="media-kit-hero" aria-labelledby="media-kit-title">
+      <div class="media-kit-hero-copy">
+        <span class="page-eyebrow"><span class="icon-container media-kit-eyebrow-icon"><i class="ph ph-newspaper" aria-hidden="true"></i></span>Kit de prensa</span>
+        <h1 id="media-kit-title">Todo lo que necesitas para hablar de <span class="logo-colored">MEDI lens</span>.</h1>
+        <p>Información del proyecto y recursos oficiales listos para consultar, compartir y publicar.</p>
+        <nav class="media-kit-shortcuts" aria-label="Secciones del kit de prensa">
+          <a href="#documentacion">Documentación</a>
+          <a href="#logotipos">Logotipos</a>
+          <a href="#recursos-visuales">Fotos y capturas</a>
+          <a href="#tiendas-y-eventos">Tiendas y eventos</a>
+        </nav>
+      </div>
+
+      <aside class="media-kit-hero-visual" aria-label="El equipo de MEDI lens y la aplicación en uso">
+        <figure class="media-kit-collage-team">
+          <img src="/media-kit/previews/equipo-1.webp" alt="Paul y Jose en una farmacia" width="960" height="720" fetchpriority="high" />
+        </figure>
+        <figure class="media-kit-collage-app media-kit-collage-app-scan">
+          <img src="/media-kit/previews/app-1.webp" alt="La aplicación MEDI lens escaneando medicamentos" width="900" height="1200" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="media-kit-collage-app media-kit-collage-app-details">
+          <img src="/media-kit/previews/app-4.webp" alt="La ficha del medicamento abierta en MEDI lens" width="900" height="1200" loading="lazy" decoding="async" />
+        </figure>
+      </aside>
+    </section>
+
+    <section id="documentacion" class="media-kit-section" aria-labelledby="media-kit-documents-title">
+      <header class="media-kit-section-heading">
+        <span class="page-eyebrow">Documentación</span>
+        <h2 id="media-kit-documents-title">Conoce el proyecto</h2>
+        <p>Material de referencia para preparar artículos, entrevistas y publicaciones.</p>
+      </header>
+
+      <div class="media-kit-document-grid">
+        <article class="media-kit-document-card media-kit-press-card">
+          <div class="media-kit-document-icon" aria-hidden="true"><i class="ph ph-megaphone"></i></div>
+          <div class="media-kit-document-copy">
+            <span class="media-kit-file-type">Nota de prensa · PDF</span>
+            <h3>Nota de prensa</h3>
+            <p>Nota de prensa oficial de MEDI lens en PDF.</p>
+          </div>
+          <div class="media-kit-document-actions">
+            <a class="media-kit-download-button" href="/docs/NOTA_PRENSA_MEDILENS_N.pdf" download>
+              Descargar nota de prensa <i class="ph ph-download-simple" aria-hidden="true"></i>
+            </a>
+            <a class="media-kit-download-button" href="/docs/NOTA_PRENSA_MEDILENS_N.pdf" target="_blank" rel="noopener" aria-label="Ver nota de prensa">
+              Ver <i class="ph ph-arrow-square-out" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="media-kit-document-card">
+          <div class="media-kit-document-icon" aria-hidden="true"><i class="ph ph-files"></i></div>
+          <div class="media-kit-document-copy">
+            <span class="media-kit-file-type">Brief · PDF</span>
+            <h3>Brief de Paul y Jose</h3>
+            <p>Una presentación del proyecto y de las personas que lo impulsan.</p>
+          </div>
+          <div class="media-kit-document-actions">
+            <a class="media-kit-download-button" href="/docs/Brief_Paul-Jose_MEDI_lens.pdf" download>
+              Descargar brief <i class="ph ph-download-simple" aria-hidden="true"></i>
+            </a>
+            <a class="media-kit-download-button" href="/docs/Brief_Paul-Jose_MEDI_lens.pdf" target="_blank" rel="noopener" aria-label="Ver brief">
+              Ver <i class="ph ph-arrow-square-out" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="logotipos" class="media-kit-section" aria-labelledby="media-kit-logos-title">
+      <header class="media-kit-section-heading">
+        <span class="page-eyebrow">Identidad visual</span>
+        <h2 id="media-kit-logos-title">Logotipos oficiales</h2>
+        <p>Elige la versión según el fondo de tu publicación. Cada variante está disponible en SVG y PNG de alta resolución.</p>
+      </header>
+
+      <div class="media-kit-logo-grid">
+        {logos.map((logo) => (
+          <article class="media-kit-logo-card">
+            <div class:list={['media-kit-logo-preview', logo.panel]}>
+              <img src={logo.image} alt={`Logotipo oficial de MEDI lens en versión ${logo.name.toLowerCase()}`} width="386" height="101" loading="lazy" decoding="async" />
+            </div>
+            <div class="media-kit-logo-info">
+              <div><h3>{logo.name}</h3><p>{logo.description}</p></div>
+              <div class="media-kit-logo-downloads" aria-label={`Descargas del logotipo en versión ${logo.name.toLowerCase()}`}>
+                <a href={logo.svg} download={`medilens-logo-${logo.name.toLowerCase()}.svg`}>SVG</a>
+                <a href={logo.png} download={`medilens-logo-${logo.name.toLowerCase()}.png`}>PNG</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="recursos-visuales" class="media-kit-section" aria-labelledby="media-kit-visuals-title">
+      <header class="media-kit-section-heading">
+        <span class="page-eyebrow">Material gráfico</span>
+        <h2 id="media-kit-visuals-title">Fotos y capturas para publicar</h2>
+        <p>Descarga el conjunto completo de imágenes de la app y fotografías de Paul y Jose en un solo archivo.</p>
+      </header>
+
+      <h3 class="media-kit-gallery-title">La app en uso</h3>
+      <div class="media-kit-app-gallery">
+        <figure>
+          <img src="/media-kit/previews/app-1.webp" alt="MEDI lens escanea un envase de medicamento desde un móvil" width="900" height="1200" loading="lazy" decoding="async" />
+          <figcaption>Búsqueda y escaneo</figcaption>
+        </figure>
+        <figure>
+          <img src="/media-kit/previews/app-2.webp" alt="Ficha de información del medicamento abierta en MEDI lens" width="900" height="1200" loading="lazy" decoding="async" />
+          <figcaption>Escanea el Datamatrix</figcaption>
+        </figure>
+        <figure>
+          <img src="/media-kit/previews/app-3.webp" alt="MEDI lens muestra detalles del medicamento durante el escaneo" width="900" height="1200" loading="lazy" decoding="async" />
+          <figcaption>Información del medicamento</figcaption>
+        </figure>
+        <figure>
+          <img src="/media-kit/previews/app-4.webp" alt="Pantalla de información del medicamento en MEDI lens" width="900" height="1200" loading="lazy" decoding="async" />
+          <figcaption>Ficha del medicamento</figcaption>
+        </figure>
+      </div>
+
+      <article class="media-kit-photo-pack">
+        <div class="media-kit-photo-grid">
+          {teamPhotos.map((photo) => (
+            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
+          ))}
+        </div>
+        <div class="media-kit-photo-copy">
+          <span class="media-kit-file-type">Paquete visual · ZIP · 50 MB</span>
+          <h3>Imágenes de MEDI lens y su equipo</h3>
+          <p>Incluye las fotos de Paul y Jose, imágenes de la app, los logotipos, las pantallas de ambas tiendas y las diapositivas de la feria.</p>
+          <a class="media-kit-download-button media-kit-download-button-primary" href="/docs/medilens-recursos-visuales.zip" download>
+            Descargar recursos visuales <i class="ph ph-download-simple" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section id="tiendas-y-eventos" class="media-kit-section" aria-labelledby="media-kit-events-title">
+      <header class="media-kit-section-heading">
+        <span class="page-eyebrow">Tiendas y eventos</span>
+        <h2 id="media-kit-events-title">Más material para medios</h2>
+        <p>Consulta las imágenes de las fichas de Google Play y App Store, además de la presentación de MEDI lens en la XVIII Feria de las Ideas de Almería.</p>
+      </header>
+
+      <div class="media-kit-asset-list">
+        {mediaCollections.map((collection) => (
+          <details class="media-kit-asset-details" name="media-kit-assets">
+            <summary>
+              <span class="media-kit-asset-summary-copy">
+                <span class="media-kit-file-type">{collection.eyebrow}</span>
+                <span class="media-kit-asset-title">{collection.title}</span>
+              </span>
+              <span class="media-kit-asset-count">{collection.count}</span>
+            </summary>
+            <div class="media-kit-assets-content">
+              <p>{collection.description}</p>
+              <div class:list={['media-kit-assets-gallery', collection.galleryClass]} role="group" aria-label={`${collection.eyebrow}: ${collection.title}`}>
+                {collection.items.map((item) => (
+                  <figure>
+                    <img src={item.src} alt={`${collection.eyebrow}: ${item.caption}`} width={item.width} height={item.height} loading="lazy" decoding="async" />
+                  </figure>
+                ))}
+              </div>
+              <a class="media-kit-download-button" href={collection.download} download>
+                {collection.downloadText} <i class="ph ph-download-simple" aria-hidden="true"></i>
+              </a>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <aside class="media-kit-cta" aria-labelledby="media-kit-cta-title">
+      <div>
+        <span class="page-eyebrow">¿Necesitas algo más?</span>
+        <h2 id="media-kit-cta-title">¿Hablamos?</h2>
+        <p>Para entrevistas, consultas o material adicional, estamos disponibles.</p>
+      </div>
+      <a class="custom-button media-kit-contact-button" href="/contacto">Contactar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </aside>
+  </main>
+</SiteLayout>

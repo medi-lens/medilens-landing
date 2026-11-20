@@ -1,15 +1,15 @@
 ---
 import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
 import IconTooltip from '@/components/IconTooltip.astro';
+import { getTrackedAppStoreUrls } from '@/constants/appStores.mjs';
 
 const currentPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '') || '/';
 const navItems = [
-  { href: '/equipo', text: 'Equipo' },
   { href: '/presentamos-medilens', text: 'Presentación' },
+  { href: '/equipo', text: 'Equipo' },
   { href: '/contacto', text: 'Contacto' },
 ];
-const playUrl = 'https://play.google.com/store/apps/details?id=es.medilens.app&utm_source=medilens_website&utm_medium=referral&utm_campaign=header_nav_cta';
-const appleUrl = 'https://apps.apple.com/es/app/medi-lens/id6749312020?utm_source=medilens_website&utm_medium=referral&utm_campaign=header_nav_cta';
+const { googlePlay: playUrl, appleAppStore: appleUrl } = getTrackedAppStoreUrls('header_nav_cta');
 ---
 <header class="site-header">
   <div class="header-inner">
@@ -22,9 +22,6 @@ const appleUrl = 'https://apps.apple.com/es/app/medi-lens/id6749312020?utm_sourc
     </button>
     <div class="header-navigation" id="main-navigation" data-navigation>
       <nav class="main-nav" aria-label="Navegación principal">
-        <a class="nav-link" href="/docs/NOTA_PRENSA_MEDILENS_N.pdf" target="_blank" rel="noopener">
-          Nota de prensa <i class="ph ph-arrow-square-out external-link-icon" aria-hidden="true"></i><span class="visually-hidden"> (se abre en una pestaña nueva)</span>
-        </a>
         {navItems.map((item) => (
           <a class="nav-link" href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.text}</a>
         ))}

@@ -2,11 +2,11 @@ import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'node:url';
+import { appStoreUrls } from './src/constants/appStores.mjs';
 
 const excludedSitemapPaths = new Set([
   '/android',
   '/descarga',
-  '/dossier-medios',
   '/ios',
 ]);
 
@@ -30,11 +30,15 @@ export default defineConfig({
   },
   redirects: {
     '/android': {
-      destination: 'https://play.google.com/store/apps/details?id=es.medilens.app',
+      destination: appStoreUrls.googlePlay,
       status: 302,
     },
+    '/dossier-medios': {
+      destination: '/kit-de-prensa',
+      status: 301,
+    },
     '/ios': {
-      destination: 'https://apps.apple.com/es/app/medi-lens/id6749312020',
+      destination: appStoreUrls.appleAppStore,
       status: 302,
     },
   },

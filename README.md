@@ -23,7 +23,7 @@ Este repositorio contiene la landing page oficial de **MEDI lens**, una aplicaci
 MEDI lens permite escanear códigos de barra, consultar prospectos y fichas técnicas, organizar un botiquín digital y recibir avisos de caducidad desde el móvil.
 
 <div align="center">
-  <img src="public/assets/images/medilens-og.png" alt="MEDI lens" width="720">
+  <img src="public/medilens-og.png" alt="MEDI lens" width="720">
 </div>
 
 ## Qué ofrece MEDI lens

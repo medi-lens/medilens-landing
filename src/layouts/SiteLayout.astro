@@ -9,6 +9,7 @@ import appleTouchIcon from '@/assets/icons/favicons/apple-touch-icon.png?no-inli
 import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
 import paulPhoto from '@/assets/images/team/paul.jpg';
 import josePhoto from '@/assets/images/team/jose.jpg';
+import { appStoreIds, appStoreUrls } from '@/constants/appStores.mjs';
 import umamiScriptUrl from '@/scripts/umami.js?url&no-inline';
 import '@fontsource-variable/akshar';
 import '@phosphor-icons/web/regular';
@@ -22,13 +23,15 @@ const {
   title = defaultTitle,
   seoTitle = title,
   description = defaultDescription,
-  image = 'https://medilens.es/assets/images/medilens-og.png',
+  image = 'https://medilens.es/medilens-og.png',
   imageAlt = 'MEDI lens — Escanea y conoce tus medicamentos',
   metaType = 'website',
   hasMailjetNewsletter = false,
+  noIndex = false,
 } = Astro.props;
 const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, Astro.site).href;
+const documentTitle = title.toLowerCase().includes('medi lens') ? title : `${title} · MEDI lens`;
 const [paulSchemaImage, joseSchemaImage, felipeSchemaImage] = await Promise.all([
   getImage({ src: paulPhoto, width: 400, height: 400, quality: 82, format: 'webp' }),
   getImage({ src: josePhoto, width: 400, height: 400, quality: 82, format: 'webp' }),
@@ -72,16 +75,13 @@ const creators = [
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MobileApplication',
-  name: seoTitle,
+  name: 'MEDI lens',
   description,
   url: canonicalUrl,
   image,
   operatingSystem: 'Android, iOS',
   applicationCategory: 'HealthApplication',
-  downloadUrl: [
-    'https://play.google.com/store/apps/details?id=es.medilens.app',
-    'https://apps.apple.com/es/app/medi-lens/id6749312020',
-  ],
+  downloadUrl: [appStoreUrls.googlePlay, appStoreUrls.appleAppStore],
   publisher: {
     '@type': 'Organization',
     name: 'MEDI lens',
@@ -99,8 +99,9 @@ const isProduction = import.meta.env.PROD;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#F25939" />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="es" href="https://medilens.es/" />
+    {!noIndex && <link rel="canonical" href={canonicalUrl} />}
+    {!noIndex && <link rel="alternate" hreflang="es" href={canonicalUrl} />}
+    {noIndex && <meta name="robots" content="noindex, follow" />}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href={faviconSvg} />
@@ -108,8 +109,8 @@ const isProduction = import.meta.env.PROD;
     <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href={aksharLatin} as="font" type="font/woff2" crossorigin />
-    <meta name="apple-itunes-app" content="app-id=6749312020, affiliate-data=medilens_website, app-argument=https://medilens.es" />
-    <meta name="google-play-app" content="app-id=es.medilens.app" />
+    <meta name="apple-itunes-app" content={`app-id=${appStoreIds.appleAppStore}, affiliate-data=medilens_website, app-argument=https://medilens.es`} />
+    <meta name="google-play-app" content={`app-id=${appStoreIds.googlePlay}`} />
     <meta property="og:site_name" content="MEDI lens" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content={seoTitle} />
@@ -127,8 +128,8 @@ const isProduction = import.meta.env.PROD;
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content={imageAlt} />
-    <title>{title} · MEDI lens</title>
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    <title>{documentTitle}</title>
+    {canonicalPath === '/' && <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>}
     {hasMailjetNewsletter && <script is:inline src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>}
     <script is:inline>
       (() => {
