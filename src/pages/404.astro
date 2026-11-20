@@ -1,12 +1,22 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
 ---
-<SiteLayout title="Página no encontrada" seoTitle="MEDI lens — Escanea y conoce tus medicamentos">
-  <main class="not-found">
-    <p class="code">404</p>
-    <h1>PÁGINA NO ENCONTRADA</h1>
-    <hr />
-    <blockquote>No llegaste donde querías, pero llegaste a algún lugar.</blockquote>
-    <a href="/" aria-label="Volver al inicio">Volver al inicio</a>
+<SiteLayout title="Página no encontrada" seoTitle="Página no encontrada | MEDI lens" description="La dirección que buscas no está disponible. Vuelve al inicio para seguir explorando MEDI lens." noIndex>
+  <main class="not-found-page">
+    <section class="not-found-card" aria-labelledby="not-found-title">
+      <div class="not-found-copy">
+        <span class="page-eyebrow"><span class="icon-container"><i class="ph ph-map-pin" aria-hidden="true"></i></span>Error 404</span>
+        <h1 id="not-found-title">No encontramos esta página</h1>
+        <p>Puede que la dirección haya cambiado o que el enlace ya no exista. Puedes volver al inicio o pedir ayuda a nuestro equipo.</p>
+        <nav class="not-found-actions" aria-label="Opciones para continuar">
+          <a class="custom-button" href="/">Volver al inicio <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          <a class="sponsor-text-link" href="/soporte">Ir a soporte <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="not-found-visual" aria-hidden="true">
+        <span class="not-found-visual-number">404</span>
+        <span class="not-found-visual-icon"><i class="ph ph-map-pin"></i></span>
+      </div>
+    </section>
   </main>
 </SiteLayout>
