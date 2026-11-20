@@ -61,6 +61,16 @@ const sections = [
     ],
   },
 ];
+
+const roadmapSections = sections.map((section) => ({
+  ...section,
+  featureGroups: section.status === 'complete'
+    ? [...new Set(section.features.map((feature) => feature.version))].map((version) => ({
+        version,
+        features: section.features.filter((feature) => feature.version === version),
+      }))
+    : [{ version: null, features: section.features }],
+}));
 ---
 <SiteLayout title="Hoja de ruta" seoTitle="Hoja de ruta de MEDI lens" description="Consulta las funciones previstas, en desarrollo y disponibles en MEDI lens.">
   <main class="roadmap-page">
@@ -75,27 +85,54 @@ const sections = [
     </nav>
 
     <div class="roadmap-sections">
-      {sections.map((section) => (
-        <section class:list={['roadmap-section', 'roadmap-' + section.status]} id={section.id} aria-labelledby={section.id + '-title'}>
-          <header class="roadmap-section-heading">
-            <span class="roadmap-section-icon"><i class:list={['ph', section.icon]} aria-hidden="true"></i></span>
-            <div>
-              <h2 id={section.id + '-title'}>{section.title}</h2>
-              <p>{section.description}</p>
-            </div>
-          </header>
-          <div class="roadmap-cards">
-            {section.features.map((feature) => (
-              <article class="roadmap-card">
-                <div class="roadmap-card-heading">
-                  <h3>{feature.name}</h3>
-                  {feature.href ? <a class="roadmap-version" href={feature.href}>{feature.version}</a> : <span class="roadmap-version">{feature.version}</span>}
-                </div>
-                <p>{feature.description}</p>
-              </article>
-            ))}
+      {roadmapSections.map((section) => (
+        <details class:list={['roadmap-section', 'roadmap-' + section.status]} id={section.id}>
+          <summary class="roadmap-section-heading">
+            <span class="roadmap-section-copy">
+              <span class="roadmap-section-icon"><i class:list={['ph', section.icon]} aria-hidden="true"></i></span>
+              <span class="roadmap-section-title" id={section.id + '-title'} role="heading" aria-level="2">{section.title}</span>
+              <span class="roadmap-section-description">{section.description}</span>
+            </span>
+            <span class="roadmap-section-meta">
+              <span class="roadmap-section-count">{section.features.length}</span>
+              <i class="ph ph-caret-down roadmap-section-chevron" aria-hidden="true"></i>
+            </span>
+          </summary>
+          <div class="roadmap-section-content">
+            {section.status === 'complete' ? (
+              <div class="roadmap-version-groups">
+                {section.featureGroups.map((group) => (
+                  <section class="roadmap-version-group" aria-labelledby={'roadmap-version-' + group.version.replaceAll('.', '-')}>
+                    <header class="roadmap-version-group-heading">
+                      <h3 id={'roadmap-version-' + group.version.replaceAll('.', '-')}>{group.version}</h3>
+                      {group.features[0]?.href && <a class="sponsor-text-link" href={group.features[0].href}>Ver cambios <i class="ph ph-arrow-right" aria-hidden="true"></i></a>}
+                    </header>
+                    <div class="roadmap-cards">
+                      {group.features.map((feature) => (
+                        <article class="roadmap-card">
+                          <h4>{feature.name}</h4>
+                          <p>{feature.description}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div class="roadmap-cards">
+                {section.features.map((feature) => (
+                  <article class="roadmap-card">
+                    <div class="roadmap-card-heading">
+                      {feature.href ? <a class="roadmap-version" href={feature.href}>{feature.version}</a> : <span class="roadmap-version">{feature.version}</span>}
+                      <h3>{feature.name}</h3>
+                    </div>
+                    <p>{feature.description}</p>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
-        </section>
+        </details>
       ))}
     </div>
   </main>
