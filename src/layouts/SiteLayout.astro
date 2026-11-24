@@ -6,7 +6,6 @@ import { getImage } from 'astro:assets';
 import faviconSvg from '@/assets/icons/favicons/favicon.svg?no-inline';
 import faviconPng from '@/assets/icons/favicons/favicon-32x32.png?no-inline';
 import appleTouchIcon from '@/assets/icons/favicons/apple-touch-icon.png?no-inline';
-import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
 import paulPhoto from '@/assets/images/team/paul.jpg';
 import josePhoto from '@/assets/images/team/jose.jpg';
 import { appStoreIds, appStoreUrls } from '@/constants/appStores.mjs';
@@ -28,6 +27,8 @@ const {
   metaType = 'website',
   hasMailjetNewsletter = false,
   noIndex = false,
+  schemaType = 'WebPage',
+  mainEntity,
 } = Astro.props;
 const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
 const canonicalUrl = new URL(canonicalPath, Astro.site).href;
@@ -40,56 +41,67 @@ const [paulSchemaImage, joseSchemaImage, felipeSchemaImage] = await Promise.all(
 const creators = [
   {
     '@type': 'Person',
+    '@id': new URL('/#person-paul-guillamon-thiery', Astro.site).href,
     name: 'Paul Guillamón Thiéry',
-    givenName: 'Paul',
-    familyName: 'Guillamón Thiéry',
-    jobTitle: 'Producto / Diseño UX/UI / QA',
-    url: 'https://qu4k3.com',
+    jobTitle: 'Producto y experiencia',
     sameAs: ['https://www.linkedin.com/in/paulguillamon', 'https://github.com/Qu4k3'],
     image: new URL(paulSchemaImage.src, Astro.site).href,
-    description: 'Producto, Gestión de Proyecto, Diseño UX/UI y Control de Calidad (QA)',
   },
   {
     '@type': 'Person',
+    '@id': new URL('/#person-jose-sanchez-fuentes', Astro.site).href,
     name: 'Jose Sánchez Fuentes',
-    givenName: 'Jose',
-    familyName: 'Sánchez Fuentes',
-    jobTitle: 'Desarrollo móvil',
-    url: 'https://crimson3d.github.io/portfolio/',
+    jobTitle: 'Aplicación móvil',
     sameAs: ['https://www.linkedin.com/in/josé-antonio-sánchez-fuentes/', 'https://github.com/crimson3d'],
     image: new URL(joseSchemaImage.src, Astro.site).href,
-    description: 'Desarrollo de la aplicación móvil para Android e iOS',
   },
   {
     '@type': 'Person',
-    name: 'Felipe Bernal Martinez',
-    givenName: 'Felipe',
-    familyName: 'Bernal Martinez',
-    jobTitle: 'Backend / Infraestructura / DevOps',
-    url: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/',
+    '@id': new URL('/#person-felipe-bernal-martinez', Astro.site).href,
+    name: 'Felipe Bernal Martínez',
+    jobTitle: 'Plataforma y operaciones',
     sameAs: ['https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/'],
     image: new URL(felipeSchemaImage.src, Astro.site).href,
-    description: 'Backend, Infraestructura, Seguridad y DevOps',
   },
 ];
+const websiteId = new URL('/#website', Astro.site).href;
+const applicationId = new URL('/#mobile-application', Astro.site).href;
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'MobileApplication',
-  name: 'MEDI lens',
-  description,
-  url: canonicalUrl,
-  image,
-  operatingSystem: 'Android, iOS',
-  applicationCategory: 'HealthApplication',
-  downloadUrl: [appStoreUrls.googlePlay, appStoreUrls.appleAppStore],
-  publisher: {
-    '@type': 'Organization',
-    name: 'MEDI lens',
-    logo: new URL(medilensIcon, Astro.site).href,
-    url: 'https://medilens.es',
-  },
-  creator: creators,
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      name: 'MEDI lens',
+      url: new URL('/', Astro.site).href,
+      inLanguage: 'es-ES',
+    },
+    {
+      '@type': schemaType,
+      '@id': `${canonicalUrl}#webpage`,
+      name: documentTitle,
+      description,
+      url: canonicalUrl,
+      inLanguage: 'es-ES',
+      isPartOf: { '@id': websiteId },
+      ...(mainEntity ? { mainEntity } : {}),
+      ...(canonicalPath === '/' ? { mainEntity: { '@id': applicationId } } : {}),
+    },
+    ...(canonicalPath === '/' ? [{
+      '@type': 'MobileApplication',
+      '@id': applicationId,
+      name: 'MEDI lens',
+      description,
+      url: canonicalUrl,
+      image,
+      operatingSystem: 'Android, iOS',
+      applicationCategory: 'HealthApplication',
+      downloadUrl: [appStoreUrls.googlePlay, appStoreUrls.appleAppStore],
+      creator: creators,
+    }] : []),
+  ],
 };
+const structuredDataJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
 const isProduction = import.meta.env.PROD;
 ---
 <!doctype html>
@@ -129,7 +141,7 @@ const isProduction = import.meta.env.PROD;
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content={imageAlt} />
     <title>{documentTitle}</title>
-    {canonicalPath === '/' && <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>}
+    {!noIndex && <script type="application/ld+json" set:html={structuredDataJson}></script>}
     {hasMailjetNewsletter && <script is:inline src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>}
     <script is:inline>
       (() => {

@@ -9,8 +9,9 @@ import felipe from '@/assets/images/team/felipe.png';
 const members = [
   {
     name: 'Paul Guillamón Thiéry',
+    schemaId: 'paul-guillamon-thiery',
     focus: 'Producto y experiencia',
-    title: 'Producto, gestión de proyecto, diseño UX/UI y control de calidad (QA)',
+    title: 'Producto y priorización, diseño UX/UI, desarrollo web, control de calidad (QA) y publicación en Google Play.',
     avatar: paul,
     links: [
       { label: 'GitHub', icon: 'ph-github-logo', href: 'https://github.com/Qu4k3' },
@@ -20,8 +21,9 @@ const members = [
   },
   {
     name: 'Jose Sánchez Fuentes',
+    schemaId: 'jose-sanchez-fuentes',
     focus: 'Aplicación móvil',
-    title: 'Desarrollo de la aplicación móvil para Android e iOS',
+    title: 'Desarrollo de la app para Android e iOS y publicación en App Store.',
     avatar: jose,
     links: [
       { label: 'GitHub', icon: 'ph-github-logo', href: 'https://github.com/crimson3d' },
@@ -30,8 +32,9 @@ const members = [
   },
   {
     name: 'Felipe Bernal Martínez',
+    schemaId: 'felipe-bernal-martinez',
     focus: 'Plataforma y operaciones',
-    title: 'Backend, infraestructura, seguridad y DevOps',
+    title: 'Backend, seguridad y operaciones (DevOps).',
     avatar: felipe,
     links: [
       { label: 'LinkedIn', icon: 'ph-linkedin-logo', href: 'https://www.linkedin.com/in/felipe-bernal-martinez-a140a483/' },
@@ -44,8 +47,23 @@ const principles = [
   { icon: 'ph-hand-heart', title: 'Diseñada para las personas', text: 'Priorizamos la facilidad de uso y la accesibilidad en la experiencia móvil.' },
   { icon: 'ph-leaf', title: 'Uso responsable', text: 'Trabajamos para que cada persona pueda informarse mejor sobre sus medicamentos.' },
 ];
+const teamStructuredData = {
+  '@type': 'ItemList',
+  name: 'Equipo de MEDI lens',
+  itemListElement: members.map((member, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Person',
+      '@id': new URL(`/#person-${member.schemaId}`, Astro.site).href,
+      name: member.name,
+      jobTitle: member.focus,
+      sameAs: member.links.map((link) => link.href),
+    },
+  })),
+};
 ---
-<SiteLayout title="El equipo" seoTitle="El equipo de MEDI lens" description="Conoce a las personas detrás de MEDI lens y el propósito que guía el proyecto.">
+<SiteLayout title="El equipo" seoTitle="El equipo de MEDI lens" description="Conoce a las personas detrás de MEDI lens y el propósito que guía el proyecto." schemaType="AboutPage" mainEntity={teamStructuredData}>
   <main class="team-page team-page-editorial">
     <header class="team-intro team-intro-editorial">
       <span class="page-eyebrow">Personas detrás de la app</span>
