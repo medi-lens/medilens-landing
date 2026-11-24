@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import StoreBadges from './StoreBadges.astro';
+import screenshot from '@/assets/images/medilens-screenshot.png';
+
+const features = [
+  { icon: 'ph-barcode', title: 'Escanea y Busca Medicamentos', details: 'Usa la cámara de tu móvil para escanear códigos de barra o usa el buscador y accede al instante a toda la información oficial de tus medicamentos. Rápido, sencillo y desde dónde tú quieras.' },
+  { icon: 'ph-pill', title: 'Prospecto y Ficha Técnica Siempre a Mano', details: 'Consulta la composición, ficha técnica, prospecto y disponibilidad global de cualquier medicamento. Toda la información, actualizada y accesible cuando la necesites.' },
+  { icon: 'ph-first-aid-kit', title: 'Organiza tu Botiquín Digital', details: 'Guarda tus medicamentos en un botiquín digital, controla su fecha de caducidad y recibe avisos antes de que caduquen. Lleva un seguimiento claro y evita sorpresas.' },
+  { icon: 'ph-person-arms-spread', title: 'Accesible por defecto', details: 'La aplicación es compatible con las tecnologías de asistencia integradas en Android e iOS, incluyendo los lectores de pantalla TalkBack y VoiceOver.' },
+  { icon: 'ph-arrows-clockwise', title: 'Tus Datos Sincronizados', details: 'Guarda tus datos en tu cuenta para tener tu botiquín, historial y favoritos sincronizados entre dispositivos y siempre disponibles.', upcoming: true },
+  { icon: 'ph-stethoscope', title: 'Perfil Personalizado de Salud', details: 'Añade tus condiciones médicas o alergias para recibir avisos relevantes sobre los medicamentos que escaneas o guardas en tu botiquín.', upcoming: true },
+];
+const faq = [
+  { question: '¿MEDI lens necesita conexión a Internet?', answer: 'Sí. Para recuperar datos oficiales y prospectos la app consulta fuentes externas; algunas funciones (búsquedas recientes, historial, favoritos, botiquín) pueden funcionar sin conexión.' },
+  { question: '¿Es gratuita? ¿Hay compras dentro de la app?', answer: 'La app es totalmente gratuita. No incluye compras dentro de la aplicación.' },
+  { question: '¿Qué permisos solicita la app y por qué?', answer: 'Solicita principalmente acceso a la cámara para escanear códigos y permiso de notificaciones para alertas de caducidad. Solo se piden permisos necesarios para la funcionalidad.' },
+  { question: '¿Qué hace la app con mis datos personales?', answer: 'No se recoge ningún dato personal. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a> para detalles sobre almacenamiento, sincronización y eliminación.' },
+  { question: '¿Funciona en iOS y Android y qué versiones son compatibles?', answer: 'MEDI lens está disponible en Google Play y App Store. Recomendamos usar versiones recientes de iOS y Android; La app es compatible con <strong>Android 7+</strong> y <strong>iOS 15.1+</strong>.' },
+  { question: '¿La app es accesible para lectores de pantalla?', answer: 'Sí. Está diseñada para ser compatible con TalkBack (Android) y VoiceOver (iOS) y seguir buenas prácticas de accesibilidad.' },
+  { question: '¿Puedo usar la app sin conexión (modo offline)?', answer: 'Algunas consultas quedan en caché para uso offline, pero la búsqueda completa y prospectos suelen requerir conexión.' },
+  { question: '¿Cómo funcionan las alertas de caducidad?', answer: 'Puedes guardar la fecha de caducidad en tu botiquín; la app envía notificaciones locales según los permisos y las preferencias de aviso.' },
+  { question: '¿Puedo sincronizar mis datos entre dispositivos?', answer: 'La sincronización en la nube está planificada. Actualmente la función no está disponible; habrá opción de cuenta y backup en futuras versiones.' },
+  { question: '¿Cómo reporto errores o doy feedback?', answer: 'Usa la sección de soporte en la web o escribe a <a href="mailto:soporte@medilens.es"><strong>soporte@medilens.es</strong></a>. Incluye versión de la app y pasos para reproducir el problema.' },
+];
+---
+<SiteLayout
+  title="MEDI lens — Escanea y conoce tus medicamentos"
+  seoTitle="MEDI lens — Escanea y conoce tus medicamentos"
+  description="MEDI lens te permite escanear medicamentos, ver prospectos, composición, receta y gestionar un botiquín digital con alertas de caducidad."
+  hasMailjetNewsletter
+>
+  <main>
+    <section class="home-hero">
+      <div class="hero-copy">
+        <div class="hero-title-group">
+          <p class="hero-brand"><span class="hero-brand-primary">MEDI</span> <span class="hero-brand-accent">lens</span></p>
+          <h1>Escanea y conoce tus medicamentos al instante</h1>
+        </div>
+        <p class="hero-tagline">Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.</p>
+        <StoreBadges />
+        <div class="hero-notes" aria-label="Características de MEDI lens">
+          <span class="hero-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Información oficial de la AEMPS</span>
+          <span class="hero-note"><i class="ph ph-device-mobile" aria-hidden="true"></i> Gratis · Para Android y iPhone</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-image-glow" aria-hidden="true"></div>
+        <Image class="hero-image" src={screenshot} alt="Pantalla de MEDI lens con el buscador, las búsquedas recientes y el acceso al botiquín" width={420} quality={88} format="webp" loading="eager" fetchpriority="high" />
+      </div>
+    </section>
+
+    <section class="feature-section" aria-label="Funciones de MEDI lens">
+      <div class="feature-grid">
+        {features.map((feature) => (
+          <article class:list={['feature-card', feature.upcoming && 'feature-card-upcoming']}>
+            <div class="feature-icon" aria-hidden="true"><i class:list={['ph', feature.icon]}></i></div>
+            <h2>{feature.title}</h2>
+            {feature.upcoming && <p class="feature-status">Próximamente</p>}
+            <p set:html={feature.details}></p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="custom-home-content">
+      <section class="faq-wrapper" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Preguntas frecuentes</h2>
+        <div class="faq">
+          {faq.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p set:html={item.answer}></p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section class="sponsorship-wrapper" aria-labelledby="sponsorship-heading">
+        <h2 id="sponsorship-heading">Patrocinadores</h2>
+        <div class="sponsorship">
+          <p>Todavía no tenemos patrocinadores. Esta es tu oportunidad de marcar la diferencia desde el inicio.</p>
+          <a class="custom-button" href="/patrocina-medilens">Patrocina <span>MEDI lens</span></a>
+        </div>
+      </section>
+
+      <section class="news-wrapper" aria-labelledby="news-heading">
+        <h2 id="news-heading">Prensa y Noticias</h2>
+        <p>Nuestra historia aún no ha sido contada. ¿Serás el primero en compartirla?</p>
+        <p class="news-contact">
+          <span>Contacto de prensa</span>
+          <a href="mailto:prensa@medilens.es"><i class="ph ph-envelope-simple" aria-hidden="true"></i> prensa@medilens.es</a>
+        </p>
+      </section>
+
+      <section class="mailjet-form" aria-labelledby="newsletter-heading">
+        <h2 id="newsletter-heading">Newsletter</h2>
+        <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s8h2u.mjt.lu/wgt/s8h2u/0s49/form?c=13b8b50e" width="100%" style="height: 0" title="Suscripción al boletín de MEDI lens"></iframe>
+        <p>El formulario de suscripción lo proporciona Mailjet. Al enviar tu email recibirás un mensaje para confirmar la suscripción. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a>.</p>
+      </section>
+    </section>
+  </main>
+</SiteLayout>

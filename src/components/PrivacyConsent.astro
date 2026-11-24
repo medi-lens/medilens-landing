@@ -1,0 +1,22 @@
+---
+const { analyticsSrc } = Astro.props;
+---
+<aside
+  id="privacy-consent"
+  class="privacy-consent"
+  data-privacy-consent
+  data-analytics-src={analyticsSrc}
+  aria-label="Preferencias de privacidad"
+  hidden
+>
+  <div class="privacy-consent-copy">
+    <p>
+      La analítica opcional nos ayuda a conocer las visitas y el rendimiento del sitio. Solo se activa si aceptas.
+      <a href="/politica-privacidad">Más información</a>
+    </p>
+  </div>
+  <div class="privacy-consent-actions">
+    <button class="privacy-consent-button" type="button" data-privacy-reject>Rechazar</button>
+    <button class="privacy-consent-button" type="button" data-privacy-accept>Aceptar analítica</button>
+  </div>
+</aside>

@@ -1,0 +1,33 @@
+---
+import medilensIcon from '@/assets/icons/medilens-icon.svg?no-inline';
+
+const currentYear = new Date().getUTCFullYear();
+---
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <p class="footer-message">
+          <img class="footer-logo" src={medilensIcon} alt="" width="32" height="32" />
+          <span><span class="logo-colored">MEDI lens</span> — Escanea y conoce tus medicamentos</span>
+        </p>
+      </div>
+      <nav class="footer-primary-nav" aria-label="Contacto, ayuda y colaboración">
+        <a href="/contacto">Contacto</a>
+        <a href="/soporte">Soporte</a>
+        <a href="/patrocina-medilens">Patrocina MEDI lens</a>
+        <a href="/kit-de-prensa">Kit de prensa</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <nav class="footer-legal-nav" aria-label="Legal y privacidad">
+        <a href="/politica-privacidad">Política de privacidad</a>
+        <a href="/aviso-legal">Aviso legal</a>
+        <button type="button" class="footer-preferences" data-privacy-settings aria-controls="privacy-consent" aria-expanded="false">
+          Preferencias de privacidad
+        </button>
+      </nav>
+      <p class="footer-copyright">Hecho con ❤️ en Almería 🍅 · © 2024{currentYear > 2024 ? `-${currentYear}` : ''} MEDI lens® · Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

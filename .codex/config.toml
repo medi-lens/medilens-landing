@@ -1,0 +1,6 @@
+[mcp_servers.astro-docs]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.docs.astro.build/mcp"]
+
+[mcp_servers.netlify]
+url = "https://mcp.netlify.com/mcp"

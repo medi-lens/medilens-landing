@@ -1,0 +1,139 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+
+const sections = [
+  {
+    id: 'en-exploracion',
+    title: 'En exploración',
+    description: 'Ideas que estamos valorando y cuya viabilidad todavía estamos definiendo.',
+    icon: 'ph-compass',
+    status: 'exploration',
+    features: [
+      { name: 'Alergias', version: 'v2.0+', description: 'Definir alergias y recibir avisos ante potenciales alergias de medicamentos buscados.' },
+      { name: 'OCR: imagen a texto', version: 'v2.0+', description: 'Indagar sobre la viabilidad de mantener la opción de escaneo para medicamentos sin código de barras (recortado) ni Datamatrix.' },
+    ],
+  },
+  {
+    id: 'planeado',
+    title: 'Planeado',
+    description: 'Funciones previstas para próximas versiones de MEDI lens.',
+    icon: 'ph-list-checks',
+    status: 'planned',
+    features: [
+      { name: 'Buscador por descripción clínica', version: 'v2.0+', description: 'Además de buscar medicamentos, poder buscar descripciones clínicas.' },
+      { name: 'Cuenta y guardado en la nube', version: 'v2.0+', description: 'Posibilidad de crear una cuenta para guardar y sincronizar el botiquín, el historial y favoritos en la nube, permitiendo acceder a ellos desde varios dispositivos y evitar la pérdida de datos.' },
+      { name: 'Añadir medicamentos manualmente', version: 'v1.X.X', description: 'Añadir manualmente medicamentos o material médico no existente en la BBDD de la AEMPS.' },
+      { name: 'Notas en el botiquín', version: 'v1.X.X', description: 'Añadir notas personalizadas a los medicamentos del botiquín.' },
+      { name: 'Ubicaciones para el botiquín', version: 'v1.X.X', description: 'Poder asociar un botiquín a una ubicación, categorizándola por categoría y color.' },
+      { name: 'Tratamientos médicos', version: 'v1.X.X', description: 'Añadir la posibilidad de empezar un tratamiento médico, con duración (días), tomas, recordatorio de tomas, etc.' },
+    ],
+  },
+  {
+    id: 'en-desarrollo',
+    title: 'En desarrollo',
+    description: 'Mejoras en las que ya estamos trabajando.',
+    icon: 'ph-wrench',
+    status: 'progress',
+    features: [
+      { name: 'Aviso en búsquedas genéricas', version: 'v1.X.X', description: 'Mostrar un aviso si la recuperación de datos de medicamentos tarda demasiado.' },
+      { name: 'Modo de alto contraste', version: 'v1.X.X', description: 'Una paleta más contrastada tanto para el modo claro como para el modo oscuro.' },
+    ],
+  },
+  {
+    id: 'completado',
+    title: 'Ya disponible',
+    description: 'Funcionalidades que ya forman parte de la aplicación.',
+    icon: 'ph-check-circle',
+    status: 'complete',
+    features: [
+      { name: 'Modal de valoración en App Store y Google Play', version: 'v1.1.0', href: '/changelog#v1-1-0-2025-10-23', description: 'Añadir modal de valoración de la app de forma orgánica.' },
+      { name: 'Botones de soporte', version: 'v1.1.0', href: '/changelog#v1-1-0-2025-10-23', description: 'Añadir botones de soporte, para mandar avisos o comentarios sobre la app.' },
+      { name: 'Detalles del medicamento enriquecidos', version: 'v1.1.0', href: '/changelog#v1-1-0-2025-10-23', description: 'Añadir en detalles del medicamento las diferentes presentaciones del medicamento.' },
+      { name: 'Modo oscuro', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Modo claro y modo oscuro de la app en función del sistema o preferencias del usuario.' },
+      { name: 'Accesibilidad nativa', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Compatibilidad con lectores de pantalla TalkBack (Android) y VoiceOver (iOS).' },
+      { name: 'Modo sin conexión', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Almacenamiento en caché de consultas y datos de visualización.' },
+      { name: 'Notificaciones de caducidad', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Notificaciones locales sobre la caducidad de los medicamentos en el botiquín.' },
+      { name: 'Historial de búsquedas', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Lista de medicamentos escaneados y marcados como favoritos.' },
+      { name: 'Prospectos oficiales', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Visualización en formato HTML de la ficha técnica y el prospecto.' },
+      { name: 'Detalles del medicamento', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Visualización de los principales datos disponibles de cada medicamento.' },
+      { name: 'Escaneo de medicamentos', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Escaneo del código de barras y Datamatrix del envase con la cámara del dispositivo.' },
+      { name: 'Buscador de medicamentos', version: 'v1.0.0', href: '/changelog#v1-0-0-2025-08-28', description: 'Búsqueda por nombre, laboratorio, principio activo, Código Nacional, código ATC, número de registro o grupo terapéutico.' },
+    ],
+  },
+];
+
+const roadmapSections = sections.map((section) => ({
+  ...section,
+  featureGroups: section.status === 'complete'
+    ? [...new Set(section.features.map((feature) => feature.version))].map((version) => ({
+        version,
+        features: section.features.filter((feature) => feature.version === version),
+      }))
+    : [{ version: null, features: section.features }],
+}));
+---
+<SiteLayout title="Hoja de ruta" seoTitle="Hoja de ruta de MEDI lens" description="Consulta las funciones previstas, en desarrollo y disponibles en MEDI lens." schemaType="CollectionPage">
+  <main class="roadmap-page">
+    <header class="roadmap-intro">
+      <span class="page-eyebrow">MEDI lens · Lo que viene</span>
+      <h1>Una app que mejora contigo</h1>
+      <p>Esta es la vista general de las funcionalidades previstas, en desarrollo y ya implementadas. Nuestro objetivo es mejorar continuamente la experiencia y ampliar las capacidades de la app en cada versión.</p>
+    </header>
+
+    <nav class="roadmap-index" aria-label="Estados de la hoja de ruta">
+      {sections.map((section) => <a href={'#' + section.id}><i class:list={['ph', section.icon]} aria-hidden="true"></i>{section.title}<span>{section.features.length}</span></a>)}
+    </nav>
+
+    <div class="roadmap-sections">
+      {roadmapSections.map((section) => (
+        <details class:list={['roadmap-section', 'roadmap-' + section.status]} id={section.id}>
+          <summary class="roadmap-section-heading">
+            <span class="roadmap-section-copy">
+              <span class="roadmap-section-icon"><i class:list={['ph', section.icon]} aria-hidden="true"></i></span>
+              <span class="roadmap-section-title" id={section.id + '-title'} role="heading" aria-level="2">{section.title}</span>
+              <span class="roadmap-section-description">{section.description}</span>
+            </span>
+            <span class="roadmap-section-meta">
+              <span class="roadmap-section-count">{section.features.length}</span>
+              <i class="ph ph-caret-down roadmap-section-chevron" aria-hidden="true"></i>
+            </span>
+          </summary>
+          <div class="roadmap-section-content">
+            {section.status === 'complete' ? (
+              <div class="roadmap-version-groups">
+                {section.featureGroups.map((group) => (
+                  <section class="roadmap-version-group" aria-labelledby={'roadmap-version-' + group.version.replaceAll('.', '-')}>
+                    <header class="roadmap-version-group-heading">
+                      <h3 id={'roadmap-version-' + group.version.replaceAll('.', '-')}>{group.version}</h3>
+                      {group.features[0]?.href && <a class="sponsor-text-link" href={group.features[0].href}>Ver cambios <i class="ph ph-arrow-right" aria-hidden="true"></i></a>}
+                    </header>
+                    <div class="roadmap-cards">
+                      {group.features.map((feature) => (
+                        <article class="roadmap-card">
+                          <h4>{feature.name}</h4>
+                          <p>{feature.description}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div class="roadmap-cards">
+                {section.features.map((feature) => (
+                  <article class="roadmap-card">
+                    <div class="roadmap-card-heading">
+                      {feature.href ? <a class="roadmap-version" href={feature.href}>{feature.version}</a> : <span class="roadmap-version">{feature.version}</span>}
+                      <h3>{feature.name}</h3>
+                    </div>
+                    <p>{feature.description}</p>
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
+        </details>
+      ))}
+    </div>
+  </main>
+</SiteLayout>

@@ -1,0 +1,112 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import StoreBadges from '@/components/StoreBadges.astro';
+
+const searchMethods = ['Nombre del medicamento', 'Laboratorio titular', 'Principio activo', 'Código Nacional', 'Código ATC', 'Número de registro', 'Grupo terapéutico'];
+const medicineDetails = [
+  { icon: 'ph-identification-card', title: 'Identificación', items: ['Foto del medicamento, si se dispone', 'Nombre y laboratorio titular', 'Laboratorio comercializador', 'Principios activos', 'Excipientes', 'Diferentes presentaciones', 'Fecha de caducidad, si se dispone'] },
+  { icon: 'ph-file-text', title: 'Documentación oficial', items: ['Ficha técnica en HTML y PDF', 'Prospecto en HTML y PDF', 'Notas', 'Material informativo'] },
+  { icon: 'ph-info', title: 'Situación y uso', items: ['Comercialización', 'Problemas de suministro', 'Afecta a la conducción', 'Condiciones de prescripción y uso', 'Situación de la autorización y fecha', 'Seguimiento adicional con triángulo negro', 'Medicamento huérfano', 'Información de la EMA', 'Biosimilar', 'Medicamento no sustituible', 'Genérico'] },
+  { icon: 'ph-tree-structure', title: 'Datos terapéuticos', items: ['Formas farmacéuticas', 'Vías de administración', 'Dosis', 'Códigos ATC', 'Grupo y subgrupo terapéutico'] },
+];
+---
+<SiteLayout title="Presentación" seoTitle="Presentación de MEDI lens" description="Conoce cómo MEDI lens acerca información oficial de medicamentos a pacientes y profesionales sanitarios." schemaType="AboutPage">
+  <main class="presentation-page">
+    <section class="presentation-hero" aria-labelledby="presentation-title">
+      <div class="presentation-hero-copy">
+        <span class="page-eyebrow"><span class="icon-container page-eyebrow-icon"><i class="ph ph-shield-check" aria-hidden="true"></i></span> Información oficial de medicamentos</span>
+        <h1 id="presentation-title">Conocer un medicamento debería ser sencillo.</h1>
+        <p class="presentation-lead"><span class="logo-colored">MEDI lens</span> acerca a ciudadanos y profesionales sanitarios información clara, accesible y actualizada sobre los medicamentos, para promover un uso adecuado, seguro y responsable.</p>
+        <p>Una experiencia móvil nativa, sencilla y pensada para ser accesible a todos.</p>
+        <StoreBadges placement="presentation" />
+      </div>
+      <aside class="presentation-data" aria-label="Datos de la base de datos de la AEMPS">
+        <div class="presentation-data-top"><span class="icon-container"><i class="ph ph-database" aria-hidden="true"></i></span><span>La base de datos de la AEMPS incluye</span></div>
+        <div class="presentation-stats">
+          <div><strong>+16.000</strong><span>medicamentos</span></div>
+          <div><strong>+2.600</strong><span>principios activos</span></div>
+          <div><strong>+33.000</strong><span>presentaciones</span></div>
+        </div>
+        <p class="presentation-data-note">La información de cada medicamento procede de su registro oficial.</p>
+      </aside>
+    </section>
+
+    <section class="presentation-documents" aria-labelledby="documents-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">Documentación oficial</span>
+        <h2 id="documents-title">La información importante, siempre a mano</h2>
+        <p>Consulta los documentos esenciales para entender el medicamento y utilizarlo correctamente.</p>
+      </header>
+      <div class="document-cards">
+        <article class="document-card">
+          <header class="document-card-header">
+            <h3><span class="document-card-code document-card-code--prospectus" aria-hidden="true">P</span>Prospecto</h3>
+            <span class="document-formats">HTML <span>·</span> PDF</span>
+          </header>
+          <p>La información que acompaña al medicamento y ayuda a conocer lo necesario para utilizarlo correctamente.</p>
+        </article>
+        <article class="document-card">
+          <header class="document-card-header">
+            <h3><span class="document-card-code document-card-code--technical" aria-hidden="true">FT</span>Ficha técnica</h3>
+            <span class="document-formats">HTML <span>·</span> PDF</span>
+          </header>
+          <p>Documento autorizado por la AEMPS con indicaciones, posología, precauciones, contraindicaciones, posibles reacciones adversas y propiedades farmacológicas.</p>
+        </article>
+        <article class="document-card">
+          <header class="document-card-header">
+            <h3><span class="document-card-code document-card-code--evaluation" aria-hidden="true">IPE</span>Evaluación</h3>
+          </header>
+          <p>Consulta la evaluación del medicamento como información complementaria a su ficha técnica y prospecto.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="presentation-details" aria-labelledby="details-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">Cada medicamento, en detalle</span>
+        <h2 id="details-title">Toda la información, de un vistazo</h2>
+        <p>Consulta de forma clara los datos de identificación, la documentación oficial, las condiciones de uso y la información terapéutica.</p>
+      </header>
+      <div class="medicine-detail-grid">
+        {medicineDetails.map((detail) => (
+          <article class="medicine-detail-card">
+            <header class="medicine-detail-card-header">
+              <span class="icon-container"><i class:list={['ph', detail.icon]} aria-hidden="true"></i></span>
+              <h3>{detail.title}</h3>
+            </header>
+            <ul>{detail.items.map((item) => <li>{item}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="presentation-search" aria-labelledby="search-title">
+      <div class="presentation-search-copy">
+        <span class="page-eyebrow">Encuentra lo que necesitas</span>
+        <h2 id="search-title">Busca o escanea</h2>
+        <p>Además de la búsqueda manual, puedes escanear el código de barras o Datamatrix del envase físico para identificar el medicamento de forma rápida y precisa.</p>
+      </div>
+      <div class="search-methods-wrap">
+        <h3>Puedes buscar por</h3>
+        <ul class="search-methods">{searchMethods.map((method) => <li>{method}</li>)}</ul>
+      </div>
+    </section>
+
+    <section class="presentation-benefits" aria-labelledby="benefits-title">
+      <header class="presentation-section-heading">
+        <span class="page-eyebrow">Una herramienta para el día a día</span>
+        <h2 id="benefits-title">Información fiable. Acceso sencillo.</h2>
+      </header>
+      <div class="benefit-grid">
+        <article><span class="icon-container"><i class="ph ph-arrows-clockwise" aria-hidden="true"></i></span><h3>Actualizada</h3><p>Los datos proceden de las fuentes que alimentan el registro oficial y reflejan cambios en la situación o problemas de suministro.</p></article>
+        <article><span class="icon-container"><i class="ph ph-check-circle" aria-hidden="true"></i></span><h3>De primera mano</h3><p>Información extraída del registro oficial de cada medicamento, proporcionada por sus titulares y validada por la Agencia correspondiente.</p></article>
+        <article><span class="icon-container"><i class="ph ph-hand-heart" aria-hidden="true"></i></span><h3>Abierta a todos</h3><p>Acceso libre y gratuito, sin necesidad de registro, con una experiencia optimizada para dispositivos móviles.</p></article>
+      </div>
+    </section>
+
+    <section class="presentation-cta" aria-labelledby="presentation-cta-title">
+      <div><span class="page-eyebrow">Disponible para Android y iPhone</span><h2 id="presentation-cta-title">Lleva <span class="logo-colored">MEDI lens</span> contigo</h2></div>
+      <StoreBadges placement="presentation" />
+    </section>
+  </main>
+</SiteLayout>

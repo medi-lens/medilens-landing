@@ -1,0 +1,41 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import StoreBadges from '@/components/StoreBadges.astro';
+---
+<SiteLayout
+  title="Descargar MEDI lens"
+  seoTitle="Descarga MEDI lens para Android y iPhone"
+  description="Descarga MEDI lens desde Google Play o App Store."
+  noIndex
+>
+  <main class="download-page">
+    <section class="download-card" aria-labelledby="download-title">
+      <h1 id="download-title">Descarga <span class="download-brand"><span class="download-brand-primary">MEDI</span> <span class="download-brand-accent">lens</span></span></h1>
+      <p id="download-status" class="download-lead" role="status" aria-atomic="true">Elige tu tienda para continuar con la descarga.</p>
+      <StoreBadges placement="download" />
+    </section>
+  </main>
+</SiteLayout>
+<script>
+  import { appStoreUrls } from '@/constants/appStores.mjs';
+
+  const userAgent = navigator.userAgent || '';
+  const iosUrl = appStoreUrls.appleAppStore;
+  const androidUrl = appStoreUrls.googlePlay;
+  const status = document.querySelector('#download-status');
+  const isIOS = /iPad|iPhone|iPod/i.test(userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isAndroid = /Android/i.test(userAgent);
+  const isDesktop = /Windows NT|Macintosh|X11|Linux x86_64|CrOS/i.test(userAgent);
+
+  if (isIOS) {
+    if (status) status.textContent = 'Abriendo App Store…';
+    window.location.replace(iosUrl);
+  } else if (isAndroid) {
+    if (status) status.textContent = 'Abriendo Google Play…';
+    window.location.replace(androidUrl);
+  } else if (isDesktop) {
+    if (status) status.textContent = 'Estás en un ordenador. Elige una tienda para consultar la app y continuar en tu móvil.';
+  } else if (status) {
+    status.textContent = 'No hemos podido identificar tu dispositivo. Elige la tienda correspondiente para continuar.';
+  }
+</script>

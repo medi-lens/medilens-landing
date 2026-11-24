@@ -1,0 +1,34 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import ContactForm from '@/components/ContactForm.astro';
+---
+<SiteLayout title="Soporte" seoTitle="Soporte de MEDI lens" description="¿Tienes dudas o necesitas ayuda con MEDI lens? Contacta con nuestro equipo de soporte." schemaType="ContactPage">
+  <main class="contact-page contact-page-wide support-page">
+    <section class="contact-copy" aria-labelledby="support-title">
+      <span class="page-eyebrow"><span class="icon-container page-eyebrow-icon"><i class="ph ph-lifebuoy" aria-hidden="true"></i></span> Estamos aquí para ayudarte</span>
+      <h1 id="support-title">¿En qué podemos ayudarte?</h1>
+      <p class="contact-lead">¿Tienes dudas, sugerencias o necesitas ayuda con la app?</p>
+      <p>Cuéntanos qué ocurre y te responderemos lo antes posible. Tu consulta será gestionada de forma confidencial y personalizada.</p>
+    </section>
+    <section class="contact-form-panel" aria-labelledby="support-form-title">
+      <header><span class="page-eyebrow">Soporte de <span class="logo-colored">MEDI lens</span></span><h2 id="support-form-title">Envíanos tu consulta</h2><p>Todos los campos son obligatorios.</p></header>
+      <ContactForm
+        name="support"
+        successTitle="¡Gracias por tu mensaje!"
+        successMessage="Tu incidencia ha sido enviada correctamente. Revisaremos y responderemos a tu mensaje lo antes posible."
+      />
+    </section>
+    <section class="contact-options" aria-label="Otras formas de contacto">
+      <a class="contact-email-card" href="mailto:soporte@medilens.es">
+        <span class="contact-card-icon"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span>
+        <span><small>Si lo prefieres, escríbenos</small><strong>soporte@medilens.es</strong></span>
+        <i class="ph ph-arrow-up-right contact-email-arrow" aria-hidden="true"></i>
+      </a>
+
+      <aside class="contact-support-card">
+        <span class="contact-card-icon"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i></span>
+        <div><h2>¿Es una consulta general?</h2><p>Para propuestas, colaboraciones u otros temas, escríbenos desde la página de contacto.</p><a class="sponsor-text-link" href="/contacto">Ir a contacto <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+      </aside>
+    </section>
+  </main>
+</SiteLayout>

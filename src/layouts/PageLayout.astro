@@ -1,0 +1,22 @@
+---
+import SiteLayout from './SiteLayout.astro';
+
+const { frontmatter = {} } = Astro.props;
+const pageTitle = frontmatter.title || 'MEDI lens';
+const defaultSeoTitle = 'MEDI lens — Escanea y conoce tus medicamentos';
+---
+<SiteLayout
+  title={pageTitle}
+  seoTitle={frontmatter.title || defaultSeoTitle}
+  description={frontmatter.description}
+  image={frontmatter.image}
+  imageAlt={frontmatter.imageAlt}
+  metaType={frontmatter.metaType}
+  schemaType={frontmatter.schemaType || 'WebPage'}
+>
+  <main class="document-main">
+    <article class="prose">
+      <slot />
+    </article>
+  </main>
+</SiteLayout>

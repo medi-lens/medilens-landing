@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import googlePlayBadge from '@/assets/images/medilens-google-play.png';
+import appleStoreBadge from '@/assets/images/medilens-apple-store-blk.svg';
+import { getTrackedAppStoreUrls } from '@/constants/appStores.mjs';
+
+const { placement = 'hero' } = Astro.props;
+const suffix = placement === 'presentation' ? 'presentation_cta' : placement === 'download' ? 'descarga_cta' : 'heroActions_cta';
+const { googlePlay: playUrl, appleAppStore: appleUrl } = getTrackedAppStoreUrls(suffix);
+---
+<div class:list={['store-badges', 'store-badges-' + placement]}>
+  <a class="google-play" href={playUrl} aria-label="Descargar MEDI lens en Google Play">
+    <Image src={googlePlayBadge} alt="Disponible en Google Play" quality={82} format="webp" />
+  </a>
+  <a class="app-store" href={appleUrl} aria-label="Descargar MEDI lens en App Store">
+    <Image src={appleStoreBadge} alt="Disponible en App Store" />
+  </a>
+</div>

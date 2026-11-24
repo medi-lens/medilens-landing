@@ -1,0 +1,8 @@
+---
+const { label } = Astro.props;
+---
+
+<span class="icon-tooltip" data-icon-tooltip>
+  <slot />
+  <span class="icon-tooltip-label" data-icon-tooltip-label aria-hidden="true">{label}</span>
+</span>
