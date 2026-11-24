@@ -33,6 +33,14 @@ export default defineConfig({
       destination: appStoreUrls.googlePlay,
       status: 302,
     },
+    '/docs/NOTA_PRENSA_MEDILENS_L.pdf': {
+      destination: '/docs/NOTA_PRENSA_MEDILENS.pdf',
+      status: 301,
+    },
+    '/docs/NOTA_PRENSA_MEDILENS_N.pdf': {
+      destination: '/docs/NOTA_PRENSA_MEDILENS.pdf',
+      status: 301,
+    },
     '/dossier-medios': {
       destination: '/kit-de-prensa',
       status: 301,
