@@ -97,8 +97,12 @@ img { max-width: 100%; }
   text-decoration: none;
   flex: 0 0 auto;
 }
-.brand img { width: 32px; height: 32px; }
-.brand span { font-size: 1.25rem; line-height: 1; translate: 0 1px; }
+.brand img { width: 38px; height: 38px; }
+.brand span { font-size: 1.5rem; line-height: 1; translate: 0 1px; }
+.partner-action { display: flex; align-items: center; margin-inline-start: 12px; padding-inline-start: 12px; border-inline-start: 1px solid var(--border); }
+.partner-action a { display: grid; width: 38px; height: 38px; place-items: center; color: var(--text-2); border-radius: 8px; text-decoration: none; }
+.partner-action a img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.partner-action a:hover { background: var(--surface); }
 .header-navigation, .main-nav, .header-actions {
   display: flex;
   align-items: center;
@@ -159,6 +163,7 @@ img { max-width: 100%; }
 }
 .version-menu-panel a:hover { color: var(--brand); background: var(--surface); }
 .header-actions { gap: 12px; }
+.header-end-actions { display: flex; align-items: center; flex: 0 0 auto; }
 .social-links { display: flex; align-items: center; gap: 7px; }
 .icon-tooltip { position: relative; display: inline-flex; }
 .icon-tooltip-label {
@@ -801,6 +806,14 @@ img { max-width: 100%; }
   }
   .social-links { padding-inline: 0; border-inline-start: 0; }
   .theme-control { margin-inline-start: 12px; padding-inline-start: 12px; border-inline-start: 1px solid var(--border); }
+  .header-actions .social-links { gap: 2px; }
+  .header-actions .social-links a { width: 28px; height: 28px; }
+  .partner-action { margin-inline-start: 8px; padding-inline-start: 8px; }
+}
+@media (max-width: 380px) {
+  .header-actions .social-links a { width: 26px; height: 26px; }
+  .theme-control { margin-inline-start: 8px; padding-inline-start: 8px; border-inline-start: 1px solid var(--border); }
+  .partner-action { margin-inline-start: 6px; padding-inline-start: 6px; }
 }
 
 /* Editorial pages */
@@ -1283,7 +1296,7 @@ a.roadmap-version:hover { color: var(--brand); border-color: var(--brand); }
 @media (prefers-reduced-motion: no-preference) {
   button, [role='button'], .custom-button, .media-kit-download-button,
   .media-kit-logo-downloads a, .news-contact > a, .member-links a,
-  .store-links a, .social-links a, .roadmap-version,
+  .store-links a, .social-links a, .partner-action a, .roadmap-version,
   .version-menu summary, .media-kit-asset-details > summary {
     transition: color .16s ease, background-color .16s ease, border-color .16s ease,
       transform .16s ease, filter .16s ease, box-shadow .16s ease;
