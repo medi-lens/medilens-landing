@@ -1,0 +1,54 @@
+<section class="newsletter-section" aria-labelledby="newsletter-heading">
+  <h2 id="newsletter-heading">Newsletter</h2>
+  <p class="newsletter-intro">Recibe novedades y recursos de <span class="logo-colored">MEDI lens</span> directamente en tu correo.</p>
+  <form class="newsletter-form" id="newsletter-form" action="/api/newsletter" method="post">
+    <label class="newsletter-email-field" for="newsletter-email">
+      <span>Correo electrónico</span>
+      <input id="newsletter-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="tu@correo.com" required />
+    </label>
+    <p class="newsletter-consent">Al pulsar «Suscribirme al boletín», solicito recibirlo en este correo electrónico. Puedo darme de baja en cualquier momento. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a>.</p>
+    <div class="newsletter-honeypot" aria-hidden="true">
+      <label for="newsletter-company">No rellenes este campo</label>
+      <input id="newsletter-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <button type="submit">Suscribirme al boletín</button>
+    <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite" hidden></p>
+  </form>
+</section>
+
+<script>
+  const newsletterForm = document.querySelector<HTMLFormElement>('#newsletter-form');
+
+  newsletterForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!newsletterForm.reportValidity()) return;
+
+    const submitButton = newsletterForm.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const status = newsletterForm.querySelector<HTMLParagraphElement>('#newsletter-status');
+    if (!submitButton || !status) return;
+
+    submitButton.disabled = true;
+    status.hidden = false;
+    status.classList.remove('is-error');
+    status.textContent = 'Enviando tu solicitud…';
+
+    try {
+      const response = await fetch(newsletterForm.action, {
+        method: 'POST',
+        body: new FormData(newsletterForm),
+        headers: { Accept: 'application/json' },
+        credentials: 'same-origin',
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error('newsletter_request_failed');
+
+      status.textContent = result.message;
+      newsletterForm.reset();
+    } catch {
+      status.classList.add('is-error');
+      status.textContent = 'No se pudo completar la suscripción. Inténtalo de nuevo más tarde.';
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+</script>
