@@ -11,8 +11,11 @@
       <label for="newsletter-company">No rellenes este campo</label>
       <input id="newsletter-company" name="company" type="text" tabindex="-1" autocomplete="off" />
     </div>
+    <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite" hidden>
+      <i class="newsletter-status-icon ph ph-spinner-gap" aria-hidden="true"></i>
+      <span class="newsletter-status-text"></span>
+    </p>
     <button type="submit">Suscribirme al boletín</button>
-    <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite" hidden></p>
   </form>
 </section>
 
@@ -25,12 +28,15 @@
 
     const submitButton = newsletterForm.querySelector<HTMLButtonElement>('button[type="submit"]');
     const status = newsletterForm.querySelector<HTMLParagraphElement>('#newsletter-status');
-    if (!submitButton || !status) return;
+    const statusText = status?.querySelector<HTMLSpanElement>('.newsletter-status-text');
+    const statusIcon = status?.querySelector<HTMLElement>('.newsletter-status-icon');
+    if (!submitButton || !status || !statusText || !statusIcon) return;
 
     submitButton.disabled = true;
     status.hidden = false;
-    status.classList.remove('is-error');
-    status.textContent = 'Enviando tu solicitud…';
+    status.dataset.state = 'loading';
+    statusText.textContent = 'Enviando tu solicitud…';
+    statusIcon.className = 'newsletter-status-icon ph ph-spinner-gap';
 
     try {
       const response = await fetch(newsletterForm.action, {
@@ -42,11 +48,14 @@
       const result = await response.json();
       if (!response.ok) throw new Error('newsletter_request_failed');
 
-      status.textContent = result.message;
+      status.dataset.state = 'success';
+      statusText.textContent = result.message;
+      statusIcon.className = 'newsletter-status-icon ph ph-check-circle';
       newsletterForm.reset();
     } catch {
-      status.classList.add('is-error');
-      status.textContent = 'No se pudo completar la suscripción. Inténtalo de nuevo más tarde.';
+      status.dataset.state = 'error';
+      statusText.textContent = 'No se pudo completar la suscripción. Inténtalo de nuevo más tarde.';
+      statusIcon.className = 'newsletter-status-icon ph ph-warning-circle';
     } finally {
       submitButton.disabled = false;
     }
