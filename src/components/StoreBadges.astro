@@ -4,15 +4,21 @@ import googlePlayBadge from '@/assets/images/medilens-google-play.png';
 import appleStoreBadge from '@/assets/images/medilens-apple-store-blk.svg';
 import { getTrackedAppStoreUrls } from '@/constants/appStores.mjs';
 
-const { placement = 'hero' } = Astro.props;
+const { placement = 'hero', showCompatibility = false } = Astro.props;
 const suffix = placement === 'presentation' ? 'presentation_cta' : placement === 'download' ? 'descarga_cta' : 'heroActions_cta';
 const { googlePlay: playUrl, appleAppStore: appleUrl } = getTrackedAppStoreUrls(suffix);
 ---
 <div class:list={['store-badges', 'store-badges-' + placement]}>
-  <a class="google-play" href={playUrl} aria-label="Descargar MEDI lens en Google Play">
-    <Image src={googlePlayBadge} alt="Disponible en Google Play" quality={82} format="webp" />
-  </a>
-  <a class="app-store" href={appleUrl} aria-label="Descargar MEDI lens en App Store">
-    <Image src={appleStoreBadge} alt="Disponible en App Store" />
-  </a>
+  <div class="store-badge-item">
+    <a class="google-play" href={playUrl} aria-label="Descargar MEDI lens en Google Play">
+      <Image src={googlePlayBadge} alt="Disponible en Google Play" quality={82} format="webp" />
+    </a>
+    {showCompatibility && <span class="store-badge-compatibility">Android 7+</span>}
+  </div>
+  <div class="store-badge-item">
+    <a class="app-store" href={appleUrl} aria-label="Descargar MEDI lens en App Store">
+      <Image src={appleStoreBadge} alt="Disponible en App Store" />
+    </a>
+    {showCompatibility && <span class="store-badge-compatibility">iOS 16.4+</span>}
+  </div>
 </div>

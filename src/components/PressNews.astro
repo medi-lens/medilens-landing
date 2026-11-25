@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import pressArticleImage from '@/assets/images/press-article-example.png';
+---
+<section class="news-wrapper" aria-labelledby="news-heading">
+  <h2 id="news-heading">Prensa y Noticias</h2>
+  <div class="news-layout">
+    <a class="news-placeholder" href="#" aria-label="Ejemplo de noticia de prensa sobre MEDI lens">
+      <div class="news-media">
+        <span class="news-media-icon" aria-hidden="true"><i class="ph ph-newspaper"></i></span>
+        <span class="news-media-name">Nombre del medio</span>
+        <span class="news-example-tag">Ejemplo</span>
+      </div>
+      <Image
+        class="news-article-image"
+        src={pressArticleImage}
+        alt="Una persona consulta información en el móvil junto a una caja de medicamento en una farmacia"
+        width={760}
+        quality={78}
+        format="webp"
+        loading="lazy"
+      />
+      <div class="news-article-copy">
+        <p class="news-article-category">Salud y tecnología</p>
+        <h3>MEDI lens acerca la información de los medicamentos al móvil</h3>
+        <p class="news-article-excerpt">Una propuesta para consultar prospectos y fichas técnicas y organizar el botiquín digital.</p>
+      </div>
+    </a>
+    <div class="news-copy">
+      <span class="news-copy-eyebrow">Para medios y periodistas</span>
+      <p>¿Preparas un reportaje sobre salud o tecnología? Te contamos cómo MEDI lens facilita el acceso a la información oficial de los medicamentos.</p>
+      <div class="news-contact">
+        <span>Contacto de prensa</span>
+        <a href="mailto:prensa@medilens.es"><i class="ph ph-envelope-simple" aria-hidden="true"></i> prensa@medilens.es</a>
+      </div>
+    </div>
+  </div>
+</section>

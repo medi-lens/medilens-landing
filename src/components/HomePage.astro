@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import StoreBadges from './StoreBadges.astro';
+import NewsletterSignup from './NewsletterSignup.astro';
+import PressNews from './PressNews.astro';
 import screenshot from '@/assets/images/medilens-screenshot.png';
 
 const features = [
@@ -17,7 +19,7 @@ const faq = [
   { question: '¿Es gratuita? ¿Hay compras dentro de la app?', answer: 'La app es totalmente gratuita. No incluye compras dentro de la aplicación.' },
   { question: '¿Qué permisos solicita la app y por qué?', answer: 'Solicita principalmente acceso a la cámara para escanear códigos y permiso de notificaciones para alertas de caducidad. Solo se piden permisos necesarios para la funcionalidad.' },
   { question: '¿Qué hace la app con mis datos personales?', answer: 'No se recoge ningún dato personal. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a> para detalles sobre almacenamiento, sincronización y eliminación.' },
-  { question: '¿Funciona en iOS y Android y qué versiones son compatibles?', answer: 'MEDI lens está disponible en Google Play y App Store. Recomendamos usar versiones recientes de iOS y Android; La app es compatible con <strong>Android 7+</strong> y <strong>iOS 15.1+</strong>.' },
+  { question: '¿Funciona en iOS y Android y qué versiones son compatibles?', answer: 'MEDI lens está disponible en Google Play y App Store. Recomendamos usar versiones recientes de iOS y Android; La app es compatible con <strong>Android 7+</strong> y <strong>iOS 16.4+</strong>.' },
   { question: '¿La app es accesible para lectores de pantalla?', answer: 'Sí. Está diseñada para ser compatible con TalkBack (Android) y VoiceOver (iOS) y seguir buenas prácticas de accesibilidad.' },
   { question: '¿Puedo usar la app sin conexión (modo offline)?', answer: 'Algunas consultas quedan en caché para uso offline, pero la búsqueda completa y prospectos suelen requerir conexión.' },
   { question: '¿Cómo funcionan las alertas de caducidad?', answer: 'Puedes guardar la fecha de caducidad en tu botiquín; la app envía notificaciones locales según los permisos y las preferencias de aviso.' },
@@ -29,7 +31,6 @@ const faq = [
   title="MEDI lens — Escanea y conoce tus medicamentos"
   seoTitle="MEDI lens — Escanea y conoce tus medicamentos"
   description="MEDI lens te permite escanear medicamentos, ver prospectos, composición, receta y gestionar un botiquín digital con alertas de caducidad."
-  hasMailjetNewsletter
 >
   <main>
     <section class="home-hero">
@@ -39,7 +40,7 @@ const faq = [
           <h1>Escanea y conoce tus medicamentos al instante</h1>
         </div>
         <p class="hero-tagline">Escanea y consulta tus medicamentos. Guárdalos en un botiquín digital, recibe alertas antes de que caduquen y accede siempre a la información oficial de la AEMPS.</p>
-        <StoreBadges />
+        <StoreBadges showCompatibility />
         <div class="hero-notes" aria-label="Características de MEDI lens">
           <span class="hero-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Información oficial de la AEMPS</span>
           <span class="hero-note"><i class="ph ph-device-mobile" aria-hidden="true"></i> Gratis · Para Android y iPhone</span>
@@ -85,20 +86,9 @@ const faq = [
         </div>
       </section>
 
-      <section class="news-wrapper" aria-labelledby="news-heading">
-        <h2 id="news-heading">Prensa y Noticias</h2>
-        <p>Nuestra historia aún no ha sido contada. ¿Serás el primero en compartirla?</p>
-        <p class="news-contact">
-          <span>Contacto de prensa</span>
-          <a href="mailto:prensa@medilens.es"><i class="ph ph-envelope-simple" aria-hidden="true"></i> prensa@medilens.es</a>
-        </p>
-      </section>
+      <PressNews />
 
-      <section class="mailjet-form" aria-labelledby="newsletter-heading">
-        <h2 id="newsletter-heading">Newsletter</h2>
-        <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s8h2u.mjt.lu/wgt/s8h2u/0s49/form?c=13b8b50e" width="100%" style="height: 0" title="Suscripción al boletín de MEDI lens"></iframe>
-        <p>El formulario de suscripción lo proporciona Mailjet. Al enviar tu email recibirás un mensaje para confirmar la suscripción. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a>.</p>
-      </section>
+      <NewsletterSignup />
     </section>
   </main>
 </SiteLayout>
