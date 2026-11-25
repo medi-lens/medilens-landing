@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import pressArticleImage from '@/assets/images/press-article-example.png';
 ---
 <section class="news-wrapper" aria-labelledby="news-heading">
   <h2 id="news-heading">Prensa y Noticias</h2>
@@ -11,15 +9,7 @@ import pressArticleImage from '@/assets/images/press-article-example.png';
         <span class="news-media-name">Nombre del medio</span>
         <span class="news-example-tag">Ejemplo</span>
       </div>
-      <Image
-        class="news-article-image"
-        src={pressArticleImage}
-        alt="Una persona consulta información en el móvil junto a una caja de medicamento en una farmacia"
-        width={760}
-        quality={78}
-        format="webp"
-        loading="lazy"
-      />
+      <div class="news-article-image" aria-hidden="true"><i class="ph ph-pill"></i></div>
       <div class="news-article-copy">
         <p class="news-article-category">Salud y tecnología</p>
         <h3>MEDI lens acerca la información de los medicamentos al móvil</h3>
