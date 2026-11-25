@@ -25,7 +25,6 @@ const {
   image = 'https://medilens.es/medilens-og.png',
   imageAlt = 'MEDI lens — Escanea y conoce tus medicamentos',
   metaType = 'website',
-  hasMailjetNewsletter = false,
   noIndex = false,
   schemaType = 'WebPage',
   mainEntity,
@@ -142,7 +141,6 @@ const isProduction = import.meta.env.PROD;
     <meta name="twitter:image:alt" content={imageAlt} />
     <title>{documentTitle}</title>
     {!noIndex && <script type="application/ld+json" set:html={structuredDataJson}></script>}
-    {hasMailjetNewsletter && <script is:inline src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>}
     <script is:inline>
       (() => {
         try {

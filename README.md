@@ -1,6 +1,5 @@
 <div align="center">
 
-
   # MEDI lens
 
   **Escanea y conoce tus medicamentos al instante**
@@ -35,24 +34,28 @@ MEDI lens permite escanear códigos de barra, consultar prospectos y fichas téc
 - **Alertas de caducidad** antes de que los productos pierdan su vigencia.
 - **Accesibilidad** compatible con TalkBack y VoiceOver.
 - **Diseño multiplataforma**, disponible para Android e iPhone.
+- **Versiones mínimas compatibles:** Android 7+ e iOS 16.4+.
 
 ## Sobre este sitio
 
-La web está creada con **Astro 7** y JavaScript vanilla. El despliegue se realiza en **Netlify**, con integración específica para el adaptador de Astro y una Edge Function configurada para el proyecto.
+La web está creada con **Astro 7** y JavaScript vanilla. Se despliega en **Netlify** con el adaptador de Astro, una Netlify Function para el alta del boletín y una Edge Function para otros flujos del sitio.
 
 ```text
 src/
 ├── assets/       # Imágenes e iconos procesados por Astro
-├── components/   # Componentes reutilizables
+├── components/   # Componentes reutilizables, incluida la home
 ├── layouts/      # Plantillas generales y estructura de página
 ├── pages/        # Rutas y páginas de la web
 ├── scripts/      # JavaScript del sitio
 └── styles/       # Estilos globales
 
-public/           # Recursos estáticos copiados directamente
+functions/        # Netlify Functions (alta de newsletter en Mailjet)
 netlify/          # Edge Functions
-netlify.toml      # Configuración de Netlify
+public/           # Recursos estáticos copiados directamente
+netlify.toml      # Configuración de Astro, Netlify Functions y Edge Functions
 ```
+
+La home compone las secciones de prensa y newsletter mediante `PressNews.astro` y `NewsletterSignup.astro`. Los botones de las tiendas muestran los requisitos mínimos de Android e iOS en la home.
 
 ## Requisitos
 
@@ -75,6 +78,22 @@ npm run build
 npm run preview
 ```
 
+Para probar localmente el endpoint de newsletter, utiliza `netlify dev` con el [CLI de Netlify](https://docs.netlify.com/cli/get-started/). `npm run dev` inicia Astro directamente y no ejecuta las Netlify Functions.
+
+## Newsletter y Mailjet
+
+El formulario de `NewsletterSignup.astro` se sirve desde la propia web y envía la dirección a `POST /api/newsletter`. La Netlify Function `functions/newsletter.mjs` llama a Mailjet desde el servidor; el navegador no carga el script ni el formulario incrustado de Mailjet.
+
+La suscripción se activa directamente al enviar el formulario, sin doble opt-in. La función usa la acción `addnoforce`: añade contactos nuevos y respeta las bajas existentes. También limita solicitudes por IP y descarta envíos que rellenan el campo honeypot.
+
+Configura estas variables en el entorno del sitio Netlify con alcance **Functions**. No las guardes en `netlify.toml` ni en el repositorio:
+
+- `MAILJET_API_KEY_PUBLIC`: clave pública de la API de Mailjet.
+- `MAILJET_API_KEY_SECRET`: clave secreta de la API; márcala como secreta.
+- `MAILJET_NEWSLETTER_LIST_ID`: ID numérico de la lista de contactos de Mailjet.
+
+Después de modificar variables de entorno, vuelve a desplegar el sitio para que la función reciba los nuevos valores.
+
 ## Enlaces
 
 - **Web:** [medilens.es](https://medilens.es/)
@@ -85,5 +104,5 @@ npm run preview
 ---
 
 <div align="center">
-  <sub>MEDI lens · Conoce mejor tus medicamentos.</sub>
+  <sub>MEDI lens — Escanea y conoce tus medicamentos</sub>
 </div>
