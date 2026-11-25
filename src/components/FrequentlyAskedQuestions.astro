@@ -1,0 +1,25 @@
+---
+const faq = [
+  { question: '¿MEDI lens necesita conexión a Internet?', answer: 'Sí. Para recuperar datos oficiales y prospectos la app consulta fuentes externas; algunas funciones (búsquedas recientes, historial, favoritos, botiquín) pueden funcionar sin conexión.' },
+  { question: '¿Es gratuita? ¿Hay compras dentro de la app?', answer: 'La app es totalmente gratuita. No incluye compras dentro de la aplicación.' },
+  { question: '¿Qué permisos solicita la app y por qué?', answer: 'Solicita principalmente acceso a la cámara para escanear códigos y permiso de notificaciones para alertas de caducidad. Solo se piden permisos necesarios para la funcionalidad.' },
+  { question: '¿Qué hace la app con mis datos personales?', answer: 'No se recoge ningún dato personal. Consulta nuestra <a href="/politica-privacidad">Política de privacidad</a> para detalles sobre almacenamiento, sincronización y eliminación.' },
+  { question: '¿Funciona en iOS y Android y qué versiones son compatibles?', answer: 'MEDI lens está disponible en Google Play y App Store. Recomendamos usar versiones recientes de iOS y Android; La app es compatible con <strong>Android 7+</strong> y <strong>iOS 16.4+</strong>.' },
+  { question: '¿La app es accesible para lectores de pantalla?', answer: 'Sí. Está diseñada para ser compatible con TalkBack (Android) y VoiceOver (iOS) y seguir buenas prácticas de accesibilidad.' },
+  { question: '¿Puedo usar la app sin conexión (modo offline)?', answer: 'Algunas consultas quedan en caché para uso offline, pero la búsqueda completa y prospectos suelen requerir conexión.' },
+  { question: '¿Cómo funcionan las alertas de caducidad?', answer: 'Puedes guardar la fecha de caducidad en tu botiquín; la app envía notificaciones locales según los permisos y las preferencias de aviso.' },
+  { question: '¿Puedo sincronizar mis datos entre dispositivos?', answer: 'La sincronización en la nube está planificada. Actualmente la función no está disponible; habrá opción de cuenta y backup en futuras versiones.' },
+  { question: '¿Cómo reporto errores o doy feedback?', answer: 'Usa la sección de soporte en la web o escribe a <a href="mailto:soporte@medilens.es"><strong>soporte@medilens.es</strong></a>. Incluye versión de la app y pasos para reproducir el problema.' },
+];
+---
+<section class="faq-wrapper" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Preguntas frecuentes</h2>
+  <div class="faq">
+    {faq.map((item) => (
+      <details>
+        <summary>{item.question}</summary>
+        <p set:html={item.answer}></p>
+      </details>
+    ))}
+  </div>
+</section>
